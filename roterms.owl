@@ -50,15 +50,21 @@
      xmlns:skos="http://www.w3.org/2004/02/skos/core#">
     <owl:Ontology rdf:about="http://purl.org/wf4ever/roterms#">
         <rdfs:label xml:lang="en">RO terms</rdfs:label>
-        <owl:versionInfo rdf:datatype="&xsd;string">0.2.1</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="&xsd;string">0.3.0</owl:versionInfo>
+        <dc:creator xml:lang="en">Stian Soiland-Reyes</dc:creator>
         <dc:contributor xml:lang="en">Graham Klyne</dc:contributor>
         <dc:contributor xml:lang="en">Khalid Belhajjame</dc:contributor>
-        <dc:creator xml:lang="en">Stian Soiland-Reyes</dc:creator>
         <rdfs:comment xml:lang="en">The Research Object vocabularies are built on existing popular vocabularies and standards, such as ORE, DC terms, PROV, to cite a few. In addition to terms that we borrowed and adapted from such vocabularies, we defined new terms under the name space roterms. 
 
 These new terms serve two main purposes. They are used to specify annotations that are, to our knowledge, not catered for by existing ontologies, e.g., roterms:Hypothesis and roterms:exampleValue. ii) They are also used to specify shortcuts that make the ontology easy to use and more accessible. For example, roterms:inputSelected associates a wfdesc:WorkflowDefinition to a ro:Resource to state that a file is meant to be used with a given workflow definition, without specifying at which input port or in which workflow run.
 </rdfs:comment>
-        <owl:versionIRI rdf:resource="https://cdn.rawgit.com/wf4ever/ro/tree/roterms-0.2.1/roterms.owl"/>
+        <owl:versionIRI rdf:resource="https://cdn.rawgit.com/wf4ever/ro/tree/roterms-0.3.0/roterms.owl"/>
+	<owl:backwardCompatibleWith rdf:resource="https://cdn.rawgit.com/wf4ever/ro/tree/roterms-0.2.0/roterms.owl" />
+        <dcterms:modified rdf:datatype="&xsd;dateTime">2015-07-30T14:29:00Z</dcterms:modified>
+        <dcterms:issued rdf:datatype="&xsd;dateTime">2015-07-30T14:30:00Z</dcterms:issued>      
+	<dcterms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/" />
+        <dcterms:publisher rdf:resource="http://researchobject.org/" />
+	
     </owl:Ontology>
     
 

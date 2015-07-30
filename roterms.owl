@@ -58,8 +58,8 @@
 
 These new terms serve two main purposes. They are used to specify annotations that are, to our knowledge, not catered for by existing ontologies, e.g., roterms:Hypothesis and roterms:exampleValue. ii) They are also used to specify shortcuts that make the ontology easy to use and more accessible. For example, roterms:inputSelected associates a wfdesc:WorkflowDefinition to a ro:Resource to state that a file is meant to be used with a given workflow definition, without specifying at which input port or in which workflow run.
 </rdfs:comment>
-        <owl:versionIRI rdf:resource="https://cdn.rawgit.com/wf4ever/ro/tree/roterms-0.3.0/roterms.owl"/>
-	<owl:backwardCompatibleWith rdf:resource="https://cdn.rawgit.com/wf4ever/ro/tree/roterms-0.2.0/roterms.owl" />
+        <owl:versionIRI rdf:resource="https://cdn.rawgit.com/wf4ever/ro/roterms-0.3.0/roterms.owl" />
+	<owl:backwardCompatibleWith rdf:resource="https://cdn.rawgit.com/wf4ever/ro/roterms-0.2.0/roterms.owl" />
         <dcterms:modified rdf:datatype="&xsd;dateTime">2015-07-30T14:29:00Z</dcterms:modified>
         <dcterms:issued rdf:datatype="&xsd;dateTime">2015-07-30T14:30:00Z</dcterms:issued>      
 	<dcterms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/" />

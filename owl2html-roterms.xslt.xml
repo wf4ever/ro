@@ -10,7 +10,7 @@
 <xsl:template match="/">
   <html>
   <body>
-  <h1><xsl:value-of select="rdf:RDF/owl:Ontology/dct:title"/></h1>
+  <h1><xsl:value-of select="rdf:RDF/owl:Ontology/rdfs:label"/></h1>
   <h2>OWL ontology</h2>
    <dl>
     <dt>Ontology IRI</dt>
@@ -40,8 +40,8 @@
     </xsl:for-each>
 
    </dl>
-   <p><strong>Please see the <a href="./">documentation for
-<xsl:value-of select="rdf:RDF/owl:Ontology/dct:title"/>
+   <p><strong>Please see the <a href="roterms.html">documentation for
+<xsl:value-of select="rdf:RDF/owl:Ontology/rdfs:label"/>
 </a>.</strong></p>
 
    <p>This HTML is meant to show a simple browser introduction to the ontology and has been

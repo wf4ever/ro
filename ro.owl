@@ -35,12 +35,9 @@
      xmlns:foaf="http://xmlns.com/foaf/0.1/">
     <owl:Ontology rdf:about="http://purl.org/wf4ever/ro">
         <rdfs:comment xml:lang="en">This ontology shows how AO and ORE ontologies can be used together to define a ResearchObject. This ontology is further customized by the wf4ever ontology.</rdfs:comment>
-        <owl:imports rdf:resource="&ao;core/"/>
-        <owl:imports rdf:resource="http://purl.org/wf4ever/dcterms_od"/>
         <owl:imports rdf:resource="http://purl.org/wf4ever/ore-owl"/>
         <owl:imports rdf:resource="http://www.w3.org/ns/oa#"/>
         <rdfs:seeAlso rdf:resource="http://www.wf4ever-project.org/wiki/display/docs/Research+Object+Vocabulary+Specification"/>
-        <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
         <owl:versionIRI rdf:resource="https://raw.github.com/wf4ever/ro/master/ro.owl"/>
     </owl:Ontology>
     
@@ -59,17 +56,17 @@
 
     <!-- http://purl.org/ao/annotatesResource -->
 
-    <rdf:Description rdf:about="&ao;annotatesResource">
+    <owl:ObjectProperty rdf:about="&ao;annotatesResource">
         <owl:equivalentProperty rdf:resource="&oa;hasTarget"/>
-    </rdf:Description>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://purl.org/ao/body -->
 
-    <rdf:Description rdf:about="&ao;body">
+    <owl:ObjectProperty rdf:about="&ao;body">
         <owl:equivalentProperty rdf:resource="&oa;hasBody"/>
-    </rdf:Description>
+    </owl:ObjectProperty>
     
 
 
@@ -158,6 +155,12 @@ TODO: Need a functional property to specify the top level folder structure of an
         <rdfs:subClassOf rdf:resource="&oa;Annotation"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="&dct;created"/>
+                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="&ore;isAggregatedBy"/>
                 <owl:someValuesFrom rdf:resource="&ro;ResearchObject"/>
             </owl:Restriction>
@@ -180,12 +183,6 @@ TODO: Need a functional property to specify the top level folder structure of an
                         </owl:unionOf>
                     </owl:Class>
                 </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&dct;created"/>
-                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">An annotation aggregated within an ro:ResearchObject.  
@@ -219,14 +216,14 @@ Such folders can be nested and (optionally) used to organize the resources of th
     <owl:Class rdf:about="&ro;FolderEntry">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ro;entryName"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                <owl:onProperty rdf:resource="&ore;proxyIn"/>
+                <owl:someValuesFrom rdf:resource="&ro;Folder"/>
             </owl:Restriction>
         </owl:equivalentClass>
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ore;proxyIn"/>
-                <owl:someValuesFrom rdf:resource="&ro;Folder"/>
+                <owl:onProperty rdf:resource="&ro;entryName"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&ore;Proxy"/>
@@ -317,6 +314,12 @@ Not all resources aggregated by an ro:ResearchObject are ro:Resource instances, 
 Aggregated resources MAY also be organised in (potentially nested) ro:Folders to reflect a file-system like structure. Note that any such resources SHOULD also be aggregated in the &quot;mother&quot; ro:ResearchObject.
 </rdfs:comment>
     </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Agent -->
+
+    <owl:Class rdf:about="&foaf;Agent"/>
 </rdf:RDF>
 
 

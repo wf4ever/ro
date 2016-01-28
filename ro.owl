@@ -16,6 +16,7 @@
      xmlns:cont="http://www.w3.org/2000/10/swap/pim/contact#"
      xmlns:ro="http://purl.org/wf4ever/ro#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://purl.org/wf4ever/ro">
         <owl:backwardCompatibleWith rdf:resource="https://raw.github.com/wf4ever/ro/0.1.1/ro.owl"/>
@@ -43,8 +44,14 @@
         <dct:creator rdf:resource="http://orcid.org/0000-0003-4289-4922"/>
         <dct:publisher rdf:resource="http://www.researchobject.org/"/>
         <dc:title xml:lang="en">Research Object ontology</dc:title>
+        <dc:description xml:lang="en">This ontology shows how OA and ORE ontologies can be used together to define a ResearchObject.</dc:description>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T13:35:00Z</dct:modified>
+        <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T13:35:00Z</dct:issued>
+	<vann:preferredNamespacePrefix>ro</vann:preferredNamespacePrefix>
+	<vann:preferredNamespaceUri>http://purl.org/wf4ever/ro#</vann:preferredNamespaceUri>
+	<vann:usageNote rdf:resource="https://w3id.org/ro/primer" />
 
-        <rdfs:comment xml:lang="en">This ontology shows how OA and ORE ontologies can be used together to define a ResearchObject.</rdfs:comment>
+	
     </owl:Ontology>
     
 
@@ -332,7 +339,15 @@ Aggregated resources MAY also be organised in (potentially nested) ro:Folders to
     <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Agent">
         <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
     </owl:Class>
-
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/vann/" />
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/vann/" />
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/usageNote">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/vann/" />
+    </owl:AnnotationProperty>
 
 
 </rdf:RDF>

@@ -10,7 +10,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:vann="http://purl.org/vocab/vann/">
     <owl:Ontology rdf:about="http://purl.org/wf4ever/ore-owl">
-        <owl:versionIRI rdf:resource="https://raw.github.com/wf4ever/ro/master/ore-owl.owl"/>
+        <owl:versionIRI rdf:resource="https://rawgit.com/wf4ever/ro/master/ore-owl.owl"/>
         <vann:preferredNamespacePrefix>ore</vann:preferredNamespacePrefix>
         <owl:priorVersion rdf:resource="http://www.openarchives.org/ore/terms/"/>
         <rdfs:comment xml:lang="en">This is an OWL-ified version of the OAI-ORE 1.0 ontology. It was downloaded as application/rdf+xml from http://www.openarchives.org/ore/terms/ on 2011-11-17, converted with cwm 1.197 to N3, then edited with vim and Protege to:

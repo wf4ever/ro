@@ -19,7 +19,7 @@
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://purl.org/wf4ever/ro">
-        <owl:versionIRI rdf:resource="https://raw.github.com/wf4ever/ro/master/ro.owl"/>
+        <owl:versionIRI rdf:resource="https://rawgit.com/wf4ever/ro/master/ro.owl"/>
         <owl:imports rdf:resource="https://rawgit.com/wf4ever/ro/master/ore-owl.owl"/>
         <dc:description xml:lang="en">This ontology shows how OA and ORE ontologies can be used together to define a ResearchObject.</dc:description>
         <owl:backwardCompatibleWith rdf:resource="https://raw.github.com/wf4ever/ro/0.1.1/ro.owl"/>

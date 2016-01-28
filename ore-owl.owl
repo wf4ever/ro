@@ -20,10 +20,11 @@
   Only one of the owl:inverseOf directions stated for ore:aggregates--ore:isAggregatedBy and ore:describes--ore:isDescribedBy
   &lt;http://purl.org/wf4ever/ore-owl&gt; is an owl:Ontology and has a owl:priorVersion &lt;http://www.openarchives.org/ore/terms/&gt; </rdfs:comment>
         <rdfs:seeAlso rdf:resource="http://www.openarchives.org/ore/toc"/>
-        <dct:publisher rdf:resource="http://orcid.org/0000-0001-9842-9718"/>
         <dct:creator rdf:resource="https://www.openarchives.org/ore/"/>
+        <dct:contributor rdf:resource="http://orcid.org/0000-0001-9842-9718"/>
         <rdfs:label>The OAI ORE terms vocabulary</rdfs:label>
         <rdfs:comment>The set of terms provided by the OAI ORE initiative</rdfs:comment>
+        <owl:versionInfo>1.0.0-owl</owl:versionInfo>
         <owl:backwardCompatibleWith rdf:resource="http://www.openarchives.org/ore/terms/"/>
     </owl:Ontology>
     

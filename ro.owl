@@ -123,6 +123,7 @@
 
     <owl:ObjectProperty rdf:about="http://purl.org/ao/annotatesResource">
         <owl:equivalentProperty rdf:resource="http://www.w3.org/ns/oa#hasTarget"/>
+        <rdfs:comment>This property is deprecated. Use oa:hasTarget instead.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ao/"/>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:ObjectProperty>
@@ -133,6 +134,7 @@
 
     <owl:ObjectProperty rdf:about="http://purl.org/ao/body">
         <owl:equivalentProperty rdf:resource="http://www.w3.org/ns/oa#hasBody"/>
+        <rdfs:comment>This property is deprecated. Use oa:hasBody instead.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ao/"/>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:ObjectProperty>
@@ -159,7 +161,7 @@
 
     <owl:ObjectProperty rdf:about="http://purl.org/wf4ever/ro#annotatesAggregatedResource">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/oa#hasTarget"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</rdfs:comment>
+        <rdfs:comment>This property is deprecated. Use oa:hasTarget instead.</rdfs:comment>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:ObjectProperty>
     
@@ -447,6 +449,12 @@ Aggregated resources MAY also be organised in (potentially nested) ro:Folders to
     
 
 
+    <!-- http://creativecommons.org/licenses/by/4.0/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by/4.0/"/>
+    
+
+
     <!-- http://data.semanticweb.org/person/esteban-garcia-cuesta -->
 
     <owl:NamedIndividual rdf:about="http://data.semanticweb.org/person/esteban-garcia-cuesta">
@@ -530,10 +538,10 @@ Aggregated resources MAY also be organised in (potentially nested) ro:Folders to
         <dct:creator rdf:resource="http://orcid.org/0000-0002-9260-0753"/>
         <dct:creator rdf:resource="http://orcid.org/0000-0003-0454-7145"/>
         <dct:creator rdf:resource="http://orcid.org/0000-0003-4289-4922"/>
+        <dct:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
         <dct:publisher rdf:resource="http://www.researchobject.org/"/>
         <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T13:35:00Z</dct:issued>
         <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T13:35:00Z</dct:modified>
-        <dct:license rdf:resource="http://creativecommons.org/licenses/by/4.0/" />
     </owl:NamedIndividual>
     
 

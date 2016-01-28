@@ -59,26 +59,6 @@
     
 
 
-    <!-- http://purl.org/ao/annotatesResource -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/ao/annotatesResource">
-        <owl:equivalentProperty rdf:resource="http://www.w3.org/ns/oa#hasTarget"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/ao/body -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/ao/body">
-        <owl:equivalentProperty rdf:resource="http://www.w3.org/ns/oa#hasBody"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/dc/terms/creator -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/creator"/>
-    
 
 
     <!-- http://purl.org/wf4ever/ro#rootFolder -->
@@ -97,15 +77,6 @@ This folder structure, if stated, is the RO creator&apos;s preferred view of org
     
 
 
-    <!-- http://www.w3.org/ns/oa#hasBody -->
-
-    <rdf:Description rdf:about="http://www.w3.org/ns/oa#hasBody"/>
-    
-
-
-    <!-- http://www.w3.org/ns/oa#hasTarget -->
-
-    <rdf:Description rdf:about="http://www.w3.org/ns/oa#hasTarget"/>
     
 
 
@@ -120,9 +91,6 @@ This folder structure, if stated, is the RO creator&apos;s preferred view of org
     
 
 
-    <!-- http://purl.org/dc/terms/created -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/created"/>
     
 
 
@@ -321,10 +289,51 @@ Aggregated resources MAY also be organised in (potentially nested) ro:Folders to
     </owl:Class>
     
 
+ <!-- External citations -->
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+    </owl:AnnotationProperty>
+    <owl:ObjectProperty rdf:about="http://purl.org/ao/annotatesResource">
+        <owl:equivalentProperty rdf:resource="http://www.w3.org/ns/oa#hasTarget"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/ao/"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://purl.org/ao/body">
+        <owl:equivalentProperty rdf:resource="http://www.w3.org/ns/oa#hasBody"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/ao/"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/creator">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    </owl:ObjectProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/publisher">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    </owl:AnnotationProperty>
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/created">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    </owl:DatatypeProperty>
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/oa#hasBody">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/oa#"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/oa#hasTarget">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/oa#"/>
+    </owl:ObjectProperty>
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Agent">
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </owl:Class>
 
-    <!-- http://xmlns.com/foaf/0.1/Agent -->
 
-    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Agent"/>
+
 </rdf:RDF>
 
 

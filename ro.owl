@@ -21,7 +21,7 @@
         <owl:backwardCompatibleWith rdf:resource="https://raw.github.com/wf4ever/ro/0.1.1/ro.owl"/>
         <!--<owl:imports rdf:resource="http://purl.org/wf4ever/ore-owl"/>-->
         <owl:imports rdf:resource="https://rawgit.com/wf4ever/ro/master/ore-owl.owl"/>
-        <owl:imports rdf:resource="http://www.w3.org/ns/oa#"/>
+        <!--<owl:imports rdf:resource="http://www.w3.org/ns/oa#"/>-->
         <rdfs:seeAlso rdf:resource="http://w3id.org/ro/ro"/>
         <owl:versionInfo>1.0.0</owl:versionInfo>
         <owl:versionIRI rdf:resource="https://raw.github.com/wf4ever/ro/master/ro.owl"/>
@@ -41,10 +41,10 @@
         <dct:creator rdf:resource="http://data.semanticweb.org/person/esteban-garcia-cuesta"/>
 	<dc:creator>Raul Palma</dc:creator>
         <dct:creator rdf:resource="http://orcid.org/0000-0003-4289-4922"/>
-
-        <dc:title xml:lang="en">Research Object ontology</dc:title>
-        <rdfs:comment xml:lang="en">This ontology shows how OA and ORE ontologies can be used together to define a ResearchObject.</rdfs:comment>
         <dct:publisher rdf:resource="http://www.researchobject.org/"/>
+        <dc:title xml:lang="en">Research Object ontology</dc:title>
+
+        <rdfs:comment xml:lang="en">This ontology shows how OA and ORE ontologies can be used together to define a ResearchObject.</rdfs:comment>
     </owl:Ontology>
     
 
@@ -311,24 +311,24 @@ Aggregated resources MAY also be organised in (potentially nested) ro:Folders to
         <owl:equivalentProperty rdf:resource="http://www.w3.org/ns/oa#hasBody"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ao/"/>
     </owl:ObjectProperty>
-    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/creator">
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/publisher">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </owl:ObjectProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator">
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/publisher">
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
-    </owl:AnnotationProperty>
     <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/created">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </owl:DatatypeProperty>
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/creator">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    </owl:ObjectProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/ns/oa#hasBody">
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/oa#"/>
     </owl:ObjectProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/ns/oa#hasTarget">
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/oa#"/>
     </owl:ObjectProperty>
+    <owl:Class rdf:about="http://www.w3.org/ns/oa#Annotation">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/oa#"/>
+    </owl:Class>
     <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Agent">
         <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
     </owl:Class>

@@ -19,21 +19,15 @@
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://purl.org/wf4ever/ro">
-        <!-- FIXME: Update version info -->
         <owl:versionIRI rdf:resource="https://rawgit.com/wf4ever/ro/master/ro.owl"/>
-        <owl:versionInfo>1.0.0-SNAPSHOT</owl:versionInfo>
-        <!-- .. and fix imports to avoid master/ and rawgit directly
-        -->
-        <owl:imports rdf:resource="https://rawgit.com/wf4ever/ro/master/metadata.owl"/>
         <owl:imports rdf:resource="https://rawgit.com/wf4ever/ro/master/ore-owl.owl"/>
-        <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T15:46:00Z</dct:issued>
-        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T15:46:00Z</dct:modified>
-        <!-- end FIXME -->
+        <owl:imports rdf:resource="https://rawgit.com/wf4ever/ro/master/metadata.owl"/>
         <rdfs:label xml:lang="en">Research Object ontology</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://w3id.org/ro/"/>
         <dc:description xml:lang="en">This ontology shows how OA and ORE ontologies can be used together to define a ResearchObject.</dc:description>
         <owl:backwardCompatibleWith rdf:resource="https://raw.github.com/wf4ever/ro/0.1.1/ro.owl"/>
         <vann:preferredNamespacePrefix>ro</vann:preferredNamespacePrefix>
+        <owl:versionInfo>1.0.0-SNAPSHOT</owl:versionInfo>
         <dc:creator>Graham Klyne</dc:creator>
         <dc:title xml:lang="en">Research Object ontology</dc:title>
         <vann:usageNote rdf:resource="https://w3id.org/ro/primer"/>
@@ -45,27 +39,20 @@
         <dc:creator>Sean Bechhofer</dc:creator>
         <dc:creator>Esteban García Cuesta</dc:creator>
         <vann:preferredNamespaceUri>http://purl.org/wf4ever/ro#</vann:preferredNamespaceUri>
-        <dct:creator rdf:resource="http://data.semanticweb.org/person/esteban-garcia-cuesta"/>
-        <dct:creator rdf:resource="http://orcid.org/0000-0001-6938-0820"/>
-        <dct:creator rdf:resource="http://orcid.org/0000-0001-9842-9718"/>
-        <dct:creator rdf:resource="http://orcid.org/0000-0002-0323-0093"/>
-        <dct:creator rdf:resource="http://orcid.org/0000-0002-5872-3573"/>
-        <dct:creator rdf:resource="http://orcid.org/0000-0002-9260-0753"/>
-        <dct:creator rdf:resource="http://orcid.org/0000-0003-0454-7145"/>
-        <dct:creator rdf:resource="http://orcid.org/0000-0003-4289-4922"/>
-        <dct:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
-        <dct:publisher rdf:resource="http://researchobject.org/"/>
-
     </owl:Ontology>
+    
 
 
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Object Properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
+
+    
+
 
     <!-- http://purl.org/ao/annotatesResource -->
 
@@ -75,7 +62,7 @@
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ao/"/>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://purl.org/ao/body -->
@@ -86,7 +73,7 @@
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ao/"/>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://purl.org/dc/terms/creator -->
@@ -94,8 +81,7 @@
     <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/creator">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </owl:ObjectProperty>
-
-
+    
 
 
     <!-- http://purl.org/wf4ever/ro#annotatesAggregatedResource -->
@@ -105,7 +91,7 @@
         <rdfs:comment>This property is deprecated. Use oa:hasTarget instead.</rdfs:comment>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://purl.org/wf4ever/ro#rootFolder -->
@@ -121,7 +107,7 @@
 
 This folder structure, if stated, is the RO creator&apos;s preferred view of organizing the RO resources. Note that the content of any folder directly or indirectly below the ro:rootFolder (including subfolders) MUST also be aggregated by the ro:ResearchObject itself.</rdfs:comment>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://www.w3.org/ns/oa#hasBody -->
@@ -129,7 +115,7 @@ This folder structure, if stated, is the RO creator&apos;s preferred view of org
     <owl:ObjectProperty rdf:about="http://www.w3.org/ns/oa#hasBody">
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/oa#"/>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://www.w3.org/ns/oa#hasTarget -->
@@ -137,10 +123,10 @@ This folder structure, if stated, is the RO creator&apos;s preferred view of org
     <owl:ObjectProperty rdf:about="http://www.w3.org/ns/oa#hasTarget">
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/oa#"/>
     </owl:ObjectProperty>
+    
 
 
-
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Data properties
@@ -148,10 +134,7 @@ This folder structure, if stated, is the RO creator&apos;s preferred view of org
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
-
-
-
+    
 
 
     <!-- http://purl.org/wf4ever/ro#entryName -->
@@ -167,10 +150,10 @@ This name must be case-sensitively unique within the ro:Folder, similar to a fil
 TODO: Need a functional property to specify the top level folder structure of an {{ro:ResearchObject}}?
 </rdfs:comment>
     </owl:DatatypeProperty>
+    
 
 
-
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Classes
@@ -178,7 +161,7 @@ TODO: Need a functional property to specify the top level folder structure of an
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
+    
 
 
     <!-- http://purl.org/wf4ever/ro#AggregatedAnnotation -->
@@ -226,7 +209,7 @@ It is possible for the annotation to also annotate non-aggregated resources, but
 
 For semantic annotations, the oa:hasBody SHOULD point to an trig:Graph which contains the actual annotation.</rdfs:comment>
     </owl:Class>
-
+    
 
 
     <!-- http://purl.org/wf4ever/ro#Folder -->
@@ -241,7 +224,7 @@ Note that all resources which are aggregated within an (potentially nested) ro:F
 Such folders can be nested and (optionally) used to organize the resources of the research object into a file-like structure. All such resources should also be aggregated by the ro:ResearchObject
           </rdfs:comment>
     </owl:Class>
-
+    
 
 
     <!-- http://purl.org/wf4ever/ro#FolderEntry -->
@@ -266,7 +249,7 @@ Such folders can be nested and (optionally) used to organize the resources of th
         </owl:hasKey>
         <rdfs:comment xml:lang="en">An ro:FolderEntry is any ore:Proxy instance that associates a resources aggregated within an ro:Folder with a ro:entryName. This name is (case-sensitive) unique within a given folder.</rdfs:comment>
     </owl:Class>
-
+    
 
 
     <!-- http://purl.org/wf4ever/ro#Manifest -->
@@ -281,7 +264,7 @@ Such folders can be nested and (optionally) used to organize the resources of th
         <rdfs:subClassOf rdf:resource="http://www.openarchives.org/ore/terms/ResourceMap"/>
         <rdfs:comment xml:lang="en">The ro:Manifest is used to describe an ro:ResearchObject. This identifies the resource for the manifest which lists all the aggregations of the research object, typically called &quot;.ro/manifest.rdf&quot; relative to the research object this manifest ore:describes.</rdfs:comment>
     </owl:Class>
-
+    
 
 
     <!-- http://purl.org/wf4ever/ro#ResearchObject -->
@@ -308,7 +291,7 @@ Such folders can be nested and (optionally) used to organize the resources of th
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A research object aggregates a number of resources. A resource can be a workflow, web service, document, data item, data set, workflow run, software or a research object.</rdfs:comment>
     </owl:Class>
-
+    
 
 
     <!-- http://purl.org/wf4ever/ro#Resource -->
@@ -347,13 +330,15 @@ Not all resources aggregated by an ro:ResearchObject are ro:Resource instances, 
 Aggregated resources MAY also be organised in (potentially nested) ro:Folders to reflect a file-system like structure. Note that any such resources SHOULD also be aggregated in the &quot;mother&quot; ro:ResearchObject.
 </rdfs:comment>
     </owl:Class>
+    
+
 
     <!-- http://www.w3.org/ns/oa#Annotation -->
 
     <owl:Class rdf:about="http://www.w3.org/ns/oa#Annotation">
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/oa#"/>
     </owl:Class>
-
+    
 
 
     <!-- http://xmlns.com/foaf/0.1/Agent -->
@@ -361,13 +346,39 @@ Aggregated resources MAY also be organised in (potentially nested) ro:Folders to
     <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Agent">
         <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
     </owl:Class>
+    
 
 
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
 
 
+    <!-- http://purl.org/wf4ever/ro -->
 
+    <owl:NamedIndividual rdf:about="http://purl.org/wf4ever/ro">
+        <dct:creator rdf:resource="http://data.semanticweb.org/person/esteban-garcia-cuesta"/>
+        <dct:creator rdf:resource="http://orcid.org/0000-0001-6938-0820"/>
+        <dct:creator rdf:resource="http://orcid.org/0000-0001-9842-9718"/>
+        <dct:creator rdf:resource="http://orcid.org/0000-0002-0323-0093"/>
+        <dct:creator rdf:resource="http://orcid.org/0000-0002-5872-3573"/>
+        <dct:creator rdf:resource="http://orcid.org/0000-0002-9260-0753"/>
+        <dct:creator rdf:resource="http://orcid.org/0000-0003-0454-7145"/>
+        <dct:creator rdf:resource="http://orcid.org/0000-0003-4289-4922"/>
+        <dct:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
+        <dct:publisher rdf:resource="http://researchobject.org/"/>
+        <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T15:46:00Z</dct:issued>
+        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T15:46:00Z</dct:modified>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 
 
 <!-- Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi -->
+

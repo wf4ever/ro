@@ -327,6 +327,18 @@
     <owl:Class rdf:about="http://www.w3.org/2004/03/trix/rdfg-1/Graph">
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/03/trix/rdfg-1/"/>
     </owl:Class>
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Group">
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Project">
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </owl:Class>
     
 
 

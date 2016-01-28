@@ -25,7 +25,7 @@
         <owl:backwardCompatibleWith rdf:resource="https://raw.github.com/wf4ever/ro/0.1.1/ro.owl"/>
         <vann:preferredNamespacePrefix>ro</vann:preferredNamespacePrefix>
         <rdfs:seeAlso rdf:resource="http://w3id.org/ro/ro"/>
-        <owl:versionInfo>1.0.0</owl:versionInfo>
+        <owl:versionInfo>1.0.0-SNAPSHOT</owl:versionInfo>
         <dc:creator>Graham Klyne</dc:creator>
         <dc:title xml:lang="en">Research Object ontology</dc:title>
         <vann:usageNote rdf:resource="https://w3id.org/ro/primer"/>

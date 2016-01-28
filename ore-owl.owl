@@ -7,12 +7,11 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:vann="http://purl.org/vocab/vann/"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/">
     <owl:Ontology rdf:about="http://purl.org/wf4ever/ore-owl">
         <owl:versionIRI rdf:resource="https://raw.github.com/wf4ever/ro/master/ore-owl.owl"/>
-        <dct:title>The OAI ORE terms vocabulary in OWL</dct:title>
-        <dct:publisher rdf:resource="http://www.researchobject.org/"/>
+        <vann:preferredNamespacePrefix>ore</vann:preferredNamespacePrefix>
         <owl:priorVersion rdf:resource="http://www.openarchives.org/ore/terms/"/>
         <rdfs:comment xml:lang="en">This is an OWL-ified version of the OAI-ORE 1.0 ontology. It was downloaded as application/rdf+xml from http://www.openarchives.org/ore/terms/ on 2011-11-17, converted with cwm 1.197 to N3, then edited with vim and Protege to:
   Make all properties Object Properties instead of rdf:Properties (avoids them becoming Annotation Properties in OWL)
@@ -21,25 +20,49 @@
   Only one of the owl:inverseOf directions stated for ore:aggregates--ore:isAggregatedBy and ore:describes--ore:isDescribedBy
   &lt;http://purl.org/wf4ever/ore-owl&gt; is an owl:Ontology and has a owl:priorVersion &lt;http://www.openarchives.org/ore/terms/&gt; </rdfs:comment>
         <rdfs:seeAlso rdf:resource="http://www.openarchives.org/ore/toc"/>
-        <dct:creator rdf:resource="https://www.openarchives.org/ore/"/>
-        <dct:contributor rdf:resource="http://orcid.org/0000-0001-9842-9718"/>
+        <vann:preferredNamespaceUri>http://www.openarchives.org/ore/terms/</vann:preferredNamespaceUri>
+        <vann:usageNote rdf:resource="http://www.openarchives.org/ore/1.0/primer"/>
         <rdfs:label>The OAI ORE terms vocabulary</rdfs:label>
         <rdfs:comment>The set of terms provided by the OAI ORE initiative</rdfs:comment>
         <owl:versionInfo>1.0.0-owl</owl:versionInfo>
         <owl:backwardCompatibleWith rdf:resource="http://www.openarchives.org/ore/terms/"/>
-
-        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T13:35:00Z</dct:modified>
-        <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T13:35:00Z</dct:issued>
-        <vann:preferredNamespacePrefix>ore</vann:preferredNamespacePrefix>
-        <vann:preferredNamespaceUri>http://www.openarchives.org/ore/terms/</vann:preferredNamespaceUri>
-        <vann:usageNote rdf:resource="http://www.openarchives.org/ore/1.0/primer" />
-
     </owl:Ontology>
     
 
 
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
 
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/vann/"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/vann/"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/vocab/vann/usageNote -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/usageNote">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/vann/"/>
+    </owl:AnnotationProperty>
+    
 
 
     <!-- 
@@ -52,6 +75,53 @@
 
     
 
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/contributor">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/creator">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/hasPart -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/hasPart">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/isPartOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/isPartOf">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/license">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/publisher -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/publisher">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    </owl:ObjectProperty>
+    
 
 
     <!-- http://www.openarchives.org/ore/terms/aggregates -->
@@ -159,6 +229,41 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/issued -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/issued">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/modified">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/title">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -167,6 +272,11 @@
     
 
 
+    <!-- http://purl.org/dc/dcmitype/Collection -->
+
+    <owl:Class rdf:about="http://purl.org/dc/dcmitype/Collection">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/dcmitype/"/>
+    </owl:Class>
     
 
 
@@ -212,67 +322,63 @@
     
 
 
+    <!-- http://www.w3.org/2004/03/trix/rdfg-1/Graph -->
+
+    <owl:Class rdf:about="http://www.w3.org/2004/03/trix/rdfg-1/Graph">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/03/trix/rdfg-1/"/>
+    </owl:Class>
     
 
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
-    // Annotations
+    // Individuals
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <rdf:Description rdf:about="https://www.openarchives.org/ore/">
-        <rdfs:label>The Open Archives Initiative ORE Project</rdfs:label>
-    </rdf:Description>
-
-<!-- Citations -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix">
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/vann/" />
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri">
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/vann/" />
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/usageNote">
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/vann/" />
-    </owl:AnnotationProperty>
-    <owl:Class rdf:about="http://www.w3.org/2004/03/trix/rdfg-1/Graph">
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/03/trix/rdfg-1/"/>
-    </owl:Class>
-    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/contributor">
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
-    </owl:ObjectProperty>
-    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/creator">
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
-    </owl:ObjectProperty>
-    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/issued">
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
-    </owl:DatatypeProperty>
-    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/license">
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
-    </owl:ObjectProperty>
-    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/modified">
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
-    </owl:DatatypeProperty>
-    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/publisher">
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
-    </owl:ObjectProperty>
-    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/title">
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
-    </owl:DatatypeProperty>
-    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/hasPart">
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
-    </owl:ObjectProperty>
-    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/isPartOf">
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
-    </owl:ObjectProperty>
-    <owl:Class rdf:about="http://purl.org/dc/dcmitype/Collection">
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/dcmitype/"/>
-    </owl:Class>
     
 
+
+    <!-- http://orcid.org/0000-0001-9842-9718 -->
+
+    <owl:NamedIndividual rdf:about="http://orcid.org/0000-0001-9842-9718">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:label>Stian Soiland-Reyes</rdfs:label>
+    </owl:NamedIndividual>
+
+    
+
+
+    <!-- http://purl.org/wf4ever/ore-owl -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/wf4ever/ore-owl">
+        <dct:contributor rdf:resource="http://orcid.org/0000-0001-9842-9718"/>
+        <dct:creator rdf:resource="https://www.openarchives.org/ore/"/>
+        <dct:publisher rdf:resource="http://researchobject.org/"/>
+        <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T13:35:00Z</dct:issued>
+        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T13:35:00Z</dct:modified>
+        <dct:title>The OAI ORE terms vocabulary in OWL</dct:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchobject.org/ -->
+
+    <owl:NamedIndividual rdf:about="http://researchobject.org/">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+        <rdfs:label>researchobject.org</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.openarchives.org/ore/ -->
+
+    <rdf:Description rdf:about="https://www.openarchives.org/ore/">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+        <rdfs:label>The Open Archives Initiative ORE Project</rdfs:label>
+    </rdf:Description>
 </rdf:RDF>
 
 

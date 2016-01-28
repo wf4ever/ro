@@ -19,17 +19,16 @@
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://purl.org/wf4ever/ro">
-        <owl:versionIRI rdf:resource="https://rawgit.com/wf4ever/ro/master/ro.owl"/>
+        <owl:versionIRI rdf:resource="https://raw.github.com/wf4ever/ro/master/ro.owl"/>
         <owl:imports rdf:resource="https://rawgit.com/wf4ever/ro/master/ore-owl.owl"/>
+        <rdfs:seeAlso rdf:resource="http://w3id.org/ro/"/>
         <dc:description xml:lang="en">This ontology shows how OA and ORE ontologies can be used together to define a ResearchObject.</dc:description>
         <owl:backwardCompatibleWith rdf:resource="https://raw.github.com/wf4ever/ro/0.1.1/ro.owl"/>
         <vann:preferredNamespacePrefix>ro</vann:preferredNamespacePrefix>
-        <vann:usageNote rdf:resource="https://w3id.org/ro/primer"/>
-        <vann:preferredNamespaceUri>http://purl.org/wf4ever/ro#</vann:preferredNamespaceUri>
-        <rdfs:seeAlso rdf:resource="http://w3id.org/ro/ro"/>
-        <owl:versionInfo>1.0.0-SNAPSHOT</owl:versionInfo>
+        <owl:versionInfo>1.0.0</owl:versionInfo>
         <dc:creator>Graham Klyne</dc:creator>
         <dc:title xml:lang="en">Research Object ontology</dc:title>
+        <vann:usageNote rdf:resource="https://w3id.org/ro/primer"/>
         <dc:creator>Daniel Garijo</dc:creator>
         <dc:creator>Stian Soiland-Reyes</dc:creator>
         <dc:creator>Khalid Belhajjame</dc:creator>
@@ -37,17 +36,7 @@
         <dc:creator>Raul Palma</dc:creator>
         <dc:creator>Sean Bechhofer</dc:creator>
         <dc:creator>Esteban García Cuesta</dc:creator>
-        <dct:creator rdf:resource="http://data.semanticweb.org/person/esteban-garcia-cuesta"/>
-        <dct:creator rdf:resource="http://orcid.org/0000-0001-6938-0820"/>
-        <dct:creator rdf:resource="http://orcid.org/0000-0001-9842-9718"/>
-        <dct:creator rdf:resource="http://orcid.org/0000-0002-0323-0093"/>
-        <dct:creator rdf:resource="http://orcid.org/0000-0002-5872-3573"/>
-        <dct:creator rdf:resource="http://orcid.org/0000-0002-9260-0753"/>
-        <dct:creator rdf:resource="http://orcid.org/0000-0003-0454-7145"/>
-        <dct:creator rdf:resource="http://orcid.org/0000-0003-4289-4922"/>
-        <dct:publisher rdf:resource="http://www.researchobject.org/"/>
-        <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T13:35:00Z</dct:issued>
-        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T13:35:00Z</dct:modified>
+        <vann:preferredNamespaceUri>http://purl.org/wf4ever/ro#</vann:preferredNamespaceUri>
     </owl:Ontology>
     
 
@@ -164,6 +153,16 @@
     
 
 
+    <!-- http://purl.org/wf4ever/ro#annotatesAggregatedResource -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/wf4ever/ro#annotatesAggregatedResource">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/oa#hasTarget"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</rdfs:comment>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.org/wf4ever/ro#rootFolder -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/wf4ever/ro#rootFolder">
@@ -242,9 +241,9 @@ TODO: Need a functional property to specify the top level folder structure of an
     
 
 
-    <!-- http://purl.org/wf4ever/ro#Annotation -->
+    <!-- http://purl.org/wf4ever/ro#AggregatedAnnotation -->
 
-    <owl:Class rdf:about="http://purl.org/wf4ever/ro#Annotation">
+    <owl:Class rdf:about="http://purl.org/wf4ever/ro#AggregatedAnnotation">
         <rdfs:subClassOf rdf:resource="http://www.openarchives.org/ore/terms/AggregatedResource"/>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/oa#Annotation"/>
         <rdfs:subClassOf>
@@ -427,6 +426,14 @@ Aggregated resources MAY also be organised in (potentially nested) ro:Folders to
     
 
 
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </owl:Class>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -441,7 +448,7 @@ Aggregated resources MAY also be organised in (potentially nested) ro:Folders to
     <!-- http://data.semanticweb.org/person/esteban-garcia-cuesta -->
 
     <owl:NamedIndividual rdf:about="http://data.semanticweb.org/person/esteban-garcia-cuesta">
-        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:label>Esteban García Cuesta</rdfs:label>
     </owl:NamedIndividual>
     
@@ -450,8 +457,17 @@ Aggregated resources MAY also be organised in (potentially nested) ro:Folders to
     <!-- http://orcid.org/0000-0001-6938-0820 -->
 
     <owl:NamedIndividual rdf:about="http://orcid.org/0000-0001-6938-0820">
-        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:label>Khalid Belhajjame</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://orcid.org/0000-0001-9842-9718 -->
+
+    <owl:NamedIndividual rdf:about="http://orcid.org/0000-0001-9842-9718">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:label>Stian Soiland-Reyes</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -459,7 +475,7 @@ Aggregated resources MAY also be organised in (potentially nested) ro:Folders to
     <!-- http://orcid.org/0000-0002-0323-0093 -->
 
     <owl:NamedIndividual rdf:about="http://orcid.org/0000-0002-0323-0093">
-        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:label>Graham Klyne</rdfs:label>
     </owl:NamedIndividual>
     
@@ -468,7 +484,7 @@ Aggregated resources MAY also be organised in (potentially nested) ro:Folders to
     <!-- http://orcid.org/0000-0002-5872-3573 -->
 
     <owl:NamedIndividual rdf:about="http://orcid.org/0000-0002-5872-3573">
-        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:label>Sean Bechhoffer</rdfs:label>
     </owl:NamedIndividual>
     
@@ -477,7 +493,7 @@ Aggregated resources MAY also be organised in (potentially nested) ro:Folders to
     <!-- http://orcid.org/0000-0002-9260-0753 -->
 
     <owl:NamedIndividual rdf:about="http://orcid.org/0000-0002-9260-0753">
-        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:label>Oscar Corcho</rdfs:label>
     </owl:NamedIndividual>
     
@@ -486,7 +502,7 @@ Aggregated resources MAY also be organised in (potentially nested) ro:Folders to
     <!-- http://orcid.org/0000-0003-0454-7145 -->
 
     <owl:NamedIndividual rdf:about="http://orcid.org/0000-0003-0454-7145">
-        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:label>Daniel Garijo</rdfs:label>
     </owl:NamedIndividual>
     
@@ -495,19 +511,33 @@ Aggregated resources MAY also be organised in (potentially nested) ro:Folders to
     <!-- http://orcid.org/0000-0003-4289-4922 -->
 
     <owl:NamedIndividual rdf:about="http://orcid.org/0000-0003-4289-4922">
-        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:label>Raul Palma</rdfs:label>
-    </owl:NamedIndividual>
-
-    <!-- http://orcid.org/0000-0001-9842-9718 -->
-
-    <owl:NamedIndividual rdf:about="http://orcid.org/0000-0001-9842-9718">
-        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
-        <rdfs:label>Stian Soiland-Reyes</rdfs:label>
     </owl:NamedIndividual>
     
 
 
+    <!-- http://purl.org/wf4ever/ro -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/wf4ever/ro">
+        <dct:creator rdf:resource="http://data.semanticweb.org/person/esteban-garcia-cuesta"/>
+        <dct:creator rdf:resource="http://orcid.org/0000-0001-6938-0820"/>
+        <dct:creator rdf:resource="http://orcid.org/0000-0001-9842-9718"/>
+        <dct:creator rdf:resource="http://orcid.org/0000-0002-0323-0093"/>
+        <dct:creator rdf:resource="http://orcid.org/0000-0002-5872-3573"/>
+        <dct:creator rdf:resource="http://orcid.org/0000-0002-9260-0753"/>
+        <dct:creator rdf:resource="http://orcid.org/0000-0003-0454-7145"/>
+        <dct:creator rdf:resource="http://orcid.org/0000-0003-4289-4922"/>
+        <dct:publisher rdf:resource="http://www.researchobject.org/"/>
+        <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T13:35:00Z</dct:issued>
+        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T13:35:00Z</dct:modified>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchobject.org/ -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchobject.org/"/>
 </rdf:RDF>
 
 

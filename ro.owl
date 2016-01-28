@@ -21,6 +21,7 @@
     <owl:Ontology rdf:about="http://purl.org/wf4ever/ro">
         <owl:versionIRI rdf:resource="https://raw.github.com/wf4ever/ro/master/ro.owl"/>
         <owl:imports rdf:resource="https://rawgit.com/wf4ever/ro/master/ore-owl.owl"/>
+        <rdfs:label xml:lang="en">Research Object ontology</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://w3id.org/ro/"/>
         <dc:description xml:lang="en">This ontology shows how OA and ORE ontologies can be used together to define a ResearchObject.</dc:description>
         <owl:backwardCompatibleWith rdf:resource="https://raw.github.com/wf4ever/ro/0.1.1/ro.owl"/>

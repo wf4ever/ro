@@ -7,6 +7,7 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://purl.org/wf4ever/ore-owl">
         <owl:versionIRI rdf:resource="https://raw.github.com/wf4ever/ro/master/ore-owl.owl"/>
@@ -26,6 +27,13 @@
         <rdfs:comment>The set of terms provided by the OAI ORE initiative</rdfs:comment>
         <owl:versionInfo>1.0.0-owl</owl:versionInfo>
         <owl:backwardCompatibleWith rdf:resource="http://www.openarchives.org/ore/terms/"/>
+
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T13:35:00Z</dcterms:modified>
+        <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T13:35:00Z</dcterms:issued>
+        <vann:preferredNamespacePrefix>ore</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>http://www.openarchives.org/ore/terms/</vann:preferredNamespaceUri>
+        <vann:usageNote rdf:resource="http://www.openarchives.org/ore/1.0/primer" />
+
     </owl:Ontology>
     
 
@@ -306,6 +314,9 @@
     <rdf:Description rdf:about="https://www.openarchives.org/ore/">
         <rdfs:label>The Open Archives Initiative ORE Project</rdfs:label>
     </rdf:Description>
+
+
+
 </rdf:RDF>
 
 

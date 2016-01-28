@@ -43,57 +43,57 @@
 
     <!-- http://purl.org/dc/terms/contributor -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor">
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/contributor">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
-    </owl:AnnotationProperty>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://purl.org/dc/terms/creator -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator">
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/creator">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
-    </owl:AnnotationProperty>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://purl.org/dc/terms/issued -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/issued">
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/issued">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
-    </owl:AnnotationProperty>
+    </owl:DatatypeProperty>
     
 
 
     <!-- http://purl.org/dc/terms/license -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license">
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/license">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
-    </owl:AnnotationProperty>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://purl.org/dc/terms/modified -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified">
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/modified">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
-    </owl:AnnotationProperty>
+    </owl:DatatypeProperty>
     
 
 
     <!-- http://purl.org/dc/terms/publisher -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/publisher">
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/publisher">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
-    </owl:AnnotationProperty>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://purl.org/dc/terms/title -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title">
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/title">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
-    </owl:AnnotationProperty>
+    </owl:DatatypeProperty>
     
 
 

@@ -26,6 +26,12 @@
         <rdfs:comment>The set of terms provided by the OAI ORE initiative</rdfs:comment>
         <owl:versionInfo>1.0.0-owl</owl:versionInfo>
         <owl:backwardCompatibleWith rdf:resource="http://www.openarchives.org/ore/terms/"/>
+        <dct:contributor rdf:resource="http://orcid.org/0000-0001-9842-9718"/>
+        <dct:creator rdf:resource="https://www.openarchives.org/ore/"/>
+        <dct:publisher rdf:resource="http://researchobject.org/"/>
+        <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T13:35:00Z</dct:issued>
+        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T13:35:00Z</dct:modified>
+        <dct:title>The OAI ORE terms vocabulary in OWL</dct:title>
     </owl:Ontology>
     
 
@@ -328,8 +334,7 @@
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/03/trix/rdfg-1/"/>
     </owl:Class>
 
-    <!-- http://xmlns.com/foaf/0.1/Person -->
-
+    <!-- http://xmlns.com/foaf/0.1/* -->
     <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
         <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
     </owl:Class>
@@ -359,21 +364,6 @@
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:label>Stian Soiland-Reyes</rdfs:label>
     </owl:NamedIndividual>
-
-    
-
-
-    <!-- http://purl.org/wf4ever/ore-owl -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/wf4ever/ore-owl">
-        <dct:contributor rdf:resource="http://orcid.org/0000-0001-9842-9718"/>
-        <dct:creator rdf:resource="https://www.openarchives.org/ore/"/>
-        <dct:publisher rdf:resource="http://researchobject.org/"/>
-        <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T13:35:00Z</dct:issued>
-        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T13:35:00Z</dct:modified>
-        <dct:title>The OAI ORE terms vocabulary in OWL</dct:title>
-    </owl:NamedIndividual>
-    
 
 
     <!-- http://www.researchobject.org/ -->

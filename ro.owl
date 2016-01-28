@@ -124,6 +124,7 @@
     <owl:ObjectProperty rdf:about="http://purl.org/ao/annotatesResource">
         <owl:equivalentProperty rdf:resource="http://www.w3.org/ns/oa#hasTarget"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ao/"/>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:ObjectProperty>
     
 
@@ -133,6 +134,7 @@
     <owl:ObjectProperty rdf:about="http://purl.org/ao/body">
         <owl:equivalentProperty rdf:resource="http://www.w3.org/ns/oa#hasBody"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ao/"/>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:ObjectProperty>
     
 

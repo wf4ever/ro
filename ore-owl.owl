@@ -32,6 +32,7 @@
         <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T13:35:00Z</dct:issued>
         <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T13:35:00Z</dct:modified>
         <dct:title>The OAI ORE terms vocabulary in OWL</dct:title>
+        <dct:license rdf:resource="http://creativecommons.org/licenses/by-sa/3.0/"/>
     </owl:Ontology>
     
 

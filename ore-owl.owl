@@ -11,8 +11,20 @@
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://purl.org/wf4ever/ore-owl">
-        <owl:versionIRI rdf:resource="https://rawgit.com/wf4ever/ro/master/ore-owl.owl"/>
-        <owl:imports rdf:resource="https://rawgit.com/wf4ever/ro/master/metadata.owl"/>
+      <!-- FIXME: Update on release -->
+      <owl:versionIRI rdf:resource="https://rawgit.com/wf4ever/ro/master/ore-owl.owl"/>
+      <owl:imports rdf:resource="https://rawgit.com/wf4ever/ro/master/metadata.owl"/>
+      <dct:contributor rdf:resource="http://orcid.org/0000-0001-9842-9718"/>
+      <dct:creator rdf:resource="https://www.openarchives.org/ore/"/>
+      <dct:license rdf:resource="http://creativecommons.org/licenses/by-sa/3.0/"/>
+      <dct:publisher rdf:resource="http://researchobject.org/"/>
+      <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T13:35:00Z</dct:issued>
+      <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T13:35:00Z</dct:modified>
+      <dct:title>The OAI ORE terms vocabulary in OWL</dct:title>
+
+      <!-- end FIXME -->
+
+
         <vann:preferredNamespacePrefix>ore</vann:preferredNamespacePrefix>
         <owl:priorVersion rdf:resource="http://www.openarchives.org/ore/terms/"/>
         <rdfs:comment xml:lang="en">This is an OWL-ified version of the OAI-ORE 1.0 ontology. It was downloaded as application/rdf+xml from http://www.openarchives.org/ore/terms/ on 2011-11-17, converted with cwm 1.197 to N3, then edited with vim and Protege to:
@@ -29,10 +41,10 @@
         <owl:versionInfo>1.0.0-owl</owl:versionInfo>
         <owl:backwardCompatibleWith rdf:resource="http://www.openarchives.org/ore/terms/"/>
     </owl:Ontology>
-    
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Object Properties
@@ -40,7 +52,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+
 
 
     <!-- http://purl.org/dc/terms/hasPart -->
@@ -48,7 +60,7 @@
     <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/hasPart">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- http://purl.org/dc/terms/isPartOf -->
@@ -56,7 +68,7 @@
     <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/isPartOf">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- http://www.openarchives.org/ore/terms/aggregates -->
@@ -70,7 +82,7 @@
         <rdfs:isDefinedBy rdf:resource="http://www.openarchives.org/ore/terms/"/>
         <rdfs:label>Aggregates</rdfs:label>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- http://www.openarchives.org/ore/terms/describes -->
@@ -84,7 +96,7 @@
         <rdfs:isDefinedBy rdf:resource="http://www.openarchives.org/ore/terms/"/>
         <rdfs:label>Describes</rdfs:label>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- http://www.openarchives.org/ore/terms/isAggregatedBy -->
@@ -97,7 +109,7 @@
         <rdfs:isDefinedBy rdf:resource="http://www.openarchives.org/ore/terms/"/>
         <rdfs:label>Is Aggregated By</rdfs:label>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- http://www.openarchives.org/ore/terms/isDescribedBy -->
@@ -109,7 +121,7 @@
         <rdfs:isDefinedBy rdf:resource="http://www.openarchives.org/ore/terms/"/>
         <rdfs:label>Is Described By</rdfs:label>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- http://www.openarchives.org/ore/terms/lineage -->
@@ -121,7 +133,7 @@
         <rdfs:isDefinedBy rdf:resource="http://www.openarchives.org/ore/terms/"/>
         <rdfs:label>Lineage</rdfs:label>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- http://www.openarchives.org/ore/terms/proxyFor -->
@@ -134,7 +146,7 @@
         <rdfs:isDefinedBy rdf:resource="http://www.openarchives.org/ore/terms/"/>
         <rdfs:label>Proxy For</rdfs:label>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- http://www.openarchives.org/ore/terms/proxyIn -->
@@ -147,7 +159,7 @@
         <rdfs:isDefinedBy rdf:resource="http://www.openarchives.org/ore/terms/"/>
         <rdfs:label>Proxy In</rdfs:label>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- http://www.openarchives.org/ore/terms/similarTo -->
@@ -158,10 +170,10 @@
         <rdfs:isDefinedBy rdf:resource="http://www.openarchives.org/ore/terms/"/>
         <rdfs:label>Similar To</rdfs:label>
     </owl:ObjectProperty>
-    
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Classes
@@ -169,7 +181,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+
 
 
     <!-- http://purl.org/dc/dcmitype/Collection -->
@@ -177,7 +189,7 @@
     <owl:Class rdf:about="http://purl.org/dc/dcmitype/Collection">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/dcmitype/"/>
     </owl:Class>
-    
+
 
 
     <!-- http://www.openarchives.org/ore/terms/AggregatedResource -->
@@ -187,7 +199,7 @@
         <rdfs:isDefinedBy rdf:resource="http://www.openarchives.org/ore/terms/"/>
         <rdfs:label>Aggregated Resource</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- http://www.openarchives.org/ore/terms/Aggregation -->
@@ -198,7 +210,7 @@
         <rdfs:isDefinedBy rdf:resource="http://www.openarchives.org/ore/terms/"/>
         <rdfs:label>Aggregation</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- http://www.openarchives.org/ore/terms/Proxy -->
@@ -208,7 +220,7 @@
         <rdfs:isDefinedBy rdf:resource="http://www.openarchives.org/ore/terms/"/>
         <rdfs:label>Proxy</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- http://www.openarchives.org/ore/terms/ResourceMap -->
@@ -219,7 +231,7 @@
         <rdfs:isDefinedBy rdf:resource="http://www.openarchives.org/ore/terms/"/>
         <rdfs:label>Resource Map</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- http://www.w3.org/2004/03/trix/rdfg-1/Graph -->
@@ -227,10 +239,10 @@
     <owl:Class rdf:about="http://www.w3.org/2004/03/trix/rdfg-1/Graph">
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/03/trix/rdfg-1/"/>
     </owl:Class>
-    
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Individuals
@@ -238,23 +250,11 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
 
 
-    <!-- http://purl.org/wf4ever/ore-owl -->
 
-    <owl:NamedIndividual rdf:about="http://purl.org/wf4ever/ore-owl">
-        <dct:contributor rdf:resource="http://orcid.org/0000-0001-9842-9718"/>
-        <dct:creator rdf:resource="https://www.openarchives.org/ore/"/>
-        <dct:license rdf:resource="http://creativecommons.org/licenses/by-sa/3.0/"/>
-        <dct:publisher rdf:resource="http://researchobject.org/"/>
-        <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T13:35:00Z</dct:issued>
-        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T13:35:00Z</dct:modified>
-        <dct:title>The OAI ORE terms vocabulary in OWL</dct:title>
-    </owl:NamedIndividual>
 </rdf:RDF>
 
 
 
 <!-- Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi -->
-

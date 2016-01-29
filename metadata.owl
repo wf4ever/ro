@@ -26,10 +26,10 @@
         <dc:description xml:lang="en">The provenance and attributions of the Research Object ontologies</dc:description>
         <rdfs:label xml:lang="en">Metadata and provenance of the Research Object ontologies</rdfs:label>
     </owl:Ontology>
-    
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Annotation properties
@@ -37,7 +37,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+
 
 
     <!-- http://purl.org/dc/elements/1.1/contributor -->
@@ -45,7 +45,7 @@
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
     </owl:AnnotationProperty>
-    
+
 
 
     <!-- http://purl.org/dc/elements/1.1/creator -->
@@ -53,7 +53,7 @@
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
     </owl:AnnotationProperty>
-    
+
 
 
     <!-- http://purl.org/dc/elements/1.1/description -->
@@ -61,7 +61,7 @@
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
     </owl:AnnotationProperty>
-    
+
 
 
     <!-- http://purl.org/dc/elements/1.1/title -->
@@ -69,7 +69,7 @@
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
     </owl:AnnotationProperty>
-    
+
 
 
     <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
@@ -77,7 +77,7 @@
     <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/vann/"/>
     </owl:AnnotationProperty>
-    
+
 
 
     <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
@@ -85,7 +85,7 @@
     <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/vann/"/>
     </owl:AnnotationProperty>
-    
+
 
 
     <!-- http://purl.org/vocab/vann/usageNote -->
@@ -93,10 +93,10 @@
     <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/usageNote">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/vann/"/>
     </owl:AnnotationProperty>
-    
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Object Properties
@@ -104,7 +104,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+
 
 
     <!-- http://purl.org/dc/terms/contributor -->
@@ -112,7 +112,7 @@
     <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/contributor">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- http://purl.org/dc/terms/creator -->
@@ -120,7 +120,7 @@
     <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/creator">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- http://purl.org/dc/terms/license -->
@@ -128,7 +128,7 @@
     <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/license">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- http://purl.org/dc/terms/publisher -->
@@ -136,10 +136,10 @@
     <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/publisher">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </owl:ObjectProperty>
-    
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Data properties
@@ -147,7 +147,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+
 
 
     <!-- http://purl.org/dc/terms/created -->
@@ -155,7 +155,7 @@
     <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/created">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- http://purl.org/dc/terms/issued -->
@@ -163,7 +163,7 @@
     <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/issued">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- http://purl.org/dc/terms/modified -->
@@ -171,7 +171,7 @@
     <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/modified">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- http://purl.org/dc/terms/title -->
@@ -179,10 +179,10 @@
     <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/title">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </owl:DatatypeProperty>
-    
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Classes
@@ -190,7 +190,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+
 
 
     <!-- http://xmlns.com/foaf/0.1/Group -->
@@ -198,7 +198,7 @@
     <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Group">
         <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
     </owl:Class>
-    
+
 
 
     <!-- http://xmlns.com/foaf/0.1/Person -->
@@ -206,7 +206,7 @@
     <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
         <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
     </owl:Class>
-    
+
 
 
     <!-- http://xmlns.com/foaf/0.1/Project -->
@@ -214,10 +214,10 @@
     <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Project">
         <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
     </owl:Class>
-    
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Individuals
@@ -225,7 +225,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+
 
 
     <!-- http://creativecommons.org/licenses/by/4.0/ -->
@@ -236,7 +236,7 @@
     <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by-sa/3.0/"/>
 
 
-    
+
 
 
     <!-- http://data.semanticweb.org/person/esteban-garcia-cuesta -->
@@ -245,7 +245,7 @@
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:label>Esteban García Cuesta</rdfs:label>
     </owl:NamedIndividual>
-    
+
 
 
     <!-- http://orcid.org/0000-0001-6938-0820 -->
@@ -254,7 +254,7 @@
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:label>Khalid Belhajjame</rdfs:label>
     </owl:NamedIndividual>
-    
+
 
 
     <!-- http://orcid.org/0000-0001-9842-9718 -->
@@ -263,7 +263,7 @@
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:label>Stian Soiland-Reyes</rdfs:label>
     </owl:NamedIndividual>
-    
+
 
 
     <!-- http://orcid.org/0000-0002-0323-0093 -->
@@ -272,7 +272,7 @@
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:label>Graham Klyne</rdfs:label>
     </owl:NamedIndividual>
-    
+
 
 
     <!-- http://orcid.org/0000-0002-5872-3573 -->
@@ -281,7 +281,7 @@
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:label>Sean Bechhoffer</rdfs:label>
     </owl:NamedIndividual>
-    
+
 
 
     <!-- http://orcid.org/0000-0002-9260-0753 -->
@@ -290,7 +290,7 @@
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:label>Oscar Corcho</rdfs:label>
     </owl:NamedIndividual>
-    
+
 
 
     <!-- http://orcid.org/0000-0003-0454-7145 -->
@@ -299,7 +299,7 @@
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:label>Daniel Garijo</rdfs:label>
     </owl:NamedIndividual>
-    
+
 
 
     <!-- http://orcid.org/0000-0003-4289-4922 -->
@@ -308,7 +308,7 @@
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:label>Raul Palma</rdfs:label>
     </owl:NamedIndividual>
-    
+
 
 
     <!-- http://researchobject.org/ -->
@@ -317,13 +317,13 @@
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
         <rdfs:label>researchobject.org</rdfs:label>
     </owl:NamedIndividual>
-    
+
 
 
     <!-- http://www.researchobject.org/ -->
 
     <owl:NamedIndividual rdf:about="http://www.researchobject.org/"/>
-    
+
 
 
     <!-- https://w3id.org/ro/metadata -->
@@ -335,7 +335,7 @@
         <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T15:58:00Z</dct:issued>
         <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T15:58:00Z</dct:modified>
     </owl:NamedIndividual>
-    
+
 
 
     <!-- https://www.openarchives.org/ore/ -->
@@ -344,9 +344,17 @@
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
         <rdfs:label>The Open Archives Initiative ORE Project</rdfs:label>
     </owl:NamedIndividual>
+
+    <!-- http://purl.org/wf4ever/ore-owl -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/wf4ever/ore-owl">
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://purl.org/wf4ever/ro">
+      </owl:NamedIndividual>
+
+
 </rdf:RDF>
 
 
 
 <!-- Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi -->
-

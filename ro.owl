@@ -185,6 +185,7 @@ TODO: Need a functional property to specify the top level folder structure of an
     <!-- http://purl.org/wf4ever/ro#AggregatedAnnotation -->
 
     <owl:Class rdf:about="http://purl.org/wf4ever/ro#AggregatedAnnotation">
+      <rdfs:label xml:lang="en">Aggregated Annotation</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/ro"/>
         <rdfs:subClassOf rdf:resource="http://www.openarchives.org/ore/terms/AggregatedResource"/>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/oa#Annotation"/>
@@ -234,6 +235,7 @@ For semantic annotations, the oa:hasBody SHOULD point to an trig:Graph which con
     <!-- http://purl.org/wf4ever/ro#Folder -->
 
     <owl:Class rdf:about="http://purl.org/wf4ever/ro#Folder">
+      <rdfs:label xml:lang="en">Folder</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/ro"/>
         <rdfs:subClassOf rdf:resource="http://purl.org/wf4ever/ro#Resource"/>
         <rdfs:subClassOf rdf:resource="http://www.openarchives.org/ore/terms/Aggregation"/>
@@ -250,6 +252,7 @@ Such folders can be nested and (optionally) used to organize the resources of th
     <!-- http://purl.org/wf4ever/ro#FolderEntry -->
 
     <owl:Class rdf:about="http://purl.org/wf4ever/ro#FolderEntry">
+      <rdfs:label xml:lang="en">Folder Entry</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/ro"/>
         <owl:equivalentClass>
             <owl:Restriction>
@@ -276,6 +279,7 @@ Such folders can be nested and (optionally) used to organize the resources of th
     <!-- http://purl.org/wf4ever/ro#Manifest -->
 
     <owl:Class rdf:about="http://purl.org/wf4ever/ro#Manifest">
+      <rdfs:label xml:lang="en">Manifest</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/ro"/>
         <owl:equivalentClass>
             <owl:Restriction>
@@ -320,6 +324,7 @@ Such folders can be nested and (optionally) used to organize the resources of th
     <!-- http://purl.org/wf4ever/ro#Resource -->
 
     <owl:Class rdf:about="http://purl.org/wf4ever/ro#Resource">
+      <rdfs:label xml:lang="en">Resource</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/ro"/>
         <rdfs:subClassOf rdf:resource="http://www.openarchives.org/ore/terms/AggregatedResource"/>
         <rdfs:subClassOf>

@@ -70,6 +70,7 @@ This ontology is meant as an upper ontology for more specific workflow definitio
     <!-- http://purl.org/wf4ever/wfdesc#hasArtifact -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/wf4ever/wfdesc#hasArtifact">
+      <rdfs:label xml:lang="en">has artifact</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfdesc"/>
         <rdfs:domain rdf:resource="http://purl.org/wf4ever/wfdesc#Parameter"/>
         <rdfs:range rdf:resource="http://purl.org/wf4ever/wfdesc#Artifact"/>
@@ -81,6 +82,7 @@ This ontology is meant as an upper ontology for more specific workflow definitio
     <!-- http://purl.org/wf4ever/wfdesc#hasConfiguration -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/wf4ever/wfdesc#hasConfiguration">
+      <rdfs:label xml:lang="en">has configuration</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfdesc"/>
         <rdfs:domain rdf:resource="http://purl.org/wf4ever/wfdesc#Process"/>
         <rdfs:range rdf:resource="http://purl.org/wf4ever/wfdesc#Configuration"/>
@@ -92,6 +94,7 @@ This ontology is meant as an upper ontology for more specific workflow definitio
     <!-- http://purl.org/wf4ever/wfdesc#hasDataLink -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/wf4ever/wfdesc#hasDataLink">
+      <rdfs:label xml:lang="en">has datalink</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfdesc"/>
         <rdfs:domain rdf:resource="http://purl.org/wf4ever/wfdesc#Workflow"/>
         <rdfs:range rdf:resource="http://purl.org/wf4ever/wfdesc#DataLink"/>
@@ -103,6 +106,7 @@ This ontology is meant as an upper ontology for more specific workflow definitio
     <!-- http://purl.org/wf4ever/wfdesc#hasImplementation -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/wf4ever/wfdesc#hasImplementation">
+      <rdfs:label xml:lang="en">has implementation</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfdesc"/>
         <rdfs:domain rdf:resource="http://purl.org/wf4ever/wfdesc#Process"/>
         <rdfs:range rdf:resource="http://purl.org/wf4ever/wfdesc#ProcessImplementation"/>
@@ -114,6 +118,7 @@ This ontology is meant as an upper ontology for more specific workflow definitio
     <!-- http://purl.org/wf4ever/wfdesc#hasInput -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/wf4ever/wfdesc#hasInput">
+      <rdfs:label xml:lang="en">has input</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfdesc"/>
         <rdfs:domain rdf:resource="http://purl.org/wf4ever/wfdesc#Process"/>
         <rdfs:range rdf:resource="http://purl.org/wf4ever/wfdesc#Input"/>
@@ -125,6 +130,7 @@ This ontology is meant as an upper ontology for more specific workflow definitio
     <!-- http://purl.org/wf4ever/wfdesc#hasOutput -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/wf4ever/wfdesc#hasOutput">
+      <rdfs:label xml:lang="en">has output</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfdesc"/>
         <rdfs:domain rdf:resource="http://purl.org/wf4ever/wfdesc#Process"/>
         <rdfs:range rdf:resource="http://purl.org/wf4ever/wfdesc#Output"/>
@@ -137,6 +143,7 @@ This ontology is meant as an upper ontology for more specific workflow definitio
     <!-- http://purl.org/wf4ever/wfdesc#hasSink -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/wf4ever/wfdesc#hasSink">
+      <rdfs:label xml:lang="en">has sink</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfdesc"/>
         <rdfs:domain rdf:resource="http://purl.org/wf4ever/wfdesc#DataLink"/>
         <rdfs:range rdf:resource="http://purl.org/wf4ever/wfdesc#Input"/>
@@ -148,6 +155,7 @@ This ontology is meant as an upper ontology for more specific workflow definitio
     <!-- http://purl.org/wf4ever/wfdesc#hasSource -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/wf4ever/wfdesc#hasSource">
+      <rdfs:label xml:lang="en">has source</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfdesc"/>
         <rdfs:domain rdf:resource="http://purl.org/wf4ever/wfdesc#DataLink"/>
         <rdfs:range rdf:resource="http://purl.org/wf4ever/wfdesc#Output"/>
@@ -159,6 +167,7 @@ This ontology is meant as an upper ontology for more specific workflow definitio
     <!-- http://purl.org/wf4ever/wfdesc#hasSubProcess -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/wf4ever/wfdesc#hasSubProcess">
+      <rdfs:label xml:lang="en">has sub-process</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfdesc"/>
         <rdfs:domain rdf:resource="http://purl.org/wf4ever/wfdesc#Workflow"/>
         <rdfs:range rdf:resource="http://purl.org/wf4ever/wfdesc#Process"/>
@@ -174,6 +183,7 @@ A specialialisation of sub process is wfdesc:hasSubWorkflow where the sub proces
     <!-- http://purl.org/wf4ever/wfdesc#hasSubWorkflow -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/wf4ever/wfdesc#hasSubWorkflow">
+      <rdfs:label xml:lang="en">has sub-workflow</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfdesc"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.org/wf4ever/wfdesc#hasSubProcess"/>
         <rdfs:domain rdf:resource="http://purl.org/wf4ever/wfdesc#Workflow"/>
@@ -188,6 +198,7 @@ This is a specialisation of wfdesc:hasSubProcess.</rdfs:comment>
     <!-- http://purl.org/wf4ever/wfdesc#hasWorkflowDefinition -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/wf4ever/wfdesc#hasWorkflowDefinition">
+      <rdfs:label xml:lang="en">has workflow definition</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfdesc"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.org/wf4ever/wfdesc#hasImplementation"/>
         <rdfs:domain rdf:resource="http://purl.org/wf4ever/wfdesc#Workflow"/>
@@ -211,6 +222,7 @@ This is a specialisation of wfdesc:hasSubProcess.</rdfs:comment>
     <!-- http://purl.org/wf4ever/wfdesc#Artifact -->
 
     <owl:Class rdf:about="http://purl.org/wf4ever/wfdesc#Artifact">
+      <rdfs:label xml:lang="en">Artifact</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfdesc"/>
         <rdfs:comment xml:lang="en">wfdesc:Artifact is used to provide information about a class of artifacts. For example, it can be used to specify the datatype of a dataset or the structure of a document.
 
@@ -224,6 +236,7 @@ The distinction between a parameter and artifact is that the parameter can be cu
     <!-- http://purl.org/wf4ever/wfdesc#Configuration -->
 
     <owl:Class rdf:about="http://purl.org/wf4ever/wfdesc#Configuration">
+      <rdfs:label xml:lang="en">Configuration</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfdesc"/>
         <rdfs:subClassOf rdf:resource="http://purl.org/wf4ever/wfdesc#Parameter"/>
         <owl:disjointWith rdf:resource="http://purl.org/wf4ever/wfdesc#Output"/>
@@ -239,6 +252,7 @@ Note that attributes which define or specify the process to invoke, like a wf4ev
     <!-- http://purl.org/wf4ever/wfdesc#DataLink -->
 
     <owl:Class rdf:about="http://purl.org/wf4ever/wfdesc#DataLink">
+      <rdfs:label xml:lang="en">Data Link</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfdesc"/>
         <rdfs:comment xml:lang="en">wfdesc:DataLink is used to represent data dependencies between wfdesc:Process descriptions. It means that the artifact generated at an wfdesc:Output (identified using wfdesc:hasSource) will be used by a wfdescInput (identified using wfdesc:hasSink).
 
@@ -252,6 +266,7 @@ Thus links can only be made within a wfdesc:Workflow - although ports owned by t
     <!-- http://purl.org/wf4ever/wfdesc#Input -->
 
     <owl:Class rdf:about="http://purl.org/wf4ever/wfdesc#Input">
+      <rdfs:label xml:lang="en">Input</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfdesc"/>
         <rdfs:subClassOf rdf:resource="http://purl.org/wf4ever/wfdesc#Parameter"/>
         <rdfs:comment xml:lang="en">wfdesc:Input represents an input parameter to a wfdesc:Process. This can be compared to a function parameter, command line argument, files read, or parameter set by a user interface.
@@ -264,6 +279,7 @@ It is out of scope of wfdesc to define the nature or classification of the param
     <!-- http://purl.org/wf4ever/wfdesc#Output -->
 
     <owl:Class rdf:about="http://purl.org/wf4ever/wfdesc#Output">
+      <rdfs:label xml:lang="en">Output</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfdesc"/>
         <rdfs:subClassOf rdf:resource="http://purl.org/wf4ever/wfdesc#Parameter"/>
         <rdfs:comment xml:lang="en">wfdesc:Output represents an output parameter from a wfdesc:Process. This can be compared to functional return values, stdout/stdin, files written, or results shown in a user interface.
@@ -276,6 +292,7 @@ It is out of scope of wfdesc to define the nature or classification of the param
     <!-- http://purl.org/wf4ever/wfdesc#Parameter -->
 
     <owl:Class rdf:about="http://purl.org/wf4ever/wfdesc#Parameter">
+      <rdfs:label xml:lang="en">Parameter</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfdesc"/>
         <owl:equivalentClass>
             <owl:Class>
@@ -298,6 +315,7 @@ A wfdesc:Configuration MAY also be a wfdesc:Input, indicating that the configura
     <!-- http://purl.org/wf4ever/wfdesc#Process -->
 
     <owl:Class rdf:about="http://purl.org/wf4ever/wfdesc#Process">
+      <rdfs:label xml:lang="en">Process</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfdesc"/>
         <rdfs:comment xml:lang="en">A wfdesc:Process is used to describe a class of actions that when enacted give rise to processes. A process can have 0 or more wfdesc:Parameter instances associated using wfdesc:hasInput and wfdesc:hasOutput, signifying what kind of parameters the process will require and return.
 
@@ -309,6 +327,7 @@ It is out of scope for wfdesc to classify or specify the nature of the process, 
     <!-- http://purl.org/wf4ever/wfdesc#ProcessImplementation -->
 
     <owl:Class rdf:about="http://purl.org/wf4ever/wfdesc#ProcessImplementation">
+      <rdfs:label xml:lang="en">Process Implementation</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfdesc"/>
         <rdfs:comment xml:lang="en">The implementation that is invoked when running the wfdesc:Process, like a wf4ever:Script or wf4ever:WebService.
 
@@ -321,6 +340,7 @@ The process specifies the implementation using wfdesc:hasImplementation.</rdfs:c
     <!-- http://purl.org/wf4ever/wfdesc#Workflow -->
 
     <owl:Class rdf:about="http://purl.org/wf4ever/wfdesc#Workflow">
+      <rdfs:label xml:lang="en">Workflow</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfdesc"/>
         <rdfs:subClassOf rdf:resource="http://purl.org/wf4ever/wfdesc#Process"/>
         <rdfs:comment xml:lang="en">A wfdesc:Workflow is a directed graph in which the nodes are wfdesc:Process instances and the edges (wfdesc:DataLink instances) represent data dependencies between the constituent wfdesc:Process descriptions.
@@ -382,9 +402,10 @@ From this :param4 is both an wfdesc:Input and wfdesc:Output (which is why these 
     <!-- http://purl.org/wf4ever/wfdesc#WorkflowDefinition -->
 
     <owl:Class rdf:about="http://purl.org/wf4ever/wfdesc#WorkflowDefinition">
+      <rdfs:label xml:lang="en">Workflow Definition</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfdesc"/>
         <rdfs:subClassOf rdf:resource="http://purl.org/wf4ever/wfdesc#ProcessImplementation"/>
-        <rdfs:comment xml:lang="en">The definition of this workflow, typically a file natively understood by the wfdesc:WorkflowEngine. Examples include .t2flow XML files from Taverna 2 and Galaxy workflows saved as JSON.
+        <rdfs:comment xml:lang="en">The definition that implements this workflow, typically a file natively understood by the wfdesc:WorkflowEngine. Examples include .t2flow XML files from Taverna 2 and Galaxy workflows saved as JSON.
 
 A wfdesc:Workflow description can specify its wfdesc:WorkflowDefinition using wfdesc:hasWorkflowDefinition. This is typically only done for the top-level workflow - subworkflows without a wfdesc:hasWorkflowDefinition are assumed to be embedded within the definition of the parent workflow, except where the sub-workflows are included in the parent by reference, in which case they would have a different wfdesc:hasWorkflowDefinition.</rdfs:comment>
         <rdfs:seeAlso rdf:resource="http://purl.org/wf4ever/wfdesc#hasWorkflowDefinition"/>
@@ -395,8 +416,11 @@ A wfdesc:Workflow description can specify its wfdesc:WorkflowDefinition using wf
     <!-- http://purl.org/wf4ever/wfdesc#WorkflowInstance -->
 
     <owl:Class rdf:about="http://purl.org/wf4ever/wfdesc#WorkflowInstance">
+      <rdfs:label xml:lang="en">Workflow Instance</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfdesc"/>
         <rdfs:subClassOf rdf:resource="http://purl.org/wf4ever/wfdesc#Workflow"/>
-        <rdfs:comment xml:lang="en">A wfdesc:WorkflowInstance is a specialisation of a wfdesc:Workflow description which defines all data/parameters/settings that are required to form a wfprov:WorkflowRun.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A wfdesc:WorkflowInstance is a specialisation of a wfdesc:Workflow description which defines all data/parameters/settings that are required to form a wfprov:WorkflowRun.
+In other words a wdesc:WorkflowInstance is a workflow description that is ready to run.
+        </rdfs:comment>
     </owl:Class>
 </rdf:RDF>

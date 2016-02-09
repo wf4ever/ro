@@ -52,6 +52,7 @@ This ontology is meant as an upper ontology for more specific workflow definitio
         <dc:creator>Daniel Garijo</dc:creator>
         <vann:preferredNamespaceUri>http://purl.org/wf4ever/wfdesc#</vann:preferredNamespaceUri>
         <dc:creator>Esteban García Cuesta</dc:creator>
+        <dc:rights rdf:datatype="&xsd;string">This ontology is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</dc:rights>
     </owl:Ontology>
 
 

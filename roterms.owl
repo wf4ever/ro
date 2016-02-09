@@ -80,7 +80,7 @@ These new terms serve two main purposes. They are used to specify annotations th
         <vann:preferredNamespacePrefix>roterms</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>http://purl.org/wf4ever/roterms#</vann:preferredNamespaceUri>
         <vann:usageNote rdf:resource="https://w3id.org/ro/primer"/>
-
+<dc:rights rdf:datatype="&xsd;string">This ontology is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</dc:rights>
 
     </owl:Ontology>
 

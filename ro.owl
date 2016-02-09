@@ -54,6 +54,7 @@
         <dct:creator rdf:resource="http://orcid.org/0000-0003-4289-4922"/>
         <dct:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
         <dct:publisher rdf:resource="http://researchobject.org/"/>
+        <dc:rights rdf:datatype="&xsd;string">This ontology is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</dc:rights>
     </owl:Ontology>
 
 

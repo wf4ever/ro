@@ -55,6 +55,10 @@
     </owl:AnnotationProperty>
 
 
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/rights">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+    </owl:AnnotationProperty>
+
 
     <!-- http://purl.org/dc/elements/1.1/description -->
 

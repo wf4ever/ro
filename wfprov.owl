@@ -110,6 +110,7 @@ This ontology can be further linked to more specific provenance ontologies like 
 		<!-- http://purl.org/wf4ever/wfprov#durationInSeconds -->
 
     <owl:DatatypeProperty rdf:about="&wfprov;durationInSeconds">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfprov"/>
     		<rdfs:label xml:lang="en">duration in seconds</rdfs:label>
     		<rdfs:comment>How long it took to run the workflow (in seconds)</rdfs:comment>
         <rdfs:domain rdf:resource="&wfprov;WorkflowRun"/>
@@ -132,6 +133,7 @@ This ontology can be further linked to more specific provenance ontologies like 
     <!-- http://purl.org/wf4ever/wfprov#describedByParameter -->
 
     <owl:ObjectProperty rdf:about="&wfprov;describedByParameter">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfprov"/>
         <rdfs:comment xml:lang="en">This object property is used to associate a wfprov:Artifact to the wfdesc:Parameter description.</rdfs:comment>
         <rdfs:range rdf:resource="&wfdesc;Parameter"/>
         <rdfs:domain rdf:resource="&wfprov;Artifact"/>
@@ -142,6 +144,7 @@ This ontology can be further linked to more specific provenance ontologies like 
     <!-- http://purl.org/wf4ever/wfprov#describedByProcess -->
 
     <owl:ObjectProperty rdf:about="&wfprov;describedByProcess">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfprov"/>
         <rdfs:comment xml:lang="en">This object property associate a wfprov:Processrun to its wfdesc:Process description .</rdfs:comment>
         <rdfs:range rdf:resource="&wfdesc;Process"/>
         <rdfs:domain rdf:resource="&wfprov;ProcessRun"/>
@@ -152,6 +155,7 @@ This ontology can be further linked to more specific provenance ontologies like 
     <!-- http://purl.org/wf4ever/wfprov#describedByWorkflow -->
 
     <owl:ObjectProperty rdf:about="&wfprov;describedByWorkflow">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfprov"/>
         <rdfs:comment xml:lang="en">This property associates a wfprov:WorkflowRun to its corresponding wfdesc:Workflow description.</rdfs:comment>
         <rdfs:range rdf:resource="&wfdesc;Workflow"/>
         <rdfs:domain rdf:resource="&wfprov;WorkflowRun"/>
@@ -163,6 +167,7 @@ This ontology can be further linked to more specific provenance ontologies like 
     <!-- http://purl.org/wf4ever/wfprov#interactedWith -->
 
     <owl:ObjectProperty rdf:about="&wfprov;interactedWith">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfprov"/>
         <rdfs:comment xml:lang="en">An Agent the ProcessRun interacted with, for instance to consult, inform or to delegate making a decission.
 
 The communication artifacts of this interaction is not normally considered inputs and outputs of the process run, so for instance a wfprov:ProcessRun :receiveEmail which has wfprov:usedInput :anEmail would not be considered wfprov:interactedWith the user who sent the email, although it could be that the overall wfprov:WorkflowRun in this case was considered to be interacting with the user.
@@ -176,6 +181,7 @@ The communication artifacts of this interaction is not normally considered input
     <!-- http://purl.org/wf4ever/wfprov#usedInput -->
 
     <owl:ObjectProperty rdf:about="&wfprov;usedInput">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfprov"/>
         <rdfs:comment xml:lang="en">This property specifies that a wfprov:ProcessRun used an wfprov:Artifact as an input</rdfs:comment>
         <rdfs:range rdf:resource="&wfprov;Artifact"/>
         <rdfs:domain rdf:resource="&wfprov;ProcessRun"/>
@@ -187,6 +193,7 @@ The communication artifacts of this interaction is not normally considered input
     <!-- http://purl.org/wf4ever/wfprov#wasEnactedBy -->
 
     <owl:ObjectProperty rdf:about="&wfprov;wasEnactedBy">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfprov"/>
         <rdfs:comment xml:lang="en">wfprov:wasEnactedBy associates a wfprov:ProcessRun with a wfprov:WorkflowEngine, specifying that the execution of the process was enacted by the engine.</rdfs:comment>
         <rdfs:domain rdf:resource="&wfprov;ProcessRun"/>
         <rdfs:range rdf:resource="&wfprov;WorkflowEngine"/>
@@ -198,6 +205,7 @@ The communication artifacts of this interaction is not normally considered input
     <!-- http://purl.org/wf4ever/wfprov#wasInitiatedBy -->
 
     <owl:ObjectProperty rdf:about="&wfprov;wasInitiatedBy">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfprov"/>
         <rdfs:comment xml:lang="en">The agent who decided to run the workflow, for example &quot;Fred initiated the workflow run&quot;.
 
 Note that an wfprov:WorkflowEngine starting nested workflows should normally instead be indicated with wfprov:wasEnactedBy, and a nested wfprov:WorkflowRun run as part of a wfprov:WorkflowRun is indicated with wfprov:wasPartOfWorkflowRun.</rdfs:comment>
@@ -212,6 +220,7 @@ Note that an wfprov:WorkflowEngine starting nested workflows should normally ins
     <!-- http://purl.org/wf4ever/wfprov#wasOutputFrom -->
 
     <owl:ObjectProperty rdf:about="&wfprov;wasOutputFrom">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfprov"/>
         <rdfs:comment xml:lang="en">This property specifies that a wfprov:Artifact was generated as an output from a wfprov:ProcessRun</rdfs:comment>
         <rdfs:domain rdf:resource="&wfprov;Artifact"/>
         <rdfs:range rdf:resource="&wfprov;ProcessRun"/>
@@ -223,6 +232,7 @@ Note that an wfprov:WorkflowEngine starting nested workflows should normally ins
     <!-- http://purl.org/wf4ever/wfprov#wasPartOfWorkflowRun -->
 
     <owl:ObjectProperty rdf:about="&wfprov;wasPartOfWorkflowRun">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfprov"/>
         <rdfs:comment xml:lang="en">This property specifies that a wfprov:ProcessRun was executed as part of a wfprov:WorkflowRun. This typically corresponds to wfdesc:hasSubProcess in the workflow description.</rdfs:comment>
         <rdfs:domain rdf:resource="&wfprov;ProcessRun"/>
         <rdfs:range rdf:resource="&wfprov;WorkflowRun"/>
@@ -244,6 +254,7 @@ Note that an wfprov:WorkflowEngine starting nested workflows should normally ins
     <!-- http://purl.org/wf4ever/wfdesc#Input -->
 
     <rdf:Description rdf:about="&wfdesc;Input">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfdesc"/>
         <rdfs:subClassOf rdf:resource="&prov;Role"/>
     </rdf:Description>
 
@@ -252,6 +263,7 @@ Note that an wfprov:WorkflowEngine starting nested workflows should normally ins
     <!-- http://purl.org/wf4ever/wfdesc#Output -->
 
     <rdf:Description rdf:about="&wfdesc;Output">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfdesc"/>
         <rdfs:subClassOf rdf:resource="&prov;Role"/>
     </rdf:Description>
 
@@ -260,6 +272,7 @@ Note that an wfprov:WorkflowEngine starting nested workflows should normally ins
     <!-- http://purl.org/wf4ever/wfdesc#Workflow -->
 
     <rdf:Description rdf:about="&wfdesc;Workflow">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfdesc"/>
         <rdfs:subClassOf rdf:resource="&prov;Plan"/>
     </rdf:Description>
 
@@ -268,6 +281,7 @@ Note that an wfprov:WorkflowEngine starting nested workflows should normally ins
     <!-- http://purl.org/wf4ever/wfprov#Artifact -->
 
     <owl:Class rdf:about="&wfprov;Artifact">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfprov"/>
         <rdfs:subClassOf rdf:resource="&prov;Entity"/>
         <rdfs:comment xml:lang="en">An artifact is a data value or item which wfprov:wasOutputFrom of a wfprov:ProcessRun or that the process run used as input (wfprov:usedInput).  Such an artifact might also be a ro:Resource if it has been aggregated in the ro:ResearchObject (typically if the artifact was used or generated by a wfprov:WorkflowRun) - but this might always not be the case for intermediate values from wfprov:ProcessRun.</rdfs:comment>
         <rdfs:seeAlso rdf:resource="&ro;ResearchObject"/>
@@ -283,6 +297,7 @@ Note that an wfprov:WorkflowEngine starting nested workflows should normally ins
     <!-- http://purl.org/wf4ever/wfprov#ProcessRun -->
 
     <owl:Class rdf:about="&wfprov;ProcessRun">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfprov"/>
         <rdfs:subClassOf rdf:resource="&prov;Activity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -310,6 +325,7 @@ Note that an wfprov:WorkflowEngine starting nested workflows should normally ins
     <!-- http://purl.org/wf4ever/wfprov#WorkflowEngine -->
 
     <owl:Class rdf:about="&wfprov;WorkflowEngine">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfprov"/>
         <rdfs:subClassOf rdf:resource="&prov;SoftwareAgent"/>
         <rdfs:subClassOf rdf:resource="&foaf;Agent"/>
         <rdfs:comment xml:lang="en">A workflow engine is an foaf:Agent that is responsible for enacting a workflow definition (which could be described in a wfdesc:Workflow). The result of workflow enactment gives rise to a wfprov:WorkflowRun.</rdfs:comment>
@@ -322,6 +338,7 @@ Note that an wfprov:WorkflowEngine starting nested workflows should normally ins
     <!-- http://purl.org/wf4ever/wfprov#WorkflowRun -->
 
     <owl:Class rdf:about="&wfprov;WorkflowRun">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfprov"/>
         <rdfs:subClassOf rdf:resource="&wfprov;ProcessRun"/>
         <rdfs:comment xml:lang="en">A workflow run is a wfprov:ProcessRun which have been enacted by a wfprov:WorkflowEngine, according to a workflow definition (which could be wfdesc:describedByWorkflow a wfdesc:Workflow). Such a process typically contains several subprocesses (wfprov:wasPartOfWorkflowRun) corresponding to wfdesc:Process descriptions</rdfs:comment>
         <rdfs:seeAlso rdf:resource="&wfdesc;Process"/>
@@ -329,7 +346,3 @@ Note that an wfprov:WorkflowEngine starting nested workflows should normally ins
         <rdfs:seeAlso rdf:resource="&wfprov;WorkflowEngine"/>
     </owl:Class>
 </rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 3.3.1957) http://owlapi.sourceforge.net -->

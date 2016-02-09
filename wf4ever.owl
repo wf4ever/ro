@@ -21,10 +21,13 @@
      xml:base="http://purl.org/wf4ever/wf4ever"
      xmlns:dcmi-terms="http://dublincore.org/documents/dcmi-terms/"
      xmlns:ro="http://purl.org/wf4ever/ro#"
+     xmlns:dct="http://purl.org/dc/terms/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:parrot="http://vocab.ctic.es/parrot#"
      xmlns:wfprov="http://purl.org/wf4ever/wfprov#"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:wfdesc="http://purl.org/wf4ever/wfdesc#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
@@ -32,16 +35,61 @@
      xmlns:wf4ever="http://purl.org/wf4ever/wf4ever#"
      xmlns:rdfg="http://www.w3.org/2004/03/trix/rdfg-1/">
     <owl:Ontology rdf:about="http://purl.org/wf4ever/wf4ever">
-        <rdfs:comment xml:lang="en">The wf4ever ontology.
-                                  This is based on the wf4ever ontologies ro, wf and wfdesc- but adds custom classes like wf4ever:Image and wf4ever:WebServiceProcess</rdfs:comment>
+        <!-- TODO: Update on release -->
         <owl:imports rdf:resource="https://rawgit.com/wf4ever/ro/master/metadata.owl"/>
-        <owl:imports rdf:resource="http://purl.org/wf4ever/ro"/>
-        <rdfs:seeAlso rdf:resource="http://purl.org/wf4ever/ro"/>
-        <owl:imports rdf:resource="http://purl.org/wf4ever/wfdesc"/>
-        <owl:imports rdf:resource="http://purl.org/wf4ever/wfprov"/>
-        <parrot:hasPrologue rdf:resource="http://purl.org/wf4ever/index.html#ro"/>
-        <rdfs:seeAlso rdf:resource="http://www.wf4ever-project.org/wiki/display/docs/Research+Object+Vocabulary+Specification"/>
         <owl:versionIRI rdf:resource="https://raw.github.com/wf4ever/ro/master/wf4ever.owl"/>
+        <owl:versionInfo>1.0.0-SNAPSHOT</owl:versionInfo>
+        <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T15:35:00Z</dct:issued>
+        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T15:35:00Z</dct:modified>
+        <!--
+        <owl:imports rdf:resource="http://purl.org/wf4ever/ro"/>
+        <owl:imports rdf:resource="http://purl.org/wf4ever/wfdesc"/>
+        <owl:imports rdf:resource="http://purl.org/wf4ever/wfprov"/>-->
+        <owl:imports rdf:resource="https://rawgit.com/wf4ever/ro/master/wfdesc.owl" />
+        <owl:imports rdf:resource="https://rawgit.com/wf4ever/ro/master/wfprov.owl" />
+        <owl:imports rdf:resource="https://rawgit.com/wf4ever/ro/master/ro.owl" />
+
+        <!-- end TODO -->
+        <rdfs:comment xml:lang="en">This ontology defines more specific subclasses of terms from the wf4ever
+          ontologies ro, wfdesc and wfprov, e.g. wf4ever:Image, wf4ever:WebServiceProcess in addition to
+          associated properties for describing services and tools, e.g.
+          wf4ever:command and wf4ever:script.
+
+          This ontology can be used as part of annotations in an wf4ever:WorkflowResearchObject,
+          a Research Object that contains at least one workflow.
+          </rdfs:comment>
+
+
+
+        <rdfs:label xml:lang="en">wf4ever ontology</rdfs:label>
+
+        <dc:title xml:lang="en">wf4ever ontology</dc:title>
+        <rdfs:seeAlso rdf:resource="http://w3id.org/ro/"/>
+
+
+        <owl:backwardCompatibleWith rdf:resource="https://raw.github.com/wf4ever/ro/0.1.1/wf4ever.owl"/>
+        <vann:preferredNamespacePrefix>wf4ever</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>http://purl.org/wf4ever/wf4ever#</vann:preferredNamespaceUri>
+        <vann:usageNote rdf:resource="https://w3id.org/ro/primer"/>
+        <dc:creator>Daniel Garijo</dc:creator>
+        <dc:creator>Stian Soiland-Reyes</dc:creator>
+        <dc:creator>Graham Klyne</dc:creator>
+        <dc:creator>Khalid Belhajjame</dc:creator>
+        <dc:creator>Oscar Corcho</dc:creator>
+        <dc:creator>Raul Palma</dc:creator>
+        <dc:creator>Sean Bechhofer</dc:creator>
+        <dc:creator>Esteban García Cuesta</dc:creator>
+        <dct:creator rdf:resource="http://data.semanticweb.org/person/esteban-garcia-cuesta"/>
+        <dct:creator rdf:resource="http://orcid.org/0000-0001-6938-0820"/>
+        <dct:creator rdf:resource="http://orcid.org/0000-0001-9842-9718"/>
+        <dct:creator rdf:resource="http://orcid.org/0000-0002-0323-0093"/>
+        <dct:creator rdf:resource="http://orcid.org/0000-0002-5872-3573"/>
+        <dct:creator rdf:resource="http://orcid.org/0000-0002-9260-0753"/>
+        <dct:creator rdf:resource="http://orcid.org/0000-0003-0454-7145"/>
+        <dct:creator rdf:resource="http://orcid.org/0000-0003-4289-4922"/>
+        <dct:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
+        <dct:publisher rdf:resource="http://researchobject.org/"/>
+
     </owl:Ontology>
 
 
@@ -82,6 +130,7 @@
     <!-- http://purl.org/wf4ever/wf4ever#command -->
 
     <owl:DatatypeProperty rdf:about="&wf4ever;command">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wf4ever"/>
         <rdfs:seeAlso xml:lang="en">The executed command, for instance &quot;cp /tmp/file1 /tmp/file2&quot;,  &quot;/usr/local/bin/analyzestuff&quot; or &quot;C:\Program.exe&quot;.
 
 This ontology does not describe the syntax or format of the command line (for instance splitting into argv arguments or escaping), although reasonable effort should be made to reflect the executed command line on a typical command line shell.</rdfs:seeAlso>
@@ -94,6 +143,7 @@ This ontology does not describe the syntax or format of the command line (for in
     <!-- http://purl.org/wf4ever/wf4ever#filePath -->
 
     <owl:DatatypeProperty rdf:about="&wf4ever;filePath">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wf4ever"/>
         <rdfs:comment xml:lang="en">The (possibly) relative filepath of a wf4ever:File artifact that was used or generated by a wfprov:WorkflowRun.
 
 Note that this file path is not uniquely identifying the artifact as different workflow runs might be writing to the same file path.
@@ -109,6 +159,7 @@ To specify fixed file paths of a workflow wfdesc:Parameter, use wf4ever:paramete
     <!-- http://purl.org/wf4ever/wf4ever#parameterFilePath -->
 
     <owl:DatatypeProperty rdf:about="&wf4ever;parameterFilePath">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wf4ever"/>
         <rdfs:comment xml:lang="en">A (possibly relative) filepath used as a fixed input or output parameter for a workflow.
 
 For instance, some workflows might always read the file &quot;relative/in.txt&quot; and always generate the output &quot;/tmp/output.txt&quot;.
@@ -123,6 +174,7 @@ To indicate that a particular wfprov:Artifact from a wfprov:WorkflowRun was a fi
     <!-- http://purl.org/wf4ever/wf4ever#script -->
 
     <owl:DatatypeProperty rdf:about="&wf4ever;script">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wf4ever"/>
         <rdfs:domain rdf:resource="&wf4ever;Script"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -132,6 +184,7 @@ To indicate that a particular wfprov:Artifact from a wfprov:WorkflowRun was a fi
     <!-- http://purl.org/wf4ever/wf4ever#serviceURI -->
 
     <owl:DatatypeProperty rdf:about="&wf4ever;serviceURI">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wf4ever"/>
         <rdfs:domain rdf:resource="&wf4ever;WebService"/>
         <rdfs:range rdf:resource="&xsd;anyURI"/>
     </owl:DatatypeProperty>
@@ -141,6 +194,7 @@ To indicate that a particular wfprov:Artifact from a wfprov:WorkflowRun was a fi
     <!-- http://purl.org/wf4ever/wf4ever#wsdlOperationName -->
 
     <owl:DatatypeProperty rdf:about="&wf4ever;wsdlOperationName">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wf4ever"/>
         <rdfs:domain rdf:resource="&wf4ever;SOAPService"/>
     </owl:DatatypeProperty>
 
@@ -149,6 +203,7 @@ To indicate that a particular wfprov:Artifact from a wfprov:WorkflowRun was a fi
     <!-- http://purl.org/wf4ever/wf4ever#wsdlPortName -->
 
     <owl:DatatypeProperty rdf:about="&wf4ever;wsdlPortName">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wf4ever"/>
         <rdfs:domain rdf:resource="&wf4ever;SOAPService"/>
     </owl:DatatypeProperty>
 
@@ -157,6 +212,7 @@ To indicate that a particular wfprov:Artifact from a wfprov:WorkflowRun was a fi
     <!-- http://purl.org/wf4ever/wf4ever#wsdlURI -->
 
     <owl:DatatypeProperty rdf:about="&wf4ever;wsdlURI">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wf4ever"/>
         <rdfs:domain rdf:resource="&wf4ever;SOAPService"/>
         <rdfs:subPropertyOf rdf:resource="&wf4ever;serviceURI"/>
     </owl:DatatypeProperty>
@@ -165,6 +221,7 @@ To indicate that a particular wfprov:Artifact from a wfprov:WorkflowRun was a fi
     <!-- http://purl.org/wf4ever/wf4ever#rootURI -->
 
     <owl:DatatypeProperty rdf:about="&wf4ever;rootURI">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wf4ever"/>
         <rdfs:label xml:lang="en">Root URI</rdfs:label>
         <rdfs:subPropertyOf rdf:resource="&wf4ever;serviceURI"/>
         <rdfs:comment xml:lang="en">The root URI of a web service</rdfs:comment>
@@ -185,7 +242,10 @@ To indicate that a particular wfprov:Artifact from a wfprov:WorkflowRun was a fi
     <!-- http://purl.org/wf4ever/wf4ever#BeanshellScript -->
 
     <owl:Class rdf:about="&wf4ever;BeanshellScript">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wf4ever"/>
         <rdfs:subClassOf rdf:resource="&wf4ever;Script"/>
+        <rdfs:comment xml:lang="en">A script written in the BeanShell language</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="https://github.com/beanshell/beanshell" />
     </owl:Class>
 
 
@@ -193,8 +253,9 @@ To indicate that a particular wfprov:Artifact from a wfprov:WorkflowRun was a fi
     <!-- http://purl.org/wf4ever/wf4ever#CommandLineTool -->
 
     <owl:Class rdf:about="&wf4ever;CommandLineTool">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wf4ever"/>
         <rdfs:subClassOf rdf:resource="&wfdesc;ProcessImplementation"/>
-        <rdfs:seeAlso xml:lang="en">A command line tool, typically executed locally, through SSH or a job submission system.</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en">A command line tool, typically executed locally, through SSH or a job submission system.</rdfs:comment>
     </owl:Class>
 
 
@@ -202,6 +263,8 @@ To indicate that a particular wfprov:Artifact from a wfprov:WorkflowRun was a fi
     <!-- http://purl.org/wf4ever/wf4ever#Dataset -->
 
     <owl:Class rdf:about="&wf4ever;Dataset">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wf4ever"/>
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wf4ever"/>
         <rdfs:subClassOf rdf:resource="&wfprov;Artifact"/>
         <rdfs:comment xml:lang="en">A dataset or reference database.</rdfs:comment>
     </owl:Class>
@@ -211,6 +274,7 @@ To indicate that a particular wfprov:Artifact from a wfprov:WorkflowRun was a fi
     <!-- http://purl.org/wf4ever/wf4ever#Document -->
 
     <owl:Class rdf:about="&wf4ever;Document">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wf4ever"/>
         <rdfs:subClassOf rdf:resource="&wfprov;Artifact"/>
         <rdfs:comment xml:lang="en">A human readable document, like a HTML page, a PDF, plain text file or a LibreOffice document.</rdfs:comment>
     </owl:Class>
@@ -220,6 +284,7 @@ To indicate that a particular wfprov:Artifact from a wfprov:WorkflowRun was a fi
     <!-- http://purl.org/wf4ever/wf4ever#File -->
 
     <owl:Class rdf:about="&wf4ever;File">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wf4ever"/>
         <rdfs:subClassOf rdf:resource="&wfprov;Artifact"/>
         <rdfs:comment xml:lang="en">A file wfprov:Artifact that was used or generated by a wfprov:WorkflowRun.
 
@@ -239,6 +304,7 @@ To specify fixed file paths of a workflow wfdesc:Parameter, use wf4ever:paramete
 
     <owl:Class rdf:about="&wf4ever;FileParameter">
         <rdfs:subClassOf rdf:resource="&wfdesc;Parameter"/>
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wf4ever"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&wf4ever;parameterFilePath"/>
@@ -259,6 +325,7 @@ To indicate that a particular value from a wfprov:WorkflowRun was a file, use wf
     <!-- http://purl.org/wf4ever/wf4ever#Image -->
 
     <owl:Class rdf:about="&wf4ever;Image">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wf4ever"/>
         <rdfs:subClassOf rdf:resource="&wfprov;Artifact"/>
         <rdfs:comment xml:lang="en">A visual image or photograph, formats like JPEG, PNG, TIFF</rdfs:comment>
     </owl:Class>
@@ -268,6 +335,7 @@ To indicate that a particular value from a wfprov:WorkflowRun was a file, use wf
     <!-- http://purl.org/wf4ever/wf4ever#RESTService -->
 
     <owl:Class rdf:about="&wf4ever;RESTService">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wf4ever"/>
         <rdfs:subClassOf rdf:resource="&wf4ever;WebService"/>
         <rdfs:comment xml:lang="en">A RESTful web service, accessed using HTTP or HTTPS.
 
@@ -281,14 +349,28 @@ TODO: Should a URI template be specified?</rdfs:comment>
     <!-- http://purl.org/wf4ever/wf4ever#RScript -->
 
     <owl:Class rdf:about="&wf4ever;RScript">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wf4ever"/>
         <rdfs:subClassOf rdf:resource="&wf4ever;Script"/>
+        <rdfs:comment xml:lang="en">A script written in the R language</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="https://www.r-project.org/"/>
     </owl:Class>
 
+
+
+        <!-- http://purl.org/wf4ever/wf4ever#PythonScript -->
+
+        <owl:Class rdf:about="&wf4ever;PythonScript">
+          <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wf4ever"/>
+            <rdfs:subClassOf rdf:resource="&wf4ever;Script"/>
+            <rdfs:comment xml:lang="en">A script written in the Python language</rdfs:comment>
+            <rdfs:seeAlso rdf:resource="https://www.python.org/"/>
+        </owl:Class>
 
 
     <!-- http://purl.org/wf4ever/wf4ever#SOAPService -->
 
     <owl:Class rdf:about="&wf4ever;SOAPService">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wf4ever"/>
         <rdfs:subClassOf rdf:resource="&wf4ever;WebService"/>
         <rdfs:comment xml:lang="en">A SOAP service is a method described in a WSDL 1.1 or WSDL 2.0 specification.
 
@@ -311,6 +393,7 @@ TODO: Do we need to distinguish between WSDL and SOAP? WSDL 1.1 and WSDL 2.0? RP
     <!-- http://purl.org/wf4ever/wf4ever#Script -->
 
     <owl:Class rdf:about="&wf4ever;Script">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wf4ever"/>
         <rdfs:subClassOf rdf:resource="&wfdesc;ProcessImplementation"/>
         <rdfs:seeAlso xml:lang="en">A script which can be evaluated. Scripts of reasonable small sizes can be embedded in this description using wf4ever:script.</rdfs:seeAlso>
     </owl:Class>
@@ -320,6 +403,7 @@ TODO: Do we need to distinguish between WSDL and SOAP? WSDL 1.1 and WSDL 2.0? RP
     <!-- http://purl.org/wf4ever/wf4ever#WebService -->
 
     <owl:Class rdf:about="&wf4ever;WebService">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wf4ever"/>
         <rdfs:subClassOf rdf:resource="&wfdesc;ProcessImplementation"/>
         <rdfs:comment>A (typically remote) web service, like REST or SOAP. For the purpose of being a wfdesc:ProcessImplementation of a wfdesc:Process, a &apos;service&apos; is considered more like a specific method then an endpoint.</rdfs:comment>
     </owl:Class>
@@ -329,6 +413,7 @@ TODO: Do we need to distinguish between WSDL and SOAP? WSDL 1.1 and WSDL 2.0? RP
     <!-- http://purl.org/wf4ever/wf4ever#WorkflowResearchObject -->
 
     <owl:Class rdf:about="&wf4ever;WorkflowResearchObject">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wf4ever"/>
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -348,7 +433,3 @@ Such research objects have characteristics that are of particular interest for t
 
 
 </rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 3.3.1957) http://owlapi.sourceforge.net -->

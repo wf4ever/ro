@@ -51,12 +51,12 @@
 
         <!-- end TODO -->
         <rdfs:comment xml:lang="en">This ontology defines more specific subclasses of terms from the wf4ever
-          ontologies ro, wfdesc and wfprov, e.g. wf4ever:Image, wf4ever:WebServiceProcess in addition to
-          associated properties for describing services and tools, e.g.
-          wf4ever:command and wf4ever:script.
+ontologies ro, wfdesc and wfprov, e.g. wf4ever:Image, wf4ever:WebServiceProcess in addition to
+associated properties for describing services and tools, e.g.
+wf4ever:command and wf4ever:script.
 
-          This ontology can be used as part of annotations in an wf4ever:WorkflowResearchObject,
-          a Research Object that contains at least one workflow.
+This ontology can be used as part of annotations in an `wf4ever:WorkflowResearchObject`,
+a Research Object that contains at least one workflow.
           </rdfs:comment>
 
 

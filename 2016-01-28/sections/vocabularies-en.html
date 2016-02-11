@@ -1,0 +1,80 @@
+<h2><span class="secno">2. </span>Vocabularies</h2>
+<div class="section" id="ro"><h3><span class="secno">2.1 </span>Research object (ro)</h3>
+
+<p>A research object aggregates a number of resources that are used and/or produced in a given scientific investigation. This aggregation supports access to those collected resources &ndash; or at least access to the identification of those resources. The resources aggregated in an RO can be distributed, thus a particular user may be allowed to see the metadata associated with a resource without necessarily having access to its content. For example, dereferencing a URI which is aggregated in a Research Object may require further authentication. A research object allows for annotation of the resources aggregated in it, where by annotation we mean the general notion of decorating a resource with some additional, arbitrary information (@@NOTE: the usage of the word "aggregated" to describe the collecting of resources in the RO rather than "contained"). The aggregation provides a container within which these annotations can be asserted, allowing for the capture of context and provenance concerning those relations and annotations. Such context is needed to support, for example, measures of trust of quality.</p>
+
+<p>The aggregated resources of an RO could include workflow descriptions, workflow runs, artifacts, etc. The figure below illustrates a research object described using a manifest. It also illustrates the specific class of research object named workflow research object, which refers to research objects that contain at least one workflow description.</p>
+
+<p><img width="600" style="border: 1px solid black" imagetext="ro.png|border=1,width=600" src="http://wf4ever.github.com/ro/diagrams/ro.png"></p>
+
+<p><strong>The Research Object Ontology is documented in detail <a href="ro/index-en.html">here</a>.</strong></p>
+
+<p>The Research Object Ontology is described in the <a href="ro.owl"><tt>ro</tt>
+ontology</a> under the namespace
+<code>http://purl.org/wf4ever/ro#</code></p>
+
+<p>This ontology extends the <a href="http://www.openarchives.org/ore/1.0/vocabulary">OAI-ORE ontology</a>.</p>
+
+</div>
+
+<div class="section" id="wfdesc"><h3><span class="secno">2.2 </span>Workflow definition (wfdesc)</h3>
+
+<p>Workflow descriptions can be made using the <a href="https://github.com/wf4ever/ro/blob/master/wfdesc.owl"><tt>wfdesc</tt> ontology</a> under the namespace <a href="http://purl.org/wf4ever/wfdesc#">http://purl.org/wf4ever/wfdesc#</a></p>
+
+<p><img width="600" style="border: 1px solid black" imagetext="wf.png|border=1,width=600" src="http://wf4ever.github.com/ro/diagrams/wf.png"></p>
+
+<p>The <tt>wfdesc</tt> ontology describes an abstract workflow description structure, which on the top level is defined as a <tt>wfdesc:Workflow</tt>.</p>
+
+<p>A <tt>wfdesc:Workflow</tt> contains several <tt>wfdesc:Process</tt> instances, associated  using the <tt>wfdesc:hasSubProcess</tt> property. Each of these (and the workflow  itself) <tt>wfdesc:hasInput</tt> and <tt>wfdesc:hasOutput</tt> some <tt>wfdesc:Parameter</tt> (<tt>wfdesc:Input</tt> or <tt>wfdesc:Output</tt>). An <tt>wfdesc:Artifact</tt> is associated with a <tt>wfdesc:Parameter</tt> using <tt>wfdesc:hasArtifact</tt>. The <tt>wfdesc:Workflow</tt> also <tt>wfdesc:hasDataLink</tt> several <tt>wfdesc:DataLink</tt> instances, which forms the  connection between parameters.  Thus this ontology allows the description a direct acyclic graph, or a  dataflow.</p>
+
+<p>This ontology is meant as an upper ontology for more specific workflow  definitions, and as a way to express abstract workflows, which could either be hand-crafted by users ("ideal workflow description") or extracted from workflow definitions of existing workflow systems, like Taverna's <tt>.t2flow</tt> and Scufl2 formats.</p>
+
+<p>The <tt>wfprov</tt> ontology shows how to link these workflow descriptions to a provenance trace of a workflow execution.</p>
+
+<p><strong>The Wfdesc Ontology is documented in detail <a href="wfdesc/index-en.html">here</a>.</strong></p>
+</div>
+
+<div class="section" id="wfprov"><h3><span class="secno">2.3 </span>Workflow execution provenance (wfprov)</h3>
+
+<p>Provenance of workflow execution is described using the <a aliasspecified="true" wikidestination="https://github.com/wf4ever/ro/blob/master/wfprov.owl" linktype="raw" rel="nofollow" class="external-link" href="https://github.com/wf4ever/ro/blob/master/wfprov.owl">wfprov ontology</a>, under namespace <a href="http://purl.org/wf4ever/wfdesc#">http://purl.org/wf4ever/wfprov#</a>. </p>
+<p><img width="600" style="border: 1px solid black" imagetext="wfprov.png|border=1,width=600" src="http://wf4ever.github.com/ro/diagrams/wfprov.png"></p>
+<p>The <tt>wfprov</tt> ontology describes the provenance of the workflow results. A <tt>wfprov:WorkflowRun</tt> describes the activity of running a <tt>wfdesc:WorkflowInstance</tt>. It groups the <tt>wfprov:ProcessRuns</tt> of the execution with the relationship <tt>wfprov:wasPartOfWorkflowRun</tt>.</p>
+
+<p>Each <tt>wfprov:ProcessRun</tt> represents a step of the workflow execution. It may have dependencies to different <tt>wfprov:Artifacts</tt>, which are modeled with the relationship <tt>wfprov:usedInput</tt>. Every result generated by one of the <tt>wfprov:ProcessRuns</tt> is linked by the relation <tt>wfprov:wasOutputFrom</tt></p>
+
+<p>Different <tt>wfprov:ProcessRuns</tt> may have been executed by different workflow engines. We can specify which one run each step with the <tt>wfprov:wasEnactedBy</tt> relationship.</p>
+
+<p>Finally, we can link each <tt>wfprov:Artifact</tt>, <tt>wfprov:ProcessRun</tt> and <tt>wfprov:WorkflowRun</tt> to their correspondant <tt>wfdesc</tt> description by the <tt>wfprov:describedByParameter</tt>, <tt>wfprov:describedByProcess</tt> and <tt>wfprov:describedByWorkflow</tt> respectively.</p>
+
+<p><strong>The Wfprov Ontology is documented in detail <a href="wfdesc/index-en.html">here</a>.</strong></p>
+</div>
+
+<div class="section" id="wf4ever"><h3><span class="secno">2.4 </span>Wf4Ever-specific extensions (wf4ever)</h3>
+
+<p><img width="600" style="border: 1px solid black" imagetext="wf4ever.png|border=1,width=600" src="http://wf4ever.github.com/ro/diagrams/wf4ever.png"></p>
+
+<p>The <a href="https://github.com/wf4ever/ro/blob/master/wf4ever.owl">wf4ever ontology</a> specifies extensions that specific to Wf4Ever, and probably not as liable for reuse as the previous ontologies. This  ontology imports all the other ontologies described on this page, and so  can also be used to get a complete picture of all the Wf4Ever  ontologies. The namespace is <a href="http://purl.org/wf4ever/wf4ever#">http://purl.org/wf4ever/wf4ever#</a></p>
+
+<p><strong>The Wf4ever Ontology is documented in detail <a href="wf4ever/index-en.html">here</a>.</strong></p>
+</div>
+
+<div class="section" id="roevo"><h3><span class="secno">2.4 </span>Research object evolution (roevo)</h3>
+<p>
+The <a href="roevo/index-en.html">roevo ontology</a> 
+&lt;<code>http://purl.org/wf4ever/roevo</code>&gt;
+extends the <a href="#ro">ro</a> ontology to capture the lifecycle and versioning of research objects
+using <a href="http://www.w3.org/TR/prov-o/">PROV-O</a>.
+</p>
+<p><strong>The ROevo Ontology is documented in detail <a href="roevo/index-en.html">here</a>.</strong></p>
+</div>
+<div class="section" id="roterms"><h3><span class="secno">2.5 </span>Research object terms (roterms)</h3>
+<p>
+	The <a href="http://purl.org/wf4ever/roterms">roterms vocabulary</a> 
+&lt;<code>http://purl.org/wf4ever/roterms#</code>&gt;
+defines some classes and properties that may be used with annotations on Research Objects and their resources, e.g. 
+<a href="https://cdn.rawgit.com/wf4ever/ro/master/roterms.html#http://purl.org/wf4ever/roterms#exampleValue">roterms:exampleValue</a>,
+<a href="https://cdn.rawgit.com/wf4ever/ro/master/roterms.html#http://purl.org/wf4ever/roterms#performsTask">roterms:performsTask</a> and
+<a href="https://cdn.rawgit.com/wf4ever/ro/master/roterms.html#http://purl.org/wf4ever/roterms#Hypothesis">roterms:Hypothesis</a>.
+</p>
+<p><strong>The ROterms Ontology is documented in detail <a href="roterms/index-en.html">here</a>.</strong></p>
+</div>

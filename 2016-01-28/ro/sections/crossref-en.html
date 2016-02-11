@@ -1,0 +1,609 @@
+<h2>4. Cross reference for RO classes, properties and dataproperties</h2>
+This section provides details for each class and property defined by RO.
+<div id="classes">
+   <h2>Classes</h2>
+   <ul class="hlist">
+      <li>
+         <a href="#http://xmlns.com/foaf/0.1/Agent" title="http://xmlns.com/foaf/0.1/Agent">
+            <span>agent</span>
+         </a>
+      </li>
+      <li>
+         <a href="#AggregatedAnnotation" title="http://purl.org/wf4ever/ro#AggregatedAnnotation">Aggregated Annotation</a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/ns/oa#Annotation" title="http://www.w3.org/ns/oa#Annotation">
+            <span>annotation</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Folder" title="http://purl.org/wf4ever/ro#Folder">Folder</a>
+      </li>
+      <li>
+         <a href="#FolderEntry" title="http://purl.org/wf4ever/ro#FolderEntry">Folder Entry</a>
+      </li>
+      <li>
+         <a href="#Manifest" title="http://purl.org/wf4ever/ro#Manifest">Manifest</a>
+      </li>
+      <li>
+         <a href="#ResearchObject" title="http://purl.org/wf4ever/ro#ResearchObject">
+            <span>research object</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Resource" title="http://purl.org/wf4ever/ro#Resource">Resource</a>
+      </li>
+   </ul>
+   <div class="entity" id="http://xmlns.com/foaf/0.1/Agent">
+      <h3>agent<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://xmlns.com/foaf/0.1/Agent</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://xmlns.com/foaf/0.1/">http://xmlns.com/foaf/0.1/</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="AggregatedAnnotation">
+      <h3>Aggregated Annotation<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/ro#AggregatedAnnotation</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/ro">http://purl.org/wf4ever/ro</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>An annotation aggregated within an ro:ResearchObject.</p>
+         <p>Instances of this class are used to annotated resources aggregated within the aggregating research object, proxies of these resources, or the research object itself. In other words, if :ro is the ro:ResearchObject this annotation has been ore:isAggregatedBy, then the annotation should have at least one oa:hasTarget which is an ore:AggregatedResource which is ore:isAggregatedBy :ro, or the annotated resource is an ore:Proxy which ore:proxyIn :ro, or the annotated resource is :ro.</p>
+         <p>It is possible for the annotation to also annotate non-aggregated resources, but as above, at least one of them needs to be part of the RO or the RO itself.</p>
+         <p>For semantic annotations, the oa:hasBody SHOULD point to an trig:Graph which contains the actual annotation.</p>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted"
+                  title="http://www.openarchives.org/ore/terms/AggregatedResource">aggregated resource</span>
+         </dd>
+         <dd>
+            <a href="#http://www.w3.org/ns/oa#Annotation" title="http://www.w3.org/ns/oa#Annotation">annotation</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <span class="dotted"
+                  title="http://www.openarchives.org/ore/terms/isAggregatedBy">is aggregated by</span> 
+            <span class="logic">some</span> 
+            <a href="#ResearchObject" title="http://purl.org/wf4ever/ro#ResearchObject">research object</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator">creator</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#http://xmlns.com/foaf/0.1/Agent" title="http://xmlns.com/foaf/0.1/Agent">agent</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#http://www.w3.org/ns/oa#hasTarget" title="http://www.w3.org/ns/oa#hasTarget">has target</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#ResearchObject" title="http://purl.org/wf4ever/ro#ResearchObject">research object</a>
+            <sup class="type-c" title="class">c</sup> 
+            <span class="logic">or</span> 
+            <span class="dotted"
+                  title="http://www.openarchives.org/ore/terms/AggregatedResource">aggregated resource</span> 
+            <span class="logic">or</span> 
+            <span class="dotted" title="http://www.openarchives.org/ore/terms/Proxy">proxy</span>
+         </dd>
+         <dd>
+            <span class="dotted" title="http://purl.org/dc/terms/created">created</span> 
+            <span class="logic">some</span> 
+            <span class="dotted" title="http://www.w3.org/2001/XMLSchema#dateTime">date time</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://www.w3.org/ns/oa#Annotation">
+      <h3>annotation<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/ns/oa#Annotation</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/oa#">http://www.w3.org/ns/oa#</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#AggregatedAnnotation" title="http://purl.org/wf4ever/ro#AggregatedAnnotation">Aggregated Annotation</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Folder">
+      <h3>Folder<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/ro#Folder</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/ro">http://purl.org/wf4ever/ro</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>An ro:Folder is a special kind of ore:Aggregation where every ro:AggregatedResource must have a ro:FolderEntry proxy with a unique ro:entryName within that folder.</p>
+         <p>Note that all resources which are aggregated within an (potentially nested) ro:Folder SHOULD also be aggregated by the same ro:ResearchObject this ro:Folder is aggregated within.</p>
+         <p>Such folders can be nested and (optionally) used to organize the resources of the research object into a file-like structure. All such resources should also be aggregated by the ro:ResearchObject</p>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Resource" title="http://purl.org/wf4ever/ro#Resource">Resource</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <span class="dotted"
+                  title="http://www.openarchives.org/ore/terms/Aggregation">aggregation</span>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#rootFolder" title="http://purl.org/wf4ever/ro#rootFolder">root folder</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="FolderEntry">
+      <h3>Folder Entry<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/ro#FolderEntry</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/ro">http://purl.org/wf4ever/ro</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>An ro:FolderEntry is any ore:Proxy instance that associates a resources aggregated within an ro:Folder with a ro:entryName. This name is (case-sensitive) unique within a given folder.</p>
+      </div>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <span class="dotted" title="http://www.openarchives.org/ore/terms/proxyIn">proxy in</span> 
+            <span class="logic">some</span> 
+            <a href="#Folder" title="http://purl.org/wf4ever/ro#Folder">Folder</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#entryName" title="http://purl.org/wf4ever/ro#entryName">entry name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="logic">some</span> 
+            <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+         </dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://www.openarchives.org/ore/terms/Proxy">proxy</span>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#entryName" title="http://purl.org/wf4ever/ro#entryName">entry name</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>has keys</dt>
+         <dd>
+            <span class="dotted" title="http://www.openarchives.org/ore/terms/proxyIn">proxy in</span> , <a href="#entryName" title="http://purl.org/wf4ever/ro#entryName">entry name</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Manifest">
+      <h3>Manifest<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/ro#Manifest</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/ro">http://purl.org/wf4ever/ro</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>The ro:Manifest is used to describe an ro:ResearchObject. This identifies the resource for the manifest which lists all the aggregations of the research object, typically called ".ro/manifest.rdf" relative to the research object this manifest ore:describes.</p>
+      </div>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <span class="dotted" title="http://www.openarchives.org/ore/terms/describes">describes</span> 
+            <span class="logic">some</span> 
+            <a href="#ResearchObject" title="http://purl.org/wf4ever/ro#ResearchObject">research object</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted"
+                  title="http://www.openarchives.org/ore/terms/ResourceMap">resource map</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ResearchObject">
+      <h3>research object<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/ro#ResearchObject</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/ro">http://purl.org/wf4ever/ro</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>A research object aggregates a number of resources. A resource can be a workflow, web service, document, data item, data set, workflow run, software or a research object.</p>
+      </div>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <span class="dotted"
+                  title="http://www.openarchives.org/ore/terms/isDescribedBy">is described by</span> 
+            <span class="logic">some</span> 
+            <a href="#Manifest" title="http://purl.org/wf4ever/ro#Manifest">Manifest</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted"
+                  title="http://www.openarchives.org/ore/terms/Aggregation">aggregation</span>
+         </dd>
+         <dd>
+            <a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator">creator</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#http://xmlns.com/foaf/0.1/Agent" title="http://xmlns.com/foaf/0.1/Agent">agent</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <span class="dotted" title="http://purl.org/dc/terms/created">created</span> 
+            <span class="logic">some</span> 
+            <span class="dotted" title="http://www.w3.org/2001/XMLSchema#dateTime">date time</span>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#rootFolder" title="http://purl.org/wf4ever/ro#rootFolder">root folder</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Resource">
+      <h3>Resource<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/ro#Resource</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/ro">http://purl.org/wf4ever/ro</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>An ro:Resource is an ore:AggregatedResource which ore:isAggregatedBy an ro:ResearchObject.</p>
+         <p>This specialisation requires that there exists an ore:Proxy which is ore:proxyFor this resource, and which is ore:proxyIn the same ro:ResearchObject the resource ore:isAggregatedBy. Any annotations on such a proxy will descrive the ro:Resource within that particular ro:ResearchObject, in particular dct:creator and dct:created on the proxy will specify who added the resource to the aggregation at what time.</p>
+         <p>Note that annotations (ro:Annotation) can be added to both the ro:Resource and the ore:Proxy - depending on if the annotation is seen to be globally true (such as the provenance of how the resource was created) or locally true within the Research Object (such as the the resource playing the role of a wf4ever:Dataset).</p>
+         <p>Not all resources aggregated by an ro:ResearchObject are ro:Resource instances, in particular ro:Annotations will also be aggregated, but are not required to also be ro:Resources (needing their own ore:Proxy).</p>
+         <p>Aggregated resources MAY also be organised in (potentially nested) ro:Folders to reflect a file-system like structure. Note that any such resources SHOULD also be aggregated in the "mother" ro:ResearchObject.</p>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted"
+                  title="http://www.openarchives.org/ore/terms/AggregatedResource">aggregated resource</span>
+         </dd>
+         <dd>
+            <span class="dotted"
+                  title="http://www.openarchives.org/ore/terms/isAggregatedBy">is aggregated by</span> 
+            <span class="logic">some</span> 
+            <a href="#ResearchObject" title="http://purl.org/wf4ever/ro#ResearchObject">research object</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <span class="logic">inverse</span> 
+            <span class="dotted" title="http://www.openarchives.org/ore/terms/proxyFor">proxy for</span> 
+            <span class="logic">some</span> 
+            <span class="dotted" title="http://www.openarchives.org/ore/terms/proxyIn">proxy in</span> 
+            <span class="logic">some</span> 
+            <a href="#ResearchObject" title="http://purl.org/wf4ever/ro#ResearchObject">research object</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#Folder" title="http://purl.org/wf4ever/ro#Folder">Folder</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div id="objectproperties">
+   <h2>Object Properties</h2>
+   <ul class="hlist">
+      <li>
+         <a href="#annotatesAggregatedResource"
+            title="http://purl.org/wf4ever/ro#annotatesAggregatedResource">
+            <span>annotates aggregated resource</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/ao/annotatesResource" title="http://purl.org/ao/annotatesResource">
+            <span>annotates resource</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/ao/body" title="http://purl.org/ao/body">
+            <span>body</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator">
+            <span>creator</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/ns/oa#hasBody" title="http://www.w3.org/ns/oa#hasBody">
+            <span>has body</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/ns/oa#hasTarget" title="http://www.w3.org/ns/oa#hasTarget">
+            <span>has target</span>
+         </a>
+      </li>
+      <li>
+         <a href="#rootFolder" title="http://purl.org/wf4ever/ro#rootFolder">
+            <span>root folder</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="annotatesAggregatedResource">
+      <h3>annotates aggregated resource<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/ro#annotatesAggregatedResource</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/ro">http://purl.org/wf4ever/ro</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>This property is deprecated. Use oa:hasTarget instead.</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#http://www.w3.org/ns/oa#hasTarget" title="http://www.w3.org/ns/oa#hasTarget">has target</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://purl.org/ao/annotatesResource">
+      <h3>annotates resource<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/ao/annotatesResource</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/ao/">http://purl.org/ao/</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>This property is deprecated. Use oa:hasTarget instead.</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has equivalent properties</dt>
+            <dd>
+               <a href="#http://www.w3.org/ns/oa#hasTarget" title="http://www.w3.org/ns/oa#hasTarget">has target</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://purl.org/ao/body">
+      <h3>body<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/ao/body</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/ao/">http://purl.org/ao/</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>This property is deprecated. Use oa:hasBody instead.</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has equivalent properties</dt>
+            <dd>
+               <a href="#http://www.w3.org/ns/oa#hasBody" title="http://www.w3.org/ns/oa#hasBody">has body</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://purl.org/dc/terms/creator">
+      <h3>creator<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/terms/creator</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://www.w3.org/ns/oa#hasBody">
+      <h3>has body<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/ns/oa#hasBody</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/oa#">http://www.w3.org/ns/oa#</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has equivalent properties</dt>
+            <dd>
+               <a href="#http://purl.org/ao/body" title="http://purl.org/ao/body">body</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.w3.org/ns/oa#hasTarget">
+      <h3>has target<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/ns/oa#hasTarget</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/oa#">http://www.w3.org/ns/oa#</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has equivalent properties</dt>
+            <dd>
+               <a href="#http://purl.org/ao/annotatesResource" title="http://purl.org/ao/annotatesResource">annotates resource</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#annotatesAggregatedResource"
+                  title="http://purl.org/wf4ever/ro#annotatesAggregatedResource">annotates aggregated resource</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="rootFolder">
+      <h3>root folder<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/ro#rootFolder</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/ro">http://purl.org/wf4ever/ro</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>The suggested root ro:Folder for the ro:ResearchObject. This folder should not be aggregated within other ro:Folders and can be seen as the top level folder for other ro:Folders in this RO.</p>
+         <p>This folder structure, if stated, is the RO creator's preferred view of organizing the RO resources. Note that the content of any folder directly or indirectly below the ro:rootFolder (including subfolders) MUST also be aggregated by the ro:ResearchObject itself.</p>
+      </div>
+      <div class="description">
+         <p>
+            <strong>has characteristics:</strong> asymmetric, functional, irreflexive</p>
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://www.openarchives.org/ore/terms/aggregates">aggregates</span>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#ResearchObject" title="http://purl.org/wf4ever/ro#ResearchObject">research object</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Folder" title="http://purl.org/wf4ever/ro#Folder">Folder</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="dataproperties">
+   <h2>Data Properties</h2>
+   <ul class="hlist">
+      <li>
+         <a href="#entryName" title="http://purl.org/wf4ever/ro#entryName">
+            <span>entry name</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="entryName">
+      <h3>entry name<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/ro#entryName</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/ro">http://purl.org/wf4ever/ro</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>This functional property specifies the name of a ro:FolderEntry within an ro:Folder.</p>
+         <p>This name must be case-sensitively unique within the ro:Folder, similar to a filename in a directory.</p>
+         <p>TODO: Need a functional property to specify the top level folder structure of an {{ro:ResearchObject}}?</p>
+      </div>
+      <div class="description">
+         <p>
+            <strong>has characteristics:</strong> functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#FolderEntry" title="http://purl.org/wf4ever/ro#FolderEntry">Folder Entry</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div>

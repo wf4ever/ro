@@ -1,0 +1,350 @@
+<!--OddPage--><h2><span class="secno">5. </span>Examples</h2>
+
+<div id="annotations-example-sec" class="section"><h3><span class="secno">5.1 </span>Annotations and manifests</h3>
+<div id="annotations-examples">
+<div id="examples">
+
+<p>Here is an example research object containing a single workflow <tt>a_workflow.t2flow</tt> and an annotation which as been added by a software agent.</p>
+
+<div class="wysiwyg-macro" macroname="code" macrostarttag="{code:title=.ro/manifest}" macrohasbody="true" wikihasnewlinebeforebody="true" wikihasnewlineafterbody="true" wikihasprecedingnewline="true" wikihastrailingnewline="true"><div class="code panel" style="border-width: 1px;">
+<div class="codeHeader panelHeader" wysiwyg="ignore" style="border-bottom-width: 1px;"><b>.ro/manifest</b></div>
+<div class="codeContent panelContent">
+<pre class="code-java">@base &lt;../&gt; .
+@prefix ro: &lt;http:<span class="code-comment">//purl.org/wf4ever/ro#&gt; .
+</span>@prefix ao: &lt;http:<span class="code-comment">//purl.org/ao/&gt; .
+</span>@prefix ore: &lt;http:<span class="code-comment">//www.openarchives.org/ore/terms/&gt; .
+</span>@prefix dct: &lt;http:<span class="code-comment">//purl.org/dc/terms/&gt; .
+</span>@prefix xsd: &lt;http:<span class="code-comment">//www.w3.org/2001/XMLSchema#&gt; .
+</span>@prefix foaf: &lt;http:<span class="code-comment">//xmlns.com/foaf/0.1/&gt; .
+</span>@prefix rdfg: &lt;http:<span class="code-comment">//www.w3.org/2004/03/trix/rdfg-1/&gt; .
+</span>
+&lt;.&gt; a ro:ResearchObject, ore:Aggregation ;
+    ore:aggregates &lt;a_workflow.t2flow&gt;, :ann1 ;
+    dct:created <span class="code-quote">"2011-12-02T15:01:10Z"</span>^^xsd:dateTime ;
+    dct:creator [ a foaf:Person; foaf:name <span class="code-quote">"Stian Soiland-Reyes"</span> ] .
+
+&lt;a_workflow.t2flow&gt; a ro:Resource .
+
+:proxy1 a ro:Proxy ;
+    ore:proxyFor &lt;a_workflow.t2flow&gt; ;
+    ore:proxyIn &lt;.&gt; ;
+    dct:created <span class="code-quote">"2011-12-02T15:02:10Z"</span>^^xsd:dateTime ;
+    dct:creator [ a foaf:Person; foaf:name <span class="code-quote">"Stian Soiland-Reyes"</span> ] .
+
+:ann1 a ro:Annotation, ro:SemanticAnnotation ;
+    ao:body &lt;.ro/ann1&gt; ;
+    ao:annotatesResource &lt;a_workflow.t2flow&gt;, &lt;.&gt; ;
+    dct:created <span class="code-quote">"2011-12-02T15:02:13Z"</span>^^xsd:dateTime ;
+    dct:creator [ a foaf:Agent ; foaf:name <span class="code-quote">"t2flow workflow annotation extractor"</span> ] .
+
+&lt;.ro/ann1&gt; a rdfg:Graph ;
+    dct:created <span class="code-quote">"2010-05-14T12:02:12Z"</span>^^xsd:dateTime ;
+    dct:creator [ a foaf:Person ; foaf:name <span class="code-quote">"Marco Roos"</span> ] .
+
+</pre>
+</div>
+</div></div>
+<p>Here we can see that Stian has made a research object at 15:01:10, and at 15:02:10 he added <tt>&lt;a_workflow.t2flow&gt;</tt> to the research object. Note that in this case we do not have informatio about when <tt>&lt;a_workflow.t2flow&gt;</tt> was created or by whom.  The research object also aggregates an annotation <tt>:ann1</tt>. This annotation was created by "t2flow workflow annotation extractor" a few seconds after Stian added <tt>&lt;a_workflow.t2flow&gt;</tt> and is an annotation on the aggregated resource. We are also told that the content of annotation <tt>&lt;.ro/ann1&gt;</tt> was created by Marco more than a year earlier. The original annotation by Marco was found inside the <tt>t2flow</tt> by the extractor.</p>
+
+<p>This example serves to illustrate that annotations can be made on both the entire RO and resources aggregated within it.</p>
+
+<p>Resolving the annotation body gives:</p>
+
+<div class="wysiwyg-macro" macroname="code" macrostarttag="{code:title=.ro/ann1}" macrohasbody="true" wikihasnewlinebeforebody="true" wikihasnewlineafterbody="true" wikihasprecedingnewline="true" wikihastrailingnewline="true"><div class="code panel" style="border-width: 1px;">
+<div class="codeHeader panelHeader" wysiwyg="ignore" style="border-bottom-width: 1px;"><b>.ro/ann1</b></div>
+<div class="codeContent panelContent">
+<pre class="code-java">@base &lt;../&gt; .
+@prefix ro: &lt;http:<span class="code-comment">//purl.org/wf4ever/ro#&gt; .
+</span>@prefix wfdesc: &lt;http:<span class="code-comment">//purl.org/wf4ever/wfdesc#&gt; .
+</span>@prefix wf4ever: &lt;http:<span class="code-comment">//purl.org/wf4ever/wf4ever#&gt; .
+</span>@prefix foaf: &lt;http:<span class="code-comment">//xmlns.com/foaf/0.1/&gt; .
+</span>@prefix ao: &lt;http:<span class="code-comment">//purl.org/ao/&gt; .
+</span>@prefix dct: &lt;http:<span class="code-comment">//purl.org/dc/terms/&gt; .
+</span>@prefix xsd: &lt;http:<span class="code-comment">//www.w3.org/2001/XMLSchema#&gt; .
+</span>
+&lt;.&gt; a wf4ever:WorkflowResearchObject .
+
+&lt;a_workflow.t2flow&gt; a wfdesc:Workflow ;
+    wfdesc:hasInput :in1 ;
+    wfdesc:hasOutput :out1 ;
+    wfdesc:hasDataLink [
+        wfdesc:hasSource :in1 ;
+        wfdesc:hasSink :out1 ;
+    ] ;
+    dct:title <span class="code-quote">"A workflow"</span> ;
+    dct:description <span class="code-quote">"A workflow that directly outputs its only input"</span> ;
+    dct:created <span class="code-quote">"2010-05-14T12:02:12Z"</span>^^xsd:dateTime ;
+    dct:creator [ a foaf:Person ; foaf:name <span class="code-quote">"Marco Roos"</span> ] .
+
+:in1 dct:description <span class="code-quote">"Any value"</span> .
+:out1 dct:description <span class="code-quote">"The value given to in1"</span> .
+</pre>
+</div>
+</div></div>
+<p>Inside the annotation body, which we have been told was done by Marco, we find an abstract version of the .t2flow workflow (using the <tt>wfdesc</tt> ontology) which has been extracted by the agent. This reveals some workflow annotations done by Marco in 2010; title and description on the workflow, and descriptions for the input and output ports.</p>
+</div>
+</div>
+</div><!--
+<section id="folders-example-sec">
+<h3>Folder structures using ro:Folder</h3>
+<div id="folders-examples">
+</div>
+</section>
+--><!--
+<section id="myExperiment-pack-example-sec">
+<h3>myExperiment Pack as a Research Object</h3>
+<div id="myexperiment-examples">
+</div>
+</section>
+--><div id="astro-example-sec" class="section"><h3><span class="secno">5.2 </span>Astronomy RO Example</h3>
+<div id="astro-examples">
+<div id="examples">
+ <p>This example comes from a use case that deals with large sets of
+  tabular data (catalogues of numbers) curated by the user. The data are calculated by means of mathematical equations based on experimental values coming from external data repositories. Updating of the external data repositories has an impact on the curation of the user dataset, it is essential to know how (in which quantity) and when these databases are updated, so that the propagation of these changes through the existing internal relation among the data can be triggered and registered. 
+  </p>The scientific experiment represented by this research object pertains to the multi-wavelength study for a sample of the most isolated galaxies in the local universe. This study characterizes each galaxy of this sample through both the measurement of basic astrophysical properties: 
+
+<ul>
+<li>The equatorial coordinates in J2000 epoch</li>
+<li>The velocities in km/s (v)</li>
+<li>The dust extinction coefficient (ag)</li>
+<li>The axis ratio of the isophote 25 mag/arcsec2 (logr25)</li>
+<li>The apparent total B magnitude (BT)</li>
+<li>The morphological type (t)</li>
+</ul>
+
+and the calculation of the more complex properties:
+<ul>
+<li>The distance in Mega parsecs (D)</li>
+<li>The corrected apparent B magnitude (btc)</li>
+<li>The optical luminosity in B-band (LB)</li>
+</ul>
+<p>Specifically, this research object is focused on the calculation of the intrinsic luminosity in the Johnson B-band, in order to achieve it the measurement or calculation of all those astrophysical properties is needed.</p>
+<p>
+
+</p>
+<p>This research object consists of several resources, including workflows, input and output datasets, scripts, web services and other documents. The type and role of each of these resources (by their relative name) are as follows:</p>
+
+<ul>
+<li>
+<b>Workflows</b>
+  <ul>
+<li>
+<em>Gathering (gathering_galaxy_properties_using_hyperleda_129473)</em>
+    <ul>
+<li>
+<b>Web Services</b>
+      <ul>
+<li><a href="http://leda.univ-lyon1.fr/ledacat.cgi?%7Bobject_name%7D?ob=ra" class="external-link" rel="nofollow">http://leda.univ-lyon1.fr/ledacat.cgi?{object_name}?ob=ra</a></li>
+      </ul>
+</li>
+    <li>
+<b>Datasets</b>
+    <ul>
+<li>Input
+      <ul>
+<li>NamesLEDA.txt</li>
+      </ul>
+</li>
+    <li>Output
+    <ul>
+<li>agNew,txt</li>
+      <li>btNew.txt</li>
+      <li>j2000Coords.txt</li>
+      <li>logr25New.txt</li>
+      <li>velocitiesNew.txt</li>
+    </ul>
+</li>
+</ul>
+</li>
+<li>
+<b>Scripts</b>
+<ul>
+<li>extractJ2000Coord.py</li>
+  <li>extractPropertyVal.py</li>
+  <li>Merge_String_List_To_A_String.java</li>
+  <li>Split_String_Into_String_List_By_Regular_Expression.java</li>
+  <li>Write_Text_File.java</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<em>Propagation (calculating_the_total_luminosity_of_a_galaxy_using_properties_from_text_files_608870)</em>
+<ul>
+<li>
+<b>Datasets</b>
+  <ul>
+<li>Input
+    <ul>
+<li>agNew,txt</li>
+      <li>btNew.txt</li>
+      <li>j2000Coords.txt</li>
+      <li>logr25New.txt</li>
+      <li>morphoNew.txt</li>
+      <li>velocitiesNew.txt</li>
+    </ul>
+</li>
+  <li>Output
+  <ul>
+<li>btcNew.txt</li>
+    <li>distancesNew.txt</li>
+    <li>lbNew.txt</li>
+  </ul>
+</li>
+</ul>
+</li>
+<li>
+<b>Scripts</b>
+<ul>
+<li>BTCorrectionCalculation.py</li>
+  <li>calculateDistance.py</li>
+  <li>coords2Deg.py</li>
+  <li>eq2gal.py</li>
+  <li>luminositiesCalculation.py</li>
+  <li>Merge_String_List_To_A_String.java</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<em>Comparing_update (comparison_and_update_values_475535)</em>
+<ul>
+<li>
+<b>Datasets</b>
+  <ul>
+<li>Input
+    <ul>
+<li>lbNew.txt</li>
+      <li>lbOld.txt</li>
+    </ul>
+</li>
+  <li>Output
+  <ul>
+<li>diff_lb.txt</li>
+    <li>lb.sql</li>
+  </ul>
+</li>
+</ul>
+</li>
+<li>
+<b>Scripts</b>
+<ul>
+<li>comparing.py</li>
+  <li>updating.py</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<b>Documents</b>
+<ul>
+<li>Used by the RO (Papers that have inspired the development of this RO or some of its componets)
+  <ul>
+<li>D1.2.pdf</li>
+    <li>D2.1.pdf</li>
+    <li>D3.1.pdf</li>
+    <li>D4.1.pdf</li>
+    <li>D5.1.pdf</li>
+    <li>Paturel.pdf (related with gathering Wf)</li>
+    <li>Vauglin.pdf (related with gathering Wf)</li>
+    <li>Ruiz.pdf</li>
+  </ul>
+</li>
+<li>Produced by the RO (Papers that have made use of this RO or some of its components)
+<ul>
+<li>D5.3v1_1.0.pdf</li>
+  <li>ColorsAA.pdf</li>
+</ul>
+</li>
+<li>General (documents and notes related to the whole RO)
+<ul>
+<li>CONTENT.txt</li>
+  <li>README.txt</li>
+  <li>RECIPES.txt</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="rdf-ro-representation">RDF RO Representation</h4>
+
+<p>Here we provide snippets of RDF illustrating particular aspects of the RO description. These snippets are all taken from the RO <em>manifest</em>.</p>
+
+<p->Manifest description. This asserts the type of the manifest, the fact that it describes the RO in question, and also includes information about the creator of the manifest (the RODL service).
+<pre class="code-java">&lt;http://sandbox.wf4ever-project.org/rosrs5/ROs/HyperLEDALuminosities/.ro/manifest&gt;
+    dct:created "2012-02-01T09:33:56.923Z"^^&lt;http://www.w3.org/2001/XMLSchema#dateTime&gt; ;
+    dct:creator [
+        a &lt;http://xmlns.com/foaf/0.1/Agent&gt; ;
+        foaf:name "RODL"
+    ] ;
+    ore:describes &lt;http://sandbox.wf4ever-project.org/rosrs5/ROs/HyperLEDALuminosities/&gt; ;
+    a &lt;http://purl.org/wf4ever/ro#Manifest&gt; .
+</pre>
+
+<p>The following snippet captures the basic aggregation of resources within the RO.</p>
+
+<pre class="code-java">&lt;http://sandbox.wf4ever-project.org/rosrs5/ROs/HyperLEDALuminosities/&gt;
+    dct:created "2012-02-01T09:33:56.832Z"^^&lt;http://www.w3.org/2001/XMLSchema#dateTime&gt; ;
+    dct:creator &lt;https://www.google.com/accounts/o8/id?id=AItOawl7tEZAtdiQmIigvXcU4KkhGsBzgm0gfKM&gt; ;
+    ore:isDescribedBy &lt;http://sandbox.wf4ever-project.org/rosrs5/ROs/HyperLEDALuminosities/.ro/manifest&gt; ;
+    a &lt;http://purl.org/wf4ever/ro#ResearchObject&gt; ;
+
+    ore:aggregates &lt;http://leda.univ-lyon1.fr/ledacat.cgi&gt;,
+      &lt;http://sandbox.wf4ever-project.org/rosrs5/ROs/HyperLEDALuminosities/.ro/manifest#0f184259-a189-4d2c-8c04-66d7d322d1a8&gt;,
+      &lt;http://sandbox.wf4ever-project.org/rosrs5/ROs/HyperLEDALuminosities/.ro/manifest#14e42518-b337-2312-a76b-aa2b21cb3222&gt;,
+      ...
+      &lt;http://sandbox.wf4ever-project.org/rosrs5/ROs/HyperLEDALuminosities/.ro/manifest#annGathering&gt;,
+      &lt;http://sandbox.wf4ever-project.org/rosrs5/ROs/HyperLEDALuminosities/.ro/manifest#annPropagation&gt;,
+      ...
+      &lt;http://sandbox.wf4ever-project.org/rosrs5/ROs/HyperLEDALuminosities/CONTENT.txt&gt;,
+      &lt;http://sandbox.wf4ever-project.org/rosrs5/ROs/HyperLEDALuminosities/D1.2.pdf&gt;,
+      ...
+      &lt;http://sandbox.wf4ever-project.org/rosrs5/ROs/HyperLEDALuminosities/GoldenTrace.txt&gt;,
+      &lt;http://sandbox.wf4ever-project.org/rosrs5/ROs/HyperLEDALuminosities/NamesLEDA.txt&gt;,
+      &lt;http://sandbox.wf4ever-project.org/rosrs5/ROs/HyperLEDALuminosities/Paturel.pdf&gt;,
+      &lt;http://sandbox.wf4ever-project.org/rosrs5/ROs/HyperLEDALuminosities/README.txt&gt;,
+      &lt;http://sandbox.wf4ever-project.org/rosrs5/ROs/HyperLEDALuminosities/RECIPES.txt&gt;,
+      &lt;http://sandbox.wf4ever-project.org/rosrs5/ROs/HyperLEDALuminosities/Ruiz.pdf&gt;,
+      &lt;http://sandbox.wf4ever-project.org/rosrs5/ROs/HyperLEDALuminosities/Vauglin.pdf&gt;,
+      ...
+      &lt;http://sandbox.wf4ever-project.org/rosrs5/ROs/HyperLEDALuminosities/btcNew.txt&gt;,
+      &lt;http://sandbox.wf4ever-project.org/rosrs5/ROs/HyperLEDALuminosities/calculateDistance.py&gt;,
+      ...
+      &lt;http://sandbox.wf4ever-project.org/rosrs5/ROs/HyperLEDALuminosities/comparison_and_update_values_475535.&gt;,
+      ...
+      &lt;http://sandbox.wf4ever-project.org/rosrs5/ROs/HyperLEDALuminosities/eq2gal.py&gt;,
+      &lt;http://sandbox.wf4ever-project.org/rosrs5/ROs/HyperLEDALuminosities/extractJ2000Coord.py&gt;,
+      &lt;http://sandbox.wf4ever-project.org/rosrs5/ROs/HyperLEDALuminosities/extractPropertyVal.py&gt;,
+      &lt;http://sandbox.wf4ever-project.org/rosrs5/ROs/HyperLEDALuminosities/morphoNew.txt&gt;,
+      ..
+      &lt;http://sandbox.wf4ever-project.org/rosrs5/ROs/HyperLEDALuminosities/updating.py&gt;,
+      &lt;http://sandbox.wf4ever-project.org/rosrs5/ROs/HyperLEDALuminosities/velocitiesNew.txt&gt; .
+</pre>
+      
+<p>An annotation expressing creation metadata. Jose Enrique Luiz created resources <tt>GoldenTrace.txt</tt>.
+</p><pre class="java-code">&lt;http://sandbox.wf4ever-project.org/rosrs5/ROs/HyperLEDALuminosities/.ro/manifest#14e42518-b337-2312-a76b-aa2b21cb3222&gt;
+    ao:body &lt;http://sandbox.wf4ever-project.org/rosrs5/ROs/HyperLEDALuminosities/GoldenTrace.txt&gt; ;
+    dct:created "2012-02-01T09:37:23.662Z"^^&lt;http://www.w3.org/2001/XMLSchema#dateTime&gt; ;
+    dct:creator _:A0 ;
+    ao:annotatesResource &lt;http://sandbox.wf4ever-project.org/rosrs5/ROs/HyperLEDALuminosities/&gt; ;
+    a ao:Annotation .
+
+&lt;http://sandbox.wf4ever-project.org/rosrs5/ROs/HyperLEDALuminosities/.ro/manifest#14e42518-b337-4698-a76b-aa2b21cb3222&gt;
+    ao:body &lt;http://sandbox.wf4ever-project.org/rosrs5/ROs/HyperLEDALuminosities/.ro/RECIPES.txt-8230278887054687059&gt; ;
+    dct:created "2012-02-01T09:37:23.662Z"^^&lt;http://www.w3.org/2001/XMLSchema#dateTime&gt; ;
+    dct:creator _:A0 ;
+    ao:annotatesResource &lt;http://sandbox.wf4ever-project.org/rosrs5/ROs/HyperLEDALuminosities/RECIPES.txt&gt; ;
+    a ao:Annotation .
+
+_:A0
+    a &lt;http://xmlns.com/foaf/0.1/Agent&gt; ;
+    foaf:name "Jose Enrique Ruiz" .
+
+</pre>
+
+</p->
+</div>
+</div>
+</div>

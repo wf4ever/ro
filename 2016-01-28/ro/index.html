@@ -12,9 +12,10 @@ function loadHash() {
 }    $(function(){
       $("#abstract").load("sections/abstract-en.html"); 
       $("#introduction").load("sections/introduction-en.html"); 
-      $("#vocabularies").load("sections/vocabularies-en.html"); 
+      $("#overview").load("sections/overview-en.html"); 
+      $("#description").load("sections/description-en.html"); 
+      $("#crossref").load("sections/crossref-en.html", null, loadHash); 
 	  $("#examples").load("sections/examples-en.html");
-	  $("#versions").load("sections/versions-en.html");
       $("#references").load("sections/references-en.html"); 
     });
     </script> 
@@ -29,7 +30,7 @@ function loadHash() {
 </span>
 <div class="logo"><img height="100" alt="Wf4Ever" src="http://wf4ever.github.com/ro/logo/wf4ever.png"></div>
 <div class="container"><div class="head">
-<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<div style="float:right">language <a href="index.html"><b>en</b></a> </div>
 <h1 property="dc:title schema:name">Research Object ontology</h1>
 <span property="dc:modified schema:dateModified" content="2016-01-28T15:46:00Z"></span>
 <h2>Release  2016-01-28</h2>
@@ -64,21 +65,31 @@ function loadHash() {
 </div>
 <div class="status"><div><span><abbr title="Workflow forever">Wf4Ever</abbr> Specification</span></div></div>
      <div id="abstract"></div>
-<div class="introductory section" id="sotd"><h2>Status of This
-    Document</h2><p>This document is a specification from the <a href="wf4ever-project.org">wf4ever</a>
-  project. It does not represent the support or consensus of any standards organisation.</p></div>
-<div class="section" id="toc"><h2 class="introductory">Table of Contents</h2><ul class="toc"><li class="tocline"><a class="tocxref" href="#introduction"><span class="secno">1. </span>Introduction</a><ul class="toc"><li class="tocline"><a class="tocxref" href="#scope"><span class="secno">1.1 </span>Scope of Wf4Ever Research Objects</a></li><li class="tocline"><a class="tocxref" href="#scope-doc"><span class="secno">1.2 </span>Scope of this document</a></li><li class="tocline"><a class="tocxref" href="#tech-soc"><span class="secno">1.3 </span>Technical and Social Objects</a></li><li class="tocline"><a class="tocxref" href="#organisation"><span class="secno">1.4 </span>Overall Model Organisation</a></li></ul></li><li class="tocline"><a class="tocxref" href="#vocabularies"><span class="secno">2. </span>Research Object Vocabularies</a><ul class="toc"><li class="tocline"><a class="tocxref" href="#ro"><span class="secno">2.1 </span>Research object (ro)</a></li><li class="tocline"><a class="tocxref" href="#wfdesc"><span class="secno">2.2 </span>Workflow definition (wfdesc)</a></li><li class="tocline"><a class="tocxref" href="#wfprov"><span class="secno">2.3 </span>Workflow execution provenance (wfprov)</a></li><li class="tocline"><a class="tocxref" href="#wf4ever"><span class="secno">2.4 </span>Wf4Ever-specific extensions (wf4ever)</a></li>
-<li class="tocline"><a class="tocxref" href="#roevo"><span class="secno">2.5 </span>Research object evolution (roevo)</a></li>
-<li class="tocline"><a class="tocxref" href="#roterms"><span class="secno">2.6 </span>Research object terms (roterms)</a></li>
-</ul></li>
-<li class="tocline"><a class="tocxref" href="#examples"><span class="secno">3. </span>Examples</a><ul class="toc"><li class="tocline"><a class="tocxref" href="#annotations-example-sec"><span class="secno">3.1 </span>Annotations and manifests</a></li><li class="tocline"><a class="tocxref" href="#astro-example-sec"><span class="secno">3.2 </span>Astronomy RO Example</a></li></ul></li><li class="tocline"><a class="tocxref" href="#ontologies"><span class="secno">4. </span>OWL versions</a></li><li class="tocline"><a class="tocxref" href="#references"><span class="secno">A. </span>References</a><ul class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><span class="secno">A.1 </span>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><span class="secno">A.2 </span>Informative references</a></li></ul></li></ul></div>
+<div id="toc">
+	<h2>Table of Contents</h2><ul><li>
+		<a href="#introduction">1. Introduction</a></li>
+		<a href="#overview">2. RO Overview</a><li>
+		<a href="#description">3. RO Description</a></li>							
+		<li><a href="#crossref">4. Cross reference for RO classes, properties and dataproperties</a></li>
+		<ul>
+			<li><a href="#classes">4.1 Classes</a></li>
+			<li><a href="#objectproperties">4.2 Object Properties</a></li>
+			<li><a href="#dataproperties">4.3 Data Properties</a></li>
+		</ul>
+		<li>
+		<a href="#examples">5. Examples</a></li><li>
+		<a href="#references">6. References</a></li><li>
+		<a href="#acknowledgements">7. Acknowledgements</a></li>
+		</ul>
+</div>
      <div id="introduction"></div>
-     <div id="vocabularies"></div>
+     <div id="overview"></div>
+     <div id="description"></div>
+     <div id="crossref"></div>
 	 <div id="examples"></div>
-	 <div id="versions"></div>
      <div id="references"></div>
 <div id="acknowledgements">
-<h2>6. Acknowledgements <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<h2>7. Acknowledgements <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <p>The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="http://purl.org/net/dgarijo/">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the document template used in this documentation.</p>
 </div>
 </body> 

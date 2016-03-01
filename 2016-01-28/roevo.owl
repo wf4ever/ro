@@ -32,8 +32,8 @@
       <!-- TODO: Update on release -->
       <owl:versionIRI rdf:resource="https://rawgit.com/wf4ever/ro/master/roevo.owl"/>
       <owl:versionInfo>1.0.0-SNAPSHOT</owl:versionInfo>
-      <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T15:46:00Z</dct:issued>
-      <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T15:46:00Z</dct:modified>
+      <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T15:46:00Z</dcterms:issued>
+      <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T15:46:00Z</dcterms:modified>
 
       <!-- end TODO -->
         <rdfs:comment xml:lang="en">The Research Object Evolution Ontology (roevo) extends the ro ontology to capture the lifecycle and versioning of research objects. ro ontology and other extensions are described at http://wf4ever.github.io/ro/.
@@ -51,8 +51,8 @@
         <dc:contributor>Stian Soiland-Reyes</dc:contributor>
         <dc:contributor>Oscar Corcho</dc:contributor>
         <dc:rights xml:lang="en">This ontology is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</dc:rights>
-        <dct:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
-        <dct:publisher rdf:resource="http://researchobject.org/"/>
+        <dcterms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
+        <dcterms:publisher rdf:resource="http://researchobject.org/"/>
     </owl:Ontology>
 
 

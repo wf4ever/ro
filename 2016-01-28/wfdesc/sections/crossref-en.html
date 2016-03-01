@@ -1,0 +1,853 @@
+<h2>4. Cross reference for Wfdesc classes, properties and dataproperties</h2>
+This section provides details for each class and property defined by Wfdesc.
+<div id="classes">
+   <h2>Classes</h2>
+   <ul class="hlist">
+      <li>
+         <a href="#Artifact" title="http://purl.org/wf4ever/wfdesc#Artifact">Artifact</a>
+      </li>
+      <li>
+         <a href="#Configuration" title="http://purl.org/wf4ever/wfdesc#Configuration">Configuration</a>
+      </li>
+      <li>
+         <a href="#DataLink" title="http://purl.org/wf4ever/wfdesc#DataLink">Data Link</a>
+      </li>
+      <li>
+         <a href="#Input" title="http://purl.org/wf4ever/wfdesc#Input">Input</a>
+      </li>
+      <li>
+         <a href="#Output" title="http://purl.org/wf4ever/wfdesc#Output">Output</a>
+      </li>
+      <li>
+         <a href="#Parameter" title="http://purl.org/wf4ever/wfdesc#Parameter">Parameter</a>
+      </li>
+      <li>
+         <a href="#Process" title="http://purl.org/wf4ever/wfdesc#Process">Process</a>
+      </li>
+      <li>
+         <a href="#ProcessImplementation"
+            title="http://purl.org/wf4ever/wfdesc#ProcessImplementation">Process Implementation</a>
+      </li>
+      <li>
+         <a href="#Workflow" title="http://purl.org/wf4ever/wfdesc#Workflow">Workflow</a>
+      </li>
+      <li>
+         <a href="#WorkflowDefinition"
+            title="http://purl.org/wf4ever/wfdesc#WorkflowDefinition">Workflow Definition</a>
+      </li>
+      <li>
+         <a href="#WorkflowInstance" title="http://purl.org/wf4ever/wfdesc#WorkflowInstance">Workflow Instance</a>
+      </li>
+   </ul>
+   <div class="entity" id="Artifact">
+      <h3>Artifact<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/wfdesc#Artifact</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/wfdesc">http://purl.org/wf4ever/wfdesc</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>wfdesc:Artifact is used to provide information about a class of artifacts. For example, it can be used to specify the datatype of a dataset or the structure of a document.</p>
+         <p>An wfdesc:Artifact is associated with a wfdesc:Parameter using wfdesc:hasArtifact.</p>
+         <p>The distinction between a parameter and artifact is that the parameter can be customized to describe the particular role the artifact plays with regards to the process (and can be linked using wfdesc:DataLink) - while the wfdesc:Artifact can describe the syntactic and semantic datatype.</p>
+      </div>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasArtifact" title="http://purl.org/wf4ever/wfdesc#hasArtifact">has artifact</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Configuration">
+      <h3>Configuration<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/wfdesc#Configuration</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/wfdesc">http://purl.org/wf4ever/wfdesc</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>A configuration is a kind of parameter to a wfdesc:Process (linked using wfdesc:hasConfiguration) to indicate a setting, flag or customization which somewhat modifies or controls the behaviour of the wfdesc:Process.</p>
+         <p>Different workflow systems have stronger or weaker differentiation between inputs and configurations, so a wfdesc:Configuration MAY also be a wfdesc:Input in the case of a dynamic configuration provided by the workflow itself.</p>
+         <p>Note that attributes which define or specify the process to invoke, like a wf4ever:script, or a wf4ever:serviceURI of a wf4ever:WebService, are not normally considered Configurations.</p>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Parameter" title="http://purl.org/wf4ever/wfdesc#Parameter">Parameter</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasConfiguration" title="http://purl.org/wf4ever/wfdesc#hasConfiguration">has configuration</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#Output" title="http://purl.org/wf4ever/wfdesc#Output">Output</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DataLink">
+      <h3>Data Link<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/wfdesc#DataLink</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/wfdesc">http://purl.org/wf4ever/wfdesc</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>wfdesc:DataLink is used to represent data dependencies between wfdesc:Process descriptions. It means that the artifact generated at an wfdesc:Output (identified using wfdesc:hasSource) will be used by a wfdescInput (identified using wfdesc:hasSink).</p>
+         <p>The wfdesc:Processes that owns the wfdesc:Parameter instances which are the source and sink of a wfdesc:DataLink must be wfdesc:hasSubProcess of a the same wfdesc:Workflow which wfdesc:hasDataLink the data link, or be be parameters of that same workflow.</p>
+         <p>Thus links can only be made within a wfdesc:Workflow - although ports owned by the workflow itself appear both inside and outside the workflow (in opposite roles).</p>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasSink" title="http://purl.org/wf4ever/wfdesc#hasSink">has sink</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasSource" title="http://purl.org/wf4ever/wfdesc#hasSource">has source</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasDataLink" title="http://purl.org/wf4ever/wfdesc#hasDataLink">has datalink</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Input">
+      <h3>Input<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/wfdesc#Input</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/wfdesc">http://purl.org/wf4ever/wfdesc</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>wfdesc:Input represents an input parameter to a wfdesc:Process. This can be compared to a function parameter, command line argument, files read, or parameter set by a user interface.</p>
+         <p>It is out of scope of wfdesc to define the nature or classification of the parameter, such as giving it a name, position or data type. This can be done with subclasses and/or subproperties.</p>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Parameter" title="http://purl.org/wf4ever/wfdesc#Parameter">Parameter</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasInput" title="http://purl.org/wf4ever/wfdesc#hasInput">has input</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasSink" title="http://purl.org/wf4ever/wfdesc#hasSink">has sink</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Output">
+      <h3>Output<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/wfdesc#Output</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/wfdesc">http://purl.org/wf4ever/wfdesc</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>wfdesc:Output represents an output parameter from a wfdesc:Process. This can be compared to functional return values, stdout/stdin, files written, or results shown in a user interface.</p>
+         <p>It is out of scope of wfdesc to define the nature or classification of the parameter, such as giving it a name, position or data type. This can be done with subclasses and/or subproperties.</p>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Parameter" title="http://purl.org/wf4ever/wfdesc#Parameter">Parameter</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasOutput" title="http://purl.org/wf4ever/wfdesc#hasOutput">has output</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasSource" title="http://purl.org/wf4ever/wfdesc#hasSource">has source</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#Configuration" title="http://purl.org/wf4ever/wfdesc#Configuration">Configuration</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Parameter">
+      <h3>Parameter<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/wfdesc#Parameter</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/wfdesc">http://purl.org/wf4ever/wfdesc</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>This class represent a parameter of a wfdesc:Process. A wfdesc:Parameter must be a wfdesc:Input, a wfdesc:Output, or a wfdesc:Configuration.</p>
+         <p>Note that a parameter MAY be both an wfdesc:Input and wfdesc:Output when it is used on both sides of a subworkflow - see wfdesc:Workflow and wfdesc:DataLink for details.</p>
+         <p>A wfdesc:Configuration MAY also be a wfdesc:Input, indicating that the configuration is of a dynamic nature, decided by the workflow.</p>
+      </div>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#Configuration" title="http://purl.org/wf4ever/wfdesc#Configuration">Configuration</a>
+            <sup class="type-c" title="class">c</sup> 
+            <span class="logic">or</span> 
+            <a href="#Input" title="http://purl.org/wf4ever/wfdesc#Input">Input</a>
+            <sup class="type-c" title="class">c</sup> 
+            <span class="logic">or</span> 
+            <a href="#Output" title="http://purl.org/wf4ever/wfdesc#Output">Output</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#Configuration" title="http://purl.org/wf4ever/wfdesc#Configuration">Configuration</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Input" title="http://purl.org/wf4ever/wfdesc#Input">Input</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Output" title="http://purl.org/wf4ever/wfdesc#Output">Output</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasArtifact" title="http://purl.org/wf4ever/wfdesc#hasArtifact">has artifact</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Process">
+      <h3>Process<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/wfdesc#Process</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/wfdesc">http://purl.org/wf4ever/wfdesc</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>A wfdesc:Process is used to describe a class of actions that when enacted give rise to processes. A process can have 0 or more wfdesc:Parameter instances associated using wfdesc:hasInput and wfdesc:hasOutput, signifying what kind of parameters the process will require and return.</p>
+         <p>It is out of scope for wfdesc to classify or specify the nature of the process, this should be done by subclassing and additional subproperties, for instance ex:perlScript or ex:restServiceURI</p>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#Workflow" title="http://purl.org/wf4ever/wfdesc#Workflow">Workflow</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasConfiguration" title="http://purl.org/wf4ever/wfdesc#hasConfiguration">has configuration</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasImplementation" title="http://purl.org/wf4ever/wfdesc#hasImplementation">has implementation</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasInput" title="http://purl.org/wf4ever/wfdesc#hasInput">has input</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasOutput" title="http://purl.org/wf4ever/wfdesc#hasOutput">has output</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasSubProcess" title="http://purl.org/wf4ever/wfdesc#hasSubProcess">has sub-process</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ProcessImplementation">
+      <h3>Process Implementation<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/wfdesc#ProcessImplementation</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/wfdesc">http://purl.org/wf4ever/wfdesc</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>The implementation that is invoked when running the wfdesc:Process, like a wf4ever:Script or wf4ever:WebService.</p>
+         <p>The process specifies the implementation using wfdesc:hasImplementation.</p>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#WorkflowDefinition"
+               title="http://purl.org/wf4ever/wfdesc#WorkflowDefinition">Workflow Definition</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasImplementation" title="http://purl.org/wf4ever/wfdesc#hasImplementation">has implementation</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Workflow">
+      <h3>Workflow<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/wfdesc#Workflow</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/wfdesc">http://purl.org/wf4ever/wfdesc</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>A wfdesc:Workflow is a directed graph in which the nodes are wfdesc:Process instances and the edges (wfdesc:DataLink instances) represent data dependencies between the constituent wfdesc:Process descriptions.</p>
+         <p>The resource that contains the wfdesc:WorkflowDefinition (say the XML file saved from a workflow designer tool) can be specified with wfdesc:hasWorkflowDefinition. Research objects might aggregate a wfdesc:Workflow, a wfdesc:WorkflowDefinition, or (recommended) both.</p>
+         <p>A wfdesc:Workflow defines associated wfdesc:Process using wfdesc:hasSubProcess. A specialisation of this property is wfdesc:hasSubWorkflow, signifying that the process is a wfdesc:Workflow itself, which is further described in a similar fashion.</p>
+         <p>As a subclass of wfdesc:Process a wfdesc:Workflow can also define wfdesc:hasInput/wfdesc:hasOutput parameters - these would be inputs taken at workflow execution time, and final outputs of the workflow. (Note: Not all dataflow systems have this concept of workflow parameters)</p>
+         <p>wfdesc:Parameter descriptions are linked using wfdesc:DataLink descriptions associated with the wfdesc:Workflow using wfdesc:hasDataLink.</p>
+         <p>A wfdesc:Parameter defined with wfdesc:hasInput on a wfdesc:Workflow is considered an wfdesc:Input "outside" the workflow (ie. if it is a subworkflow), but an wfdesc:Output "inside" the workflow (where it can be connected to a wfdesc:Input of a wfdesc:Process). Thus such parameters can be linked "through" the workflow without having a "mirrored" port inside.</p>
+         <p>Example:</p>
+         <p>```</p>
+         <p>@prefix wfdesc: &lt;http://purl.org/wf4ever/wfdesc#&gt; .</p>
+         <p>:outerWorkflow a wfdesc:Workflow ;</p>
+         <p>  wfdesc:hasSubWorkflow :innerWorkflow ;</p>
+         <p>  wfdesc:hasSubProcess :procA, :procC .</p>
+         <p>:procA a wfdesc:Process ;</p>
+         <p>  wfdesc:hasOutput :param1 .</p>
+         <p>:procC a wfdesc:Process ;</p>
+         <p>  wfdesc:hasInput :param2 ;</p>
+         <p>  wfdesc:hasOutput :param3 .</p>
+         <p>:innerWorkflow a wfdesc:Workflow ;</p>
+         <p>  wfdesc:hasInput :param4 ;</p>
+         <p>  wfdesc:hasOutput :param5 ;</p>
+         <p>  wfdesc:hasProcess :procB .</p>
+         <p>:procB a wfdesc:Process ;</p>
+         <p>  wfdesc:hasInput :param6 ;</p>
+         <p>  wfdesc:hasOutput :param7 .</p>
+         <p>:innerWorkflow wfdesc:hasDataLink</p>
+         <p>   [ wfdesc:hasSource :param4; wfdesc:hasSink :param6 ],</p>
+         <p>   [ wfdesc:hasSource :param7; wfdesc:hasSink :param5 ] .</p>
+         <p>:outerWorkflow wfdesc:hasDataLink</p>
+         <p>  [ wfdesc:hasSource :param1; wfdesc:hasSink :param4 ],</p>
+         <p>  [ wfdesc:hasSource :param5; wfdesc:hasSink :param2 ] .</p>
+         <p>```</p>
+         <p>In this example :param1 is the output of :procA. :param1 is the source in a datalink that goes to the input :param4 of the :innerWorkflow. :param4 is however also the source of an inner datalink, going to input :param6 of the nested :procB.</p>
+         <p>From this :param4 is both an wfdesc:Input and wfdesc:Output (which is why these two classes are not disjoint)</p>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Process" title="http://purl.org/wf4ever/wfdesc#Process">Process</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#WorkflowInstance" title="http://purl.org/wf4ever/wfdesc#WorkflowInstance">Workflow Instance</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasDataLink" title="http://purl.org/wf4ever/wfdesc#hasDataLink">has datalink</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasSubProcess" title="http://purl.org/wf4ever/wfdesc#hasSubProcess">has sub-process</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasSubWorkflow" title="http://purl.org/wf4ever/wfdesc#hasSubWorkflow">has sub-workflow</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasWorkflowDefinition"
+               title="http://purl.org/wf4ever/wfdesc#hasWorkflowDefinition">has workflow definition</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasSubWorkflow" title="http://purl.org/wf4ever/wfdesc#hasSubWorkflow">has sub-workflow</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="WorkflowDefinition">
+      <h3>Workflow Definition<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/wfdesc#WorkflowDefinition</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/wfdesc">http://purl.org/wf4ever/wfdesc</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>The definition that implements this workflow, typically a file natively understood by the wfdesc:WorkflowEngine. Examples include .t2flow XML files from Taverna 2 and Galaxy workflows saved as JSON.</p>
+         <p>A wfdesc:Workflow description can specify its wfdesc:WorkflowDefinition using wfdesc:hasWorkflowDefinition. This is typically only done for the top-level workflow - subworkflows without a wfdesc:hasWorkflowDefinition are assumed to be embedded within the definition of the parent workflow, except where the sub-workflows are included in the parent by reference, in which case they would have a different wfdesc:hasWorkflowDefinition.</p>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ProcessImplementation"
+               title="http://purl.org/wf4ever/wfdesc#ProcessImplementation">Process Implementation</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasWorkflowDefinition"
+               title="http://purl.org/wf4ever/wfdesc#hasWorkflowDefinition">has workflow definition</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="WorkflowInstance">
+      <h3>Workflow Instance<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/wfdesc#WorkflowInstance</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/wfdesc">http://purl.org/wf4ever/wfdesc</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>A wfdesc:WorkflowInstance is a specialisation of a wfdesc:Workflow description which defines all data/parameters/settings that are required to form a wfprov:WorkflowRun.</p>
+         <p>In other words a wdesc:WorkflowInstance is a workflow description that is ready to run.</p>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Workflow" title="http://purl.org/wf4ever/wfdesc#Workflow">Workflow</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div id="objectproperties">
+   <h2>Object Properties</h2>
+   <ul class="hlist">
+      <li>
+         <a href="#hasArtifact" title="http://purl.org/wf4ever/wfdesc#hasArtifact">has artifact</a>
+      </li>
+      <li>
+         <a href="#hasConfiguration" title="http://purl.org/wf4ever/wfdesc#hasConfiguration">has configuration</a>
+      </li>
+      <li>
+         <a href="#hasDataLink" title="http://purl.org/wf4ever/wfdesc#hasDataLink">has datalink</a>
+      </li>
+      <li>
+         <a href="#hasImplementation" title="http://purl.org/wf4ever/wfdesc#hasImplementation">has implementation</a>
+      </li>
+      <li>
+         <a href="#hasInput" title="http://purl.org/wf4ever/wfdesc#hasInput">has input</a>
+      </li>
+      <li>
+         <a href="#hasOutput" title="http://purl.org/wf4ever/wfdesc#hasOutput">has output</a>
+      </li>
+      <li>
+         <a href="#hasSink" title="http://purl.org/wf4ever/wfdesc#hasSink">has sink</a>
+      </li>
+      <li>
+         <a href="#hasSource" title="http://purl.org/wf4ever/wfdesc#hasSource">has source</a>
+      </li>
+      <li>
+         <a href="#hasSubProcess" title="http://purl.org/wf4ever/wfdesc#hasSubProcess">has sub-process</a>
+      </li>
+      <li>
+         <a href="#hasSubWorkflow" title="http://purl.org/wf4ever/wfdesc#hasSubWorkflow">has sub-workflow</a>
+      </li>
+      <li>
+         <a href="#hasWorkflowDefinition"
+            title="http://purl.org/wf4ever/wfdesc#hasWorkflowDefinition">has workflow definition</a>
+      </li>
+   </ul>
+   <div class="entity" id="hasArtifact">
+      <h3>has artifact<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/wfdesc#hasArtifact</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/wfdesc">http://purl.org/wf4ever/wfdesc</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>This property associates a wfdesc:Parameter with an wfdesc:Artifact which can describe the artifact which would be used/generated on execution of the workflow.</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Parameter" title="http://purl.org/wf4ever/wfdesc#Parameter">Parameter</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Artifact" title="http://purl.org/wf4ever/wfdesc#Artifact">Artifact</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasConfiguration">
+      <h3>has configuration<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/wfdesc#hasConfiguration</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/wfdesc">http://purl.org/wf4ever/wfdesc</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>This object property is used to specify the wfdesc:Configuration parameter of a given wfdesc:Process.</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Process" title="http://purl.org/wf4ever/wfdesc#Process">Process</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Configuration" title="http://purl.org/wf4ever/wfdesc#Configuration">Configuration</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasDataLink">
+      <h3>has datalink<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/wfdesc#hasDataLink</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/wfdesc">http://purl.org/wf4ever/wfdesc</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>This property is used to specify the wfdesc:DataLink instances of a given wfdesc:Workflow.</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Workflow" title="http://purl.org/wf4ever/wfdesc#Workflow">Workflow</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#DataLink" title="http://purl.org/wf4ever/wfdesc#DataLink">Data Link</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasImplementation">
+      <h3>has implementation<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/wfdesc#hasImplementation</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/wfdesc">http://purl.org/wf4ever/wfdesc</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>The implementation that is invoked when running the wfdesc:Process, like a wf4ever:Script or wf4ever:WebService. </p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#hasWorkflowDefinition"
+                  title="http://purl.org/wf4ever/wfdesc#hasWorkflowDefinition">has workflow definition</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Process" title="http://purl.org/wf4ever/wfdesc#Process">Process</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#ProcessImplementation"
+                  title="http://purl.org/wf4ever/wfdesc#ProcessImplementation">Process Implementation</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasInput">
+      <h3>has input<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/wfdesc#hasInput</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/wfdesc">http://purl.org/wf4ever/wfdesc</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>This object property is used to specify the wfdesc:Input parameter of a given wfdesc:Process.</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Process" title="http://purl.org/wf4ever/wfdesc#Process">Process</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Input" title="http://purl.org/wf4ever/wfdesc#Input">Input</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasOutput">
+      <h3>has output<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/wfdesc#hasOutput</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/wfdesc">http://purl.org/wf4ever/wfdesc</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>This object property is used to specify the wfdesc:Output parameter of a given wfdesc:Process.</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Process" title="http://purl.org/wf4ever/wfdesc#Process">Process</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Output" title="http://purl.org/wf4ever/wfdesc#Output">Output</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasSink">
+      <h3>has sink<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/wfdesc#hasSink</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/wfdesc">http://purl.org/wf4ever/wfdesc</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>This property is used to specify the wfdesc:Input parameter that acts as a sink from a given wfdesc:DataLink, consuming data from the link.</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#DataLink" title="http://purl.org/wf4ever/wfdesc#DataLink">Data Link</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Input" title="http://purl.org/wf4ever/wfdesc#Input">Input</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasSource">
+      <h3>has source<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/wfdesc#hasSource</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/wfdesc">http://purl.org/wf4ever/wfdesc</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>This property is used to specify the wfdesc:Output parameter that acts as a source to a given wfdesc:DataLink, providing data into the link.</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#DataLink" title="http://purl.org/wf4ever/wfdesc#DataLink">Data Link</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Output" title="http://purl.org/wf4ever/wfdesc#Output">Output</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasSubProcess">
+      <h3>has sub-process<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/wfdesc#hasSubProcess</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/wfdesc">http://purl.org/wf4ever/wfdesc</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>This object property is used to specify that the given workflow  contains the given process as part of its definition.</p>
+         <p>Although not a requirement, such sub processes should have wfdesc:DataLink within the containing workflow connecting their parameters with parameters of the containing workflow, or with parameters other contained wfdesc:Process instances.</p>
+         <p>A specialialisation of sub process is wfdesc:hasSubWorkflow where the sub process is a nested wfdesc:Workflow.</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#hasSubWorkflow" title="http://purl.org/wf4ever/wfdesc#hasSubWorkflow">has sub-workflow</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Workflow" title="http://purl.org/wf4ever/wfdesc#Workflow">Workflow</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Process" title="http://purl.org/wf4ever/wfdesc#Process">Process</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasSubWorkflow">
+      <h3>has sub-workflow<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/wfdesc#hasSubWorkflow</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/wfdesc">http://purl.org/wf4ever/wfdesc</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>This object property is used to associate a wfdesc:Workflow description to another wfdesc:Workflow, specifying that the first workflow has the given sub-workflow as a contained process.</p>
+         <p>This is a specialisation of wfdesc:hasSubProcess.</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#hasSubProcess" title="http://purl.org/wf4ever/wfdesc#hasSubProcess">has sub-process</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Workflow" title="http://purl.org/wf4ever/wfdesc#Workflow">Workflow</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Workflow" title="http://purl.org/wf4ever/wfdesc#Workflow">Workflow</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasWorkflowDefinition">
+      <h3>has workflow definition<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/wfdesc#hasWorkflowDefinition</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/wfdesc">http://purl.org/wf4ever/wfdesc</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>The definition of this workflow, typically a file natively understood by the wfdesc:WorkflowEngine.</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#hasImplementation" title="http://purl.org/wf4ever/wfdesc#hasImplementation">has implementation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Workflow" title="http://purl.org/wf4ever/wfdesc#Workflow">Workflow</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#WorkflowDefinition"
+                  title="http://purl.org/wf4ever/wfdesc#WorkflowDefinition">Workflow Definition</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div>

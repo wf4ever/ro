@@ -1,0 +1,1022 @@
+<h2>4. Cross reference for roevo classes, properties and dataproperties</h2>
+This section provides details for each class and property defined by roevo.
+<div id="classes">
+   <h2>Classes</h2>
+   <ul class="hlist">
+      <li>
+         <a href="#Addition" title="http://purl.org/wf4ever/roevo#Addition">Addition</a>
+      </li>
+      <li>
+         <a href="#http://purl.org/wf4ever/ro#AggregatedAnnotation" title="http://purl.org/wf4ever/ro#AggregatedAnnotation">
+            <span>aggregated annotation</span>
+         </a>
+      </li>
+      <li>
+         <a href="#ArchivedRO" title="http://purl.org/wf4ever/roevo#ArchivedRO">Archived RO</a>
+      </li>
+      <li>
+         <a href="#Change" title="http://purl.org/wf4ever/roevo#Change">Change</a>
+      </li>
+      <li>
+         <a href="#ChangeSpecification"
+            title="http://purl.org/wf4ever/roevo#ChangeSpecification">Change Specification</a>
+      </li>
+      <li>
+         <a href="#LiveRO" title="http://purl.org/wf4ever/roevo#LiveRO">Live RO</a>
+      </li>
+      <li>
+         <a href="#Modification" title="http://purl.org/wf4ever/roevo#Modification">Modification</a>
+      </li>
+      <li>
+         <a href="#Removal" title="http://purl.org/wf4ever/roevo#Removal">Removal</a>
+      </li>
+      <li>
+         <a href="#http://purl.org/wf4ever/ro#ResearchObject" title="http://purl.org/wf4ever/ro#ResearchObject">
+            <span>research object</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/wf4ever/ro#Resource" title="http://purl.org/wf4ever/ro#Resource">
+            <span>resource</span>
+         </a>
+      </li>
+      <li>
+         <a href="#SnapshotRO" title="http://purl.org/wf4ever/roevo#SnapshotRO">Snapshot RO</a>
+      </li>
+      <li>
+         <a href="#VersionableResource"
+            title="http://purl.org/wf4ever/roevo#VersionableResource">Versionable Resource</a>
+      </li>
+   </ul>
+   <div class="entity" id="Addition">
+      <h3>Addition<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/roevo#Addition</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/roevo">http://purl.org/wf4ever/roevo</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>A type of roevo:Change that changes the aggregation, content and/or structure of the Research Object by adding a resources or an annotation</p>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Change" title="http://purl.org/wf4ever/roevo#Change">Change</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://purl.org/wf4ever/ro#AggregatedAnnotation">
+      <h3>aggregated annotation<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/ro#AggregatedAnnotation</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/ro">http://purl.org/wf4ever/ro</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://purl.org/ao/annotatesResource" title="http://purl.org/ao/annotatesResource">annotates resource</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#Change" title="http://purl.org/wf4ever/roevo#Change">Change</a>
+            <sup class="type-c" title="class">c</sup> 
+            <span class="logic">or</span> 
+            <a href="#ChangeSpecification"
+               title="http://purl.org/wf4ever/roevo#ChangeSpecification">Change Specification</a>
+            <sup class="type-c" title="class">c</sup> 
+            <span class="logic">or</span> 
+            <a href="#VersionableResource"
+               title="http://purl.org/wf4ever/roevo#VersionableResource">Versionable Resource</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ArchivedRO">
+      <h3>Archived RO<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/roevo#ArchivedRO</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/roevo">http://purl.org/wf4ever/roevo</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>A subclass of ro:ResearchObject representing a type of Research Object in archival state. It is also a subclass of prov:Entity as this is a type of artifact with fixed aspects and for which we want to provide provenance.</p>
+         <p>Archived ROs represent the final stage of a RO (release) where it has either reached a version that the author prescribes to be stable and meaningful and is appropriate for publication and long-term preservation, or it has been deprecated. They are therefore immutable, with no further changes or versions allowed</p>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://purl.org/wf4ever/ro#ResearchObject" title="http://purl.org/wf4ever/ro#ResearchObject">research object</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <span class="dotted" title="http://www.w3.org/ns/prov#Entity">entity</span>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#archivedAtTime" title="http://purl.org/wf4ever/roevo#archivedAtTime">archivedAtTime</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#wasArchivedBy" title="http://purl.org/wf4ever/roevo#wasArchivedBy">was archived by</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasArchive" title="http://purl.org/wf4ever/roevo#hasArchive">has archive</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Change">
+      <h3>Change<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/roevo#Change</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/roevo">http://purl.org/wf4ever/roevo</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>A prov:Activity that changes the Research Object (RO) aggregation, content, structure, or the annotations about the RO or its aggregated resources.</p>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://www.w3.org/ns/prov#Activity">activity</span>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#Addition" title="http://purl.org/wf4ever/roevo#Addition">Addition</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Modification" title="http://purl.org/wf4ever/roevo#Modification">Modification</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Removal" title="http://purl.org/wf4ever/roevo#Removal">Removal</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasPreviousChange" title="http://purl.org/wf4ever/roevo#hasPreviousChange">has previous change</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#relatedResource" title="http://purl.org/wf4ever/roevo#relatedResource">related resource</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasChange" title="http://purl.org/wf4ever/roevo#hasChange">has change</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasPreviousChange" title="http://purl.org/wf4ever/roevo#hasPreviousChange">has previous change</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ChangeSpecification">
+      <h3>Change Specification<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/roevo#ChangeSpecification</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/roevo">http://purl.org/wf4ever/roevo</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>A collection of roevo:Changes activities representing the set of changes in a Research Object between two different versions</p>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://www.w3.org/ns/prov#Activity">activity</span>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#fromVersion" title="http://purl.org/wf4ever/roevo#fromVersion">from version</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasChange" title="http://purl.org/wf4ever/roevo#hasChange">has change</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#toVersion" title="http://purl.org/wf4ever/roevo#toVersion">to version</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#wasChangedBy" title="http://purl.org/wf4ever/roevo#wasChangedBy">was changed by</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="LiveRO">
+      <h3>Live RO<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/roevo#LiveRO</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/roevo">http://purl.org/wf4ever/roevo</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>A subclass of ro:ResearchObject representing a type of Research Object in live state. It is also a subclass of prov:Entity as this is a type of artifact with fixed aspects and for which we want to provide provenance.</p>
+         <p>Live ROs  represent a work in progress. They are thus mutable as the content or state of their resources may change.</p>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://purl.org/wf4ever/ro#ResearchObject" title="http://purl.org/wf4ever/ro#ResearchObject">research object</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <span class="dotted" title="http://www.w3.org/ns/prov#Entity">entity</span>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasArchive" title="http://purl.org/wf4ever/roevo#hasArchive">has archive</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasSnapshot" title="http://purl.org/wf4ever/roevo#hasSnapshot">has snapshot</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Modification">
+      <h3>Modification<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/roevo#Modification</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/roevo">http://purl.org/wf4ever/roevo</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>A type of roevo:Change that modifies the aggregation, content and/or structure of the Research Object by updating an aggregated resource content or an existing annotation</p>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Change" title="http://purl.org/wf4ever/roevo#Change">Change</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Removal">
+      <h3>Removal<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/roevo#Removal</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/roevo">http://purl.org/wf4ever/roevo</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>A type of roevo:Change that changes the aggregation, content and/or structure of the Research Object by removing a resources or an annotation</p>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Change" title="http://purl.org/wf4ever/roevo#Change">Change</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://purl.org/wf4ever/ro#ResearchObject">
+      <h3>research object<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/ro#ResearchObject</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/ro">http://purl.org/wf4ever/ro</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#ArchivedRO" title="http://purl.org/wf4ever/roevo#ArchivedRO">Archived RO</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#LiveRO" title="http://purl.org/wf4ever/roevo#LiveRO">Live RO</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#SnapshotRO" title="http://purl.org/wf4ever/roevo#SnapshotRO">Snapshot RO</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://purl.org/wf4ever/ro#Resource">
+      <h3>resource<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/ro#Resource</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/ro">http://purl.org/wf4ever/ro</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="SnapshotRO">
+      <h3>Snapshot RO<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/roevo#SnapshotRO</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/roevo">http://purl.org/wf4ever/roevo</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>A subclass of ro:ResearchObject representing a type of Research Object in snapshot state. It is also a subclass of prov:Entity as this is a type of artifact with fixed aspects and for which we want to provide provenance.</p>
+         <p>Snapshot ROs are intended as a record of past activity, ready to be disseminated as a whole. They are immutable, and reflect the state of the Live RO at a certain time. </p>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://purl.org/wf4ever/ro#ResearchObject" title="http://purl.org/wf4ever/ro#ResearchObject">research object</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <span class="dotted" title="http://www.w3.org/ns/prov#Entity">entity</span>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#snapshotedAtTime" title="http://purl.org/wf4ever/roevo#snapshotedAtTime">snapshotedAtTime</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#wasSnapshotedBy" title="http://purl.org/wf4ever/roevo#wasSnapshotedBy">was snapshoted by</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasSnapshot" title="http://purl.org/wf4ever/roevo#hasSnapshot">has snapshot</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="VersionableResource">
+      <h3>Versionable Resource<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/roevo#VersionableResource</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/roevo">http://purl.org/wf4ever/roevo</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>A prov:Entity representing a type of artifact that may be versioned and for which we want to track its different versions. This class is equivalent to the union of roevo:SnapshotRO, roevo:ArchivedRO, ro:Resource and ro:AggregatedAnnotation that are the artifacts for which we want to track their versions.</p>
+      </div>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#http://purl.org/wf4ever/ro#AggregatedAnnotation" title="http://purl.org/wf4ever/ro#AggregatedAnnotation">aggregated annotation</a>
+            <sup class="type-c" title="class">c</sup> 
+            <span class="logic">or</span> 
+            <a href="#http://purl.org/wf4ever/ro#Resource" title="http://purl.org/wf4ever/ro#Resource">resource</a>
+            <sup class="type-c" title="class">c</sup> 
+            <span class="logic">or</span> 
+            <a href="#ArchivedRO" title="http://purl.org/wf4ever/roevo#ArchivedRO">Archived RO</a>
+            <sup class="type-c" title="class">c</sup> 
+            <span class="logic">or</span> 
+            <a href="#SnapshotRO" title="http://purl.org/wf4ever/roevo#SnapshotRO">Snapshot RO</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://www.w3.org/ns/prov#Entity">entity</span>
+         </dd>
+         <dd>
+            <a href="#http://purl.org/dc/terms/identifier" title="http://purl.org/dc/terms/identifier">identifier</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="logic">some</span> 
+            <span class="dotted" title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</span>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#wasChangedBy" title="http://purl.org/wf4ever/roevo#wasChangedBy">was changed by</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#fromVersion" title="http://purl.org/wf4ever/roevo#fromVersion">from version</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#relatedResource" title="http://purl.org/wf4ever/roevo#relatedResource">related resource</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#toVersion" title="http://purl.org/wf4ever/roevo#toVersion">to version</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div id="objectproperties">
+   <h2>Object Properties</h2>
+   <ul class="hlist">
+      <li>
+         <a href="#http://purl.org/ao/annotatesResource" title="http://purl.org/ao/annotatesResource">
+            <span>annotates resource</span>
+         </a>
+      </li>
+      <li>
+         <a href="#fromVersion" title="http://purl.org/wf4ever/roevo#fromVersion">from version</a>
+      </li>
+      <li>
+         <a href="#hasArchive" title="http://purl.org/wf4ever/roevo#hasArchive">has archive</a>
+      </li>
+      <li>
+         <a href="#hasChange" title="http://purl.org/wf4ever/roevo#hasChange">has change</a>
+      </li>
+      <li>
+         <a href="#hasPreviousChange" title="http://purl.org/wf4ever/roevo#hasPreviousChange">has previous change</a>
+      </li>
+      <li>
+         <a href="#hasRevision" title="http://purl.org/wf4ever/roevo#hasRevision">has revision</a>
+      </li>
+      <li>
+         <a href="#hasSnapshot" title="http://purl.org/wf4ever/roevo#hasSnapshot">has snapshot</a>
+      </li>
+      <li>
+         <a href="#isArchiveOf" title="http://purl.org/wf4ever/roevo#isArchiveOf">is archive of</a>
+      </li>
+      <li>
+         <a href="#isSnapshotOf" title="http://purl.org/wf4ever/roevo#isSnapshotOf">is snapshot of</a>
+      </li>
+      <li>
+         <a href="#relatedResource" title="http://purl.org/wf4ever/roevo#relatedResource">related resource</a>
+      </li>
+      <li>
+         <a href="#toVersion" title="http://purl.org/wf4ever/roevo#toVersion">to version</a>
+      </li>
+      <li>
+         <a href="#wasArchivedBy" title="http://purl.org/wf4ever/roevo#wasArchivedBy">was archived by</a>
+      </li>
+      <li>
+         <a href="#wasChangedBy" title="http://purl.org/wf4ever/roevo#wasChangedBy">was changed by</a>
+      </li>
+      <li>
+         <a href="#wasSnapshotedBy" title="http://purl.org/wf4ever/roevo#wasSnapshotedBy">was snapshoted by</a>
+      </li>
+   </ul>
+   <div class="entity" id="http://purl.org/ao/annotatesResource">
+      <h3>annotates resource<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/ao/annotatesResource</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/ao/">http://purl.org/ao/</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="fromVersion">
+      <h3>from version<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/roevo#fromVersion</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/roevo">http://purl.org/wf4ever/roevo</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>Associates the set of changes (roevo:ChangeSpecification) that were used (applied) by the pointed version of the resource (roevo:VersionableResource)</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#used">used</span>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#ChangeSpecification"
+                  title="http://purl.org/wf4ever/roevo#ChangeSpecification">Change Specification</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#VersionableResource"
+                  title="http://purl.org/wf4ever/roevo#VersionableResource">Versionable Resource</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasArchive">
+      <h3>has archive<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/roevo#hasArchive</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/roevo">http://purl.org/wf4ever/roevo</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>Link a roevo:LiveRO with its archived version (roevo:ArchivedRO)</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#LiveRO" title="http://purl.org/wf4ever/roevo#LiveRO">Live RO</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#ArchivedRO" title="http://purl.org/wf4ever/roevo#ArchivedRO">Archived RO</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#isArchiveOf" title="http://purl.org/wf4ever/roevo#isArchiveOf">is archive of</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasChange">
+      <h3>has change<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/roevo#hasChange</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/roevo">http://purl.org/wf4ever/roevo</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>Associates a roevo:Change to the roevo:ChangeSpecification including this change (in the set of changes generating a version of a resource)</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#ChangeSpecification"
+                  title="http://purl.org/wf4ever/roevo#ChangeSpecification">Change Specification</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Change" title="http://purl.org/wf4ever/roevo#Change">Change</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasPreviousChange">
+      <h3>has previous change<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/roevo#hasPreviousChange</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/roevo">http://purl.org/wf4ever/roevo</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>Associates two roevo:Changes that occurred one after the other</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Change" title="http://purl.org/wf4ever/roevo#Change">Change</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Change" title="http://purl.org/wf4ever/roevo#Change">Change</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasRevision">
+      <h3>has revision<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/roevo#hasRevision</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/roevo">http://purl.org/wf4ever/roevo</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>Inverse of prov:wasRevisionOf, where a revision is a derivation for which the resulting entity is a revised version of some original. Hence, it associates an entity with another entity derived from the former.</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>is inverse of</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#wasRevisionOf">was revision of</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasSnapshot">
+      <h3>has snapshot<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/roevo#hasSnapshot</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/roevo">http://purl.org/wf4ever/roevo</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>Link a roevo:LiveRO with its different snapshots (roevo:SnapshotRO)</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#LiveRO" title="http://purl.org/wf4ever/roevo#LiveRO">Live RO</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#SnapshotRO" title="http://purl.org/wf4ever/roevo#SnapshotRO">Snapshot RO</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#isSnapshotOf" title="http://purl.org/wf4ever/roevo#isSnapshotOf">is snapshot of</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isArchiveOf">
+      <h3>is archive of<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/roevo#isArchiveOf</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/roevo">http://purl.org/wf4ever/roevo</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>Inverse of roevo:hasArchive. It associates an roevo:ArchivedRO with the roevo:LiveRO from which it was created</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#hasArchive" title="http://purl.org/wf4ever/roevo#hasArchive">has archive</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isSnapshotOf">
+      <h3>is snapshot of<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/roevo#isSnapshotOf</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/roevo">http://purl.org/wf4ever/roevo</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>Inverse of roevo:hasSnapshot. It associates an roevo:SnapshotRO with the roevo:LiveRO from which it was created</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#hasSnapshot" title="http://purl.org/wf4ever/roevo#hasSnapshot">has snapshot</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="relatedResource">
+      <h3>related resource<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/roevo#relatedResource</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/roevo">http://purl.org/wf4ever/roevo</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>Associates a change (roevo:Change) to the resource (roevo:VersionableResource) affected by this change</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#used">used</span>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Change" title="http://purl.org/wf4ever/roevo#Change">Change</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#VersionableResource"
+                  title="http://purl.org/wf4ever/roevo#VersionableResource">Versionable Resource</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="toVersion">
+      <h3>to version<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/roevo#toVersion</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/roevo">http://purl.org/wf4ever/roevo</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>Associates the set of changes (roevo:ChangeSpecification) that generated the pointed version of the resource (roevo:VersionableResource)</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#generated">generated</span>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#ChangeSpecification"
+                  title="http://purl.org/wf4ever/roevo#ChangeSpecification">Change Specification</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#VersionableResource"
+                  title="http://purl.org/wf4ever/roevo#VersionableResource">Versionable Resource</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="wasArchivedBy">
+      <h3>was archived by<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/roevo#wasArchivedBy</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/roevo">http://purl.org/wf4ever/roevo</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>Indicates the prov:Agent responsible for creating the associated roevo:ArchivedRO</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#wasAttributedTo">was attributed to</span>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#ArchivedRO" title="http://purl.org/wf4ever/roevo#ArchivedRO">Archived RO</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#Agent">agent</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="wasChangedBy">
+      <h3>was changed by<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/roevo#wasChangedBy</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/roevo">http://purl.org/wf4ever/roevo</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>Associates a version of the resource (roevo:VersionableResource) to the set of changes (roevo:ChangeSpecification) that generated it</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#wasGeneratedBy">was generated by</span>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#VersionableResource"
+                  title="http://purl.org/wf4ever/roevo#VersionableResource">Versionable Resource</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#ChangeSpecification"
+                  title="http://purl.org/wf4ever/roevo#ChangeSpecification">Change Specification</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="wasSnapshotedBy">
+      <h3>was snapshoted by<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/roevo#wasSnapshotedBy</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/roevo">http://purl.org/wf4ever/roevo</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>Indicates the prov:Agent responsible for creating the associated roevo:SnapshotRO</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#wasAttributedTo">was attributed to</span>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#SnapshotRO" title="http://purl.org/wf4ever/roevo#SnapshotRO">Snapshot RO</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#Agent">agent</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="dataproperties">
+   <h2>Data Properties</h2>
+   <ul class="hlist">
+      <li>
+         <a href="#archivedAtTime" title="http://purl.org/wf4ever/roevo#archivedAtTime">archivedAtTime</a>
+      </li>
+      <li>
+         <a href="#http://purl.org/dc/terms/identifier" title="http://purl.org/dc/terms/identifier">
+            <span>identifier</span>
+         </a>
+      </li>
+      <li>
+         <a href="#snapshotedAtTime" title="http://purl.org/wf4ever/roevo#snapshotedAtTime">snapshotedAtTime</a>
+      </li>
+   </ul>
+   <div class="entity" id="archivedAtTime">
+      <h3>archivedAtTime<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/roevo#archivedAtTime</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/roevo">http://purl.org/wf4ever/roevo</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>The time at which an roevo:ArchiveRO was completely created and is available for use</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#generatedAtTime">generated at time</span>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#ArchivedRO" title="http://purl.org/wf4ever/roevo#ArchivedRO">Archived RO</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#dateTime">date time</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://purl.org/dc/terms/identifier">
+      <h3>identifier<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/terms/identifier</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="snapshotedAtTime">
+      <h3>snapshotedAtTime<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/wf4ever/roevo#snapshotedAtTime</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://purl.org/wf4ever/roevo">http://purl.org/wf4ever/roevo</a>
+         </dd>
+      </dl>
+      <div class="comment">
+         <p>The time at which an roevo:SnapshotRO was completely created and is available for use</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#generatedAtTime">generated at time</span>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#SnapshotRO" title="http://purl.org/wf4ever/roevo#SnapshotRO">Snapshot RO</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#dateTime">date time</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div>

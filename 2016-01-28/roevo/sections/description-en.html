@@ -1,0 +1,70 @@
+<h2>3. roevo: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>A Research Object Version is a specific form or variant of a Research Object that is normally created after applying changes to an existing variant. A version has an associated state, in our case, snapshot or archived. Versions are related to each other via direct relationships (e.g., priorVersion) or via contribution dependencies (e.g., derivedFrom, relatesTo).</p>  
+<p>
+Research Object Life-cycle refers to the stages that the research object transition since its conception until its conclusion. A Research Object can be in one of the following stages:
+</p>
+<p>A <b>Research Object</b>&nbsp;<b>Version</b> is a specific form or variant of a Research Object that is normally created after applying changes to an existing variant. A version has an associated state, in our case, snapshot or archived. Versions are related to each other via direct relationships (e.g., priorVersion) or via contribution dependencies (e.g., derivedFrom, relatesTo). &nbsp;</p>
+
+<p><b>Research Object Life-cycle</b>&nbsp;refers to the stages that the research object transition since its conception until its conclusion.&nbsp;A Research Object can be in one of the following stages:</p>
+
+<ul>
+	<li><b>LiveRO</b>: &nbsp;represent a work in progress. They are thus <b><em>mutable</em></b> as the content or state of their resources may change. That is,
+	<ul>
+		<li>They are private to the researcher or they are shared with others collaborators via mail, in a common space/server, or with the help of collaborative tools like Dropbox, SVN, Github, etc.</li>
+		<li>They&nbsp;may be versioned with tools like Github or SVN (e.g., as it happens with educational resources as described in&nbsp;<a href="http://mashe.hawksey.info/2012/03/do-you-git-it-open-educational-resourcespractices-meets-software-version-control/" class="external-link" rel="nofollow">http://mashe.hawksey.info/2012/03/do-you-git-it-open-educational-resourcespractices-meets-software-version-control/</a>)</li>
+		<li>They are potentially under the control of multiple owners and may fall under mixed stewardship, raising issues of security and access control; however, these issues are addressed by the collaborative and versioning tools used for maintaining LiveROs (out of scope of Wf4Ever).</li>
+		<li>When a LiveRO at a certain point in time during its evolution needs to be disseminated or preserved, a SnapshotRO or ArchivedRO needs to be made (see below).&nbsp;</li>
+	</ul>
+	</li>
+</ul>
+
+<ul>
+	<li><b>SnapshotRO</b>: are intended as a record of past activity, ready to be disseminated as a whole.&nbsp;They are <b><em>immutable</em></b>, and reflect the state of the Live RO at a certain time.
+
+<ul>
+	<li><b>ArchivedRO</b>: represent the final stage of a Research Object&nbsp;where it has either reached a version that the author prescribes to be stable and meaningful and is appropriate for <b>publication</b> and <b>long term</b> <b>preservation</b>.&nbsp;They are therefore <b><em>immutable</em></b>, with no further changes or versions allowed, or has&nbsp;been deprecated&nbsp;
+	<ul>
+		<li>They are usually stored in a Digital Library (RO DL or Journal DL infrastructure) (*softened)</li>
+		<li>They are publicly available (typically, but they may also be restricted to a certain group of people)&nbsp;</li>
+		<li><b>Desirably curated</b>&nbsp;(as described in <a href="http://www.dcc.ac.uk/digital-curation/what-digital-curation" class="external-link" rel="nofollow">http://www.dcc.ac.uk/digital-curation/what-digital-curation</a>)</li>
+		<li>They must be citable&nbsp;</li>
+		<li>They must be preserved&nbsp;</li>
+	</ul>
+	</li>
+</ul>
+	<ul>
+		<li>Successive snapshots are related to each other via versioning relations. </li>
+		<li>They are stored in a Digital Library (RO DL and potentially Journal DL infrastructure)&nbsp;</li>
+		<li>They are shared&nbsp;among a group of selected users, for instance with the research group for internal review or with external referees for external review, but they are not&nbsp;publicly available by default&nbsp;</li>
+		<li>They must be referenceable</li>
+	</ul>
+	</li>
+</ul>
+<ul>
+	<li><strong>PublicationRO&nbsp;</strong></b>Publication represents the process by which a value of trust is added to a scientific investigation represented by a RO. The process conforms to common practices within a research community, which is typically more than simply making the RO publicly accessible. In biology (and astronomy?) this means some form of peer review.
+</li>
+</ul>
+
+<h2><a name="ROevolution-Lifecycle"></a>Lifecycle</h2>
+<ul>
+	<li>The life of a Research Object starts with the creation of a Live RO.&nbsp;</li>
+	<li><font color="#363636">During the dynamic life of the LiveRO, i.e. d</font><font color="#363636">uring the maturation</font> <font color="#363636">of a LiveRO while a researcher is designing and executing her investigation, 0 to many snapshotROs are made from the LiveRO.</font> <font color="#363636">SnapshotROs have four purposes (at least)</font><font color="#ff6600">:</font>** <font color="#363636">A frozen copy of the state of an investigation that can be preserved for the researcher and/or research team.</font>** <font color="#363636">Internal review (e.g. between supervisor and student). The evaluation of the snapshot is then used for the further development of the LiveRO. Typically, the snapshotRO is kept by the researcher for later reference.</font>
+	
+	</li>
+	<li><font color="#363636">An Archived RO is an endpoint in the life of an RO. It does not evolve further. However, earlier stages of the RO may have produced clones (forks). Typically, it is a&nbsp;stable and meaningful version appropriate for&nbsp;public release and&nbsp;long term&nbsp;preservation. It may at some point acquire a status of</font> 'deprecated'.</li>
+	<li>In a typical scenario, a Live RO <font color="#363636">has produced a number of</font> Snapshots <font color="#363636">before</font> producing an&nbsp;Archived RO.</li>
+	<li>A NEW Research Object (with a new Identity) may be created &nbsp;
+	<ul>
+		<li>from <b>scratch</b></li>
+		<li>by <b>forking a Live RO</b>, e.g.,&nbsp;split/replicate a Live RO in order to explore different hypothesis</li>
+		<li>by <b>forking a Snapshot RO</b>, e.g., recover and re-use an old Snapshot to produce a different&nbsp;Archived RO,&nbsp;or&nbsp;</li>
+		<li>by <b>re-using an Archived RO</b>, e.g., continuing the research after an Archived RO is produced&nbsp;to produce new results and make progress in the research</li>
+	</ul>
+	</li>
+</ul>
+<p>The following figure illustrates the evolution scenario:</p>
+<span class="image-wrap" style=""><img src="img/ROEvolutionv0.3.png" style="border: 1px solid black" width="950"></span>
+<p>
+An overview diagram of the roevo model can be seen below: 
+</p>
+<span class="image-wrap" style=""><img src="img/ROevo_v0.4.png" style="border: 1px solid black" width="950"></span>

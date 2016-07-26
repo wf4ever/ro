@@ -68,7 +68,7 @@ These new terms serve two main purposes. They are used to specify annotations th
         <owl:versionIRI rdf:resource="https://rawgit.com/wf4ever/ro/master/roterms.owl" />
         <dcterms:modified rdf:datatype="&xsd;dateTime">2015-07-30T14:55:00Z</dcterms:modified>
         <dcterms:issued rdf:datatype="&xsd;dateTime">2015-07-30T15:00:00Z</dcterms:issued>
-        <owl:versionInfo>0.3.2-SNAPSHOT</owl:versionInfo>
+        <owl:versionInfo>0.3.3-SNAPSHOT</owl:versionInfo>
         <!-- end TODO -->
         <owl:backwardCompatibleWith rdf:resource="https://cdn.rawgit.com/wf4ever/ro/roterms-0.3.1/roterms.owl" />
 	<owl:backwardCompatibleWith rdf:resource="https://cdn.rawgit.com/wf4ever/ro/roterms-0.3.0/roterms.owl" />
@@ -141,10 +141,10 @@ These new terms serve two main purposes. They are used to specify annotations th
         <rdfs:label xml:lang="en">default value</rdfs:label>
         <rdfs:comment xml:lang="en">The default value for a wfdesc:Input or wfdesc:Configuration.
 
-The default value is not a suggested value (see roterms:exampleValue), it is the value that is inherently assumed if no value is provided by the workflow run.
+The default value is not a suggested value (see roterms:exampleValue), it is the value that is inherently assumed if no value is provided by the process (e.g., workflow) run.
 
-The value is given as an roterms:WorkflowValue instance, which allows specification of the value typically as text (cnt:chars), Base64 encoded bytes (cnt:bytes) or a collection of these (co:element).</rdfs:comment>
-        <rdfs:range rdf:resource="&roterms;WorkflowValue"/>
+The value is given as an roterms:ProcessValue instance, which allows specification of the value typically as text (cnt:chars), Base64 encoded bytes (cnt:bytes) or a collection of these (co:element).</rdfs:comment>
+        <rdfs:range rdf:resource="&roterms;ProcessValue"/>
         <rdfs:domain rdf:resource="&wfdesc;Parameter"/>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
     </owl:ObjectProperty>
@@ -156,10 +156,10 @@ The value is given as an roterms:WorkflowValue instance, which allows specificat
     <owl:ObjectProperty rdf:about="&roterms;exampleValue">
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/roterms#"/>
         <rdfs:label xml:lang="en">example value</rdfs:label>
-        <rdfs:comment>An example value for a given input or output parameter. The value is given as an roterms:WorkflowValue instance, which allows specification of the value typically as text (cnt:chars), Base64 encoded bytes (cnt:bytes) or a collection of these (co:element).
+        <rdfs:comment>An example value for a given input or output parameter. The value is given as an roterms:ProcessValue instance, which allows specification of the value typically as text (cnt:chars), Base64 encoded bytes (cnt:bytes) or a collection of these (co:element).
 
 </rdfs:comment>
-        <rdfs:range rdf:resource="&roterms;WorkflowValue"/>
+        <rdfs:range rdf:resource="&roterms;ProcessValue"/>
         <rdfs:domain rdf:resource="&wfdesc;Parameter"/>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
     </owl:ObjectProperty>
@@ -171,7 +171,7 @@ The value is given as an roterms:WorkflowValue instance, which allows specificat
     <owl:ObjectProperty rdf:about="&roterms;ofSemanticType">
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/roterms#"/>
         <rdfs:label xml:lang="en">of semantic type</rdfs:label>
-        <rdfs:comment xml:lang="en">The wfdesc:Artifact describes a potential wfdesc:WorkflowValue which is of the given semantic type.
+        <rdfs:comment xml:lang="en">The wfdesc:Artifact describes a potential roterms:ProcessValue which is of the given semantic type.
 
 The range of this property is given as skos:Concept, because it is envisioned that URIs from any existing (general and domain-specific) vocabularies could be used. It MAY be used with URIs identifying owl:Class-es; indicating that when a workflow is run, its wfprov:Artifact&apos;s would be instances of that type.
 
@@ -187,7 +187,7 @@ Unlike the structural type (see roterms:ofStructuralType), the semantic type def
     <owl:ObjectProperty rdf:about="&roterms;ofStructuralType">
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/roterms#"/>
         <rdfs:label xml:lang="en">of structural type</rdfs:label>
-        <rdfs:comment xml:lang="en">The wfdesc:Artifact describes a potential wfdesc:WorkflowValue which is of the given structural type.
+        <rdfs:comment xml:lang="en">The wfdesc:Artifact describes a potential roterms:ProcessValue which is of the given structural type.
 
 The format (media type) of the value SHOULD be specified using dct:format. This property MAY be used when the format is not specific enough, for instance dct:format [ rdv:value &quot;application/xml&quot; ] specifies the serialization as XML, while roterms:ofStructuralType might point to the XML schema.
 
@@ -209,16 +209,25 @@ This property does not specify the task (beyond being a skos:Concept), as it is 
         <rdfs:range rdf:resource="&skos;Concept"/>
     </owl:ObjectProperty>
 
+		<!-- http://purl.org/wf4ever/roterms#previousProcess -->
 
+    <owl:ObjectProperty rdf:about="&roterms;previousProcess">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/roterms#"/>
+        <rdfs:label xml:lang="en">previous process</rdfs:label>
+        <rdfs:comment>Previous process that is or should be executed</rdfs:comment>
+        <rdfs:domain rdf:resource="&wfdesc;Process"/>
+        <rdfs:range rdf:resource="&wfdesc;Proces"/>
+    </owl:ObjectProperty>
 
     <!-- http://purl.org/wf4ever/roterms#previousWorkflow -->
 
     <owl:ObjectProperty rdf:about="&roterms;previousWorkflow">
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/roterms#"/>
         <rdfs:label xml:lang="en">previous workflow</rdfs:label>
-        <rdfs:comment>Previous workflow that is or should be execute</rdfs:comment>
+        <rdfs:comment>Previous workflow that is or should be executed</rdfs:comment>
         <rdfs:domain rdf:resource="&wfdesc;Workflow"/>
         <rdfs:range rdf:resource="&wfdesc;Workflow"/>
+        <rdfs:subPropertyOf rdf:resource="&roterms;previousProcess"/>
     </owl:ObjectProperty>
 
 
@@ -255,7 +264,15 @@ This property does not specify the task (beyond being a skos:Concept), as it is 
         <rdfs:subPropertyOf rdf:resource="&dcterms;requires"/>
     </owl:ObjectProperty>
 
+		<!-- http://purl.org/wf4ever/roterms#subsequentProcess -->
 
+    <owl:ObjectProperty rdf:about="&roterms;subsequentProcess">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/roterms#"/>
+        <rdfs:label xml:lang="en">subsequent process</rdfs:label>
+        <rdfs:comment>Subsequent process that is or should be executed</rdfs:comment>
+        <rdfs:domain rdf:resource="&wfdesc;Process"/>
+        <rdfs:range rdf:resource="&wfdesc;Process"/>
+    </owl:ObjectProperty>
 
     <!-- http://purl.org/wf4ever/roterms#subsequentWorkflow -->
 
@@ -265,8 +282,8 @@ This property does not specify the task (beyond being a skos:Concept), as it is 
         <rdfs:comment>Subsequent workflow is or should be execute</rdfs:comment>
         <rdfs:domain rdf:resource="&wfdesc;Workflow"/>
         <rdfs:range rdf:resource="&wfdesc;Workflow"/>
+        <rdfs:subPropertyOf rdf:resource="&roterms;subsequentProcess"/>
     </owl:ObjectProperty>
-
 
 
     <!-- http://purl.org/wf4ever/roterms#technicalContact -->
@@ -321,7 +338,7 @@ The agent SHOULD have a foaf:name. It SHOULD have one of foaf:mbox, foaf:phone o
     <!-- http://purl.org/co/Collection -->
 
     <owl:Class rdf:about="&co;Collection">
-        <rdfs:subClassOf rdf:resource="&roterms;WorkflowValue"/>
+        <rdfs:subClassOf rdf:resource="&roterms;ProcessValue"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/co"/>
     </owl:Class>
 
@@ -441,15 +458,15 @@ When the value of the optional parameter is not provided, the execution of the a
 
 
 
-    <!-- http://purl.org/wf4ever/roterms#WorkflowValue -->
+    <!-- http://purl.org/wf4ever/roterms#ProcessValue -->
 
-    <owl:Class rdf:about="&roterms;WorkflowValue">
+    <owl:Class rdf:about="&roterms;ProcessValue">
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/roterms#"/>
-        <rdfs:label xml:lang="en">Workflow Value</rdfs:label>
+        <rdfs:label xml:lang="en">Process Value</rdfs:label>
         <rdfs:subClassOf rdf:resource="&prov;Entity"/>
-        <rdfs:comment xml:lang="en">A (potential) workflow value. The value is a piece of data that was used or generated by a wfdesc:WorkflowRun (as a wfprov:Artifact). It can also be used to specify a value that is suggested for a wfdesc:Parameter given by roterms:exampleValue or roterms:defaultValue.
+        <rdfs:comment xml:lang="en">A (potential) process (e.g., workflow) value. The value is a piece of data that was used or generated by a wfprov:ProcessRun (e.g., wfprov:WorkflowRun) (as a wfprov:Artifact). It can also be used to specify a value that is suggested for a wfdesc:Parameter given by roterms:exampleValue or roterms:defaultValue.
 
-A value can be provided in different forms, indicated as a subclass of roterms:WorkflowValue:
+A value can be provided in different forms, indicated as a subclass of roterms:ProcessValue:
 
 wfprov:Artifact refers directly to the resource by URI
 
@@ -458,7 +475,7 @@ cnt:ContentAsText - inlining the textual value with cnt:chars.
 cnt:ContentAsBase64 - inlining the bytes in base64-encoding using cnt:bytes.
 
 
-co:Collection / co:List listing nested roterms:WorkflowValue instances.</rdfs:comment>
+co:Collection / co:List listing nested roterms:ProcessValue instances.</rdfs:comment>
         <rdfs:seeAlso rdf:resource="http://purl.org/co"/>
         <rdfs:seeAlso rdf:resource="&co;Collection"/>
         <rdfs:seeAlso rdf:resource="&wfprov;Artifact"/>
@@ -513,7 +530,7 @@ co:Collection / co:List listing nested roterms:WorkflowValue instances.</rdfs:co
     <!-- http://purl.org/wf4ever/wfprov#Artifact -->
 
     <owl:Class rdf:about="&wfprov;Artifact">
-        <rdfs:subClassOf rdf:resource="&roterms;WorkflowValue"/>
+        <rdfs:subClassOf rdf:resource="&roterms;ProcessValue"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wfprov"/>
     </owl:Class>
 
@@ -538,7 +555,7 @@ co:Collection / co:List listing nested roterms:WorkflowValue instances.</rdfs:co
     <!-- http://www.w3.org/2011/content#Content -->
 
     <owl:Class rdf:about="&cnt;Content">
-        <rdfs:subClassOf rdf:resource="&roterms;WorkflowValue"/>
+        <rdfs:subClassOf rdf:resource="&roterms;ProcessValue"/>
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2011/content"/>
     </owl:Class>
 

@@ -1,0 +1,445 @@
+<rdf:RDF xmlns="http://purl.org/wf4ever/wf4ever"
+     xml:base="http://purl.org/wf4ever/wf4ever"
+     xmlns:dcmi-terms="http://dublincore.org/documents/dcmi-terms/"
+     xmlns:ro="http://purl.org/wf4ever/ro#"
+     xmlns:dct="http://purl.org/dc/terms/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:wfprov="http://purl.org/wf4ever/wfprov#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:wfdesc="http://purl.org/wf4ever/wfdesc#"
+     xmlns:roterms="http://purl.org/wf4ever/roterms#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdfg="http://www.w3.org/2004/03/trix/rdfg-1/"
+     xmlns:prov="http://www.w3.org/ns/prov#"
+     xmlns:geo="http://www.opengis.net/ont/geosparql#"
+     xmlns:sf="http://www.opengis.net/ont/sf#"
+     xmlns:gml="http://www.opengis.net/ont/gml#"
+     xmlns:odrs="http://schema.theodi.org/odrs#"
+     xmlns:cc="http://creativecommons.org/ns#"
+     xmlns:odrl="http://www.w3.org/ns/odrl/2/"
+     xmlns:easc="http://w3id.org/ro/earth-science#">
+    <owl:Ontology rdf:about="http://w3id.org/ro/earth-science">
+        <!-- TODO: Update on release -->
+        <owl:imports rdf:resource="https://github.com/wf4ever/ro/blob/earth-science/metadata.owl"/>
+        <owl:versionIRI rdf:resource="https://raw.github.com/wf4ever/ro/earth-science/earth-science.owl"/>
+        <owl:versionInfo>0.0.2016-07-28</owl:versionInfo>
+        <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-07-28T15:35:00Z</dct:issued>
+        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-07-28T15:35:00Z</dct:modified>
+        <!--
+        <owl:imports rdf:resource="http://purl.org/wf4ever/ro"/>
+        <owl:imports rdf:resource="http://purl.org/wf4ever/wfdesc"/>
+        <owl:imports rdf:resource="http://purl.org/wf4ever/wfprov"/>
+        <owl:imports rdf:resource="https://rawgit.com/wf4ever/ro/master/wfdesc.owl" />
+        <owl:imports rdf:resource="https://rawgit.com/wf4ever/ro/master/wfprov.owl" />
+        <owl:imports rdf:resource="https://rawgit.com/wf4ever/ro/master/ro.owl" />
+        -->
+        <owl:imports rdf:resource="https://rawgit.com/wf4ever/ro/master/ro.owl" />
+        <!-- end TODO -->
+        
+        <!--
+        <owl:imports rdf:resource="http://www.opengis.net/ont/geosparql" /> sf:Polygon, sf:Point, geo:hasGeometry, geo:asWKT, etc. 
+        -->
+        
+        <rdfs:comment xml:lang="en">This ontology extends the wf4ever ro ontology suite with earth-science specific terms.
+This ontology includes both definition of terms, and reference to terms from well-known vocabularies, which are useful for
+the annotation of resources in earth-science domain.
+        </rdfs:comment>
+        <rdfs:label xml:lang="en">earth-science ro ontology</rdfs:label>
+
+        <dc:title xml:lang="en">earth-science ro ontology</dc:title>
+        <rdfs:seeAlso rdf:resource="http://w3id.org/ro/"/>
+
+        <vann:preferredNamespacePrefix>easc</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>http://w3id.org/ro/earth-science#</vann:preferredNamespaceUri>
+        <dc:creator>Raul Palma</dc:creator>
+        <dc:creator>Jose Manuel Gomez-Perez</dc:creator>
+        <dct:creator rdf:resource="http://orcid.org/0000-0003-4289-4922"/>
+        <dct:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
+        <dc:rights xml:lang="en">This ontology is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</dc:rights>
+        <dct:publisher rdf:resource="http://www.ever-est.eu/"/>
+
+    </owl:Ontology>
+    
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+    
+    <!-- http://w3id.org/ro/earth-science#centerOf -->
+
+    <owl:ObjectProperty rdf:about="&easc;centerOf">
+      <rdfs:isDefinedBy rdf:resource="http://w3id.org/ro/earth-science"/>
+        <rdfs:label xml:lang="en">center of</rdfs:label>
+        <rdfs:comment xml:lang="en">the center point of the selected feature. Property redefined and adapted from gml v1.0 
+        (http://schemas.opengis.net/gml/1.0.0/gml.rdfs) that is not resolvable and incompatible with gml v3 used by geosparql ontology</rdfs:comment>
+        <rdfs:range rdf:resource="&sf:Point"/>
+        <rdfs:subPropertyOf rdf:resource="&geo;hasGeometry"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.opengis.net/ont/geosparql#hasGeometry -->
+    
+    <owl:ObjectProperty rdf:about="http://www.opengis.net/ont/geosparql#hasGeometry">
+        <rdfs:isDefinedBy rdf:resource="http://www.opengis.net/ont/geosparql"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://schema.theodi.org/odrs#attributionURL -->
+    
+    <owl:ObjectProperty rdf:about="http://schema.theodi.org/odrs#attributionURL">
+        <rdfs:isDefinedBy rdf:resource="http://schema.theodi.org/odrs"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://creativecommons.org/ns#permits -->
+    
+    <owl:ObjectProperty rdf:about="http://creativecommons.org/ns#permits">
+        <rdfs:isDefinedBy rdf:resource="http://creativecommons.org/ns"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://creativecommons.org/ns#requires -->
+    
+    <owl:ObjectProperty rdf:about="http://creativecommons.org/ns#requires">
+        <rdfs:isDefinedBy rdf:resource="http://creativecommons.org/ns"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://creativecommons.org/ns#prohibits -->
+    
+    <owl:ObjectProperty rdf:about="http://creativecommons.org/ns#prohibits">
+        <rdfs:isDefinedBy rdf:resource="http://creativecommons.org/ns"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.w3.org/ns/odrl/2/target" -->
+    
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/odrl/2/target">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/odrl/2/"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.w3.org/ns/odrl/2/action" -->
+    
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/odrl/2/action">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/odrl/2/"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.w3.org/ns/odrl/2/constraint" -->
+    
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/odrl/2/constraint">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/odrl/2/"/>
+    </owl:ObjectProperty>
+    
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+     
+     <!-- http://w3id.org/ro/earth-science#distributionCategory -->
+
+    <owl:DatatypeProperty rdf:about="&easc;distributionCategory">
+      <rdfs:isDefinedBy rdf:resource="http://w3id.org/ro/earth-science"/>
+        <rdfs:label xml:lang="en">distribution category</rdfs:label>
+        <rdfs:comment>Intended use of the RO (Official use, Internal use, Releasable to the Public)</rdfs:comment>
+        <rdfs:domain rdf:resource="&ro;ResearchObject"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+    
+    <!-- http://www.w3.org/ns/prov#generatedAtTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/prov#generatedAtTime">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o"/>
+    </owl:DatatypeProperty>
+    
+    <!-- http://www.w3.org/ns/prov#invalidatedAtTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/prov#invalidatedAtTime">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o"/>
+    </owl:DatatypeProperty>
+    
+    <!-- http://www.opengis.net/ont/geosparql#asWKT -->
+    
+    <owl:DatatypeProperty rdf:about="http://www.opengis.net/ont/geosparql#asWKT">
+        <rdfs:isDefinedBy rdf:resource="http://www.opengis.net/ont/geosparql"/>
+    </owl:DatatypeProperty>
+    
+    <!-- http://schema.theodi.org/odrs#attributionText -->
+    
+    <owl:DatatypeProperty rdf:about="http://schema.theodi.org/odrs#attributionText">
+        <rdfs:isDefinedBy rdf:resource="http://schema.theodi.org/odrs"/>
+    </owl:DatatypeProperty>
+    
+    <!-- http://schema.theodi.org/odrs#copyrightNotice -->
+    
+    <owl:DatatypeProperty rdf:about="http://schema.theodi.org/odrs#copyrightNotice">
+        <rdfs:isDefinedBy rdf:resource="http://schema.theodi.org/odrs"/>
+    </owl:DatatypeProperty>
+    
+    <!-- http://schema.theodi.org/odrs#copyrightYear -->
+    
+    <owl:DatatypeProperty rdf:about="http://schema.theodi.org/odrs#copyrightYear">
+        <rdfs:isDefinedBy rdf:resource="http://schema.theodi.org/odrs"/>
+    </owl:DatatypeProperty>
+     
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+     
+     <!-- http://w3id.org/ro/earth-science#DataResearchObject -->
+     
+     <owl:Class rdf:about="&easc;DataResearchObject">
+      <rdfs:label xml:lang="en">Data-centric Research Object</rdfs:label>
+      <rdfs:isDefinedBy rdf:resource="http://w3id.org/ro/earth-science"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ro;ResearchObject"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.openarchives.org/ore/terms/aggregates"/>
+                        <owl:someValuesFrom rdf:resource="&wfprov;Artifact"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">A data-centric research object is a research object that aggregates at least one artifact. 
+        It might of course aggregates any other kind of resources, but MUST aggregate at least one wfprov:Artifact, 
+        such as wf4ever:Dataset, wf4ever:Document, wf4ever:File, wf4ever:Image.
+        </rdfs:comment>
+    </owl:Class>
+    
+    <!-- http://w3id.org/ro/earth-science#ServiceResearchObject -->
+    
+    <owl:Class rdf:about="&easc;ServiceResearchObject">
+      <rdfs:label xml:lang="en">Service-centric Research Object</rdfs:label>
+      <rdfs:isDefinedBy rdf:resource="http://w3id.org/ro/earth-science"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ro;ResearchObject"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.openarchives.org/ore/terms/aggregates"/>
+                        <owl:someValuesFrom rdf:resource="&wf4ever:WebService"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">A service-centric research object is a research object that aggregates at least one web service. 
+        It might of course aggregates any other kind of resources, but MUST aggregate at least one wfprov:WebService, 
+        such as wf4ever:RESTService, wf4ever:SOAPService.
+        </rdfs:comment>
+    </owl:Class>
+    
+    <!-- http://w3id.org/ro/earth-science#BibliographyResearchObject -->
+     
+    <owl:Class rdf:about="&easc;BibliographyResearchObject">
+      <rdfs:label xml:lang="en">Bibliography-centric Research Object</rdfs:label>
+      <rdfs:isDefinedBy rdf:resource="http://w3id.org/ro/earth-science"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ro;ResearchObject"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.openarchives.org/ore/terms/aggregates"/>
+                        <owl:someValuesFrom rdf:resource="&dct:BibliographicResource"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">A bibliography-centric research object is a research object that aggregates at least one bibliographic resource. 
+        It might of course aggregates any other kind of resources, but MUST aggregate at least one dct:BibliographicResource.
+        </rdfs:comment>
+    </owl:Class>
+    
+    <!-- http://w3id.org/ro/earth-science#MinutesResearchObject -->
+    
+    <owl:Class rdf:about="&easc;MinutesResearchObject">
+      <rdfs:label xml:lang="en">Minutes-centric Research Object</rdfs:label>
+      <rdfs:isDefinedBy rdf:resource="http://w3id.org/ro/earth-science"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ro;ResearchObject"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.openarchives.org/ore/terms/aggregates"/>
+                        <owl:someValuesFrom rdf:resource="&roterms:MeetingMinutes"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">A minutes-centric research object is a research object that aggregates at least one meeting minutes resource. 
+        It might of course aggregates any other kind of resources, but MUST aggregate at least one roterms:MeetingMinutes.
+        </rdfs:comment>
+    </owl:Class>
+    
+    <!-- http://www.opengis.net/ont/sf#Polygon -->
+    
+    <owl:Class rdf:about="http://www.opengis.net/ont/sf#Polygon">
+        <rdfs:isDefinedBy rdf:resource="http://www.opengis.net/ont/sf"/>
+    </owl:Class>
+    
+    <!-- http://www.opengis.net/ont/sf#Point -->
+    
+    <owl:Class rdf:about="http://www.opengis.net/ont/sf#Point">
+        <rdfs:isDefinedBy rdf:resource="http://www.opengis.net/ont/sf"/>
+    </owl:Class>
+    
+    <!-- http://schema.theodi.org/odrs#License -->
+    
+    <owl:Class rdf:about="http://schema.theodi.org/odrs#License">
+        <rdfs:isDefinedBy rdf:resource="http://schema.theodi.org/odrs"/>
+    </owl:Class>
+    
+    <!-- http://schema.theodi.org/odrs#RightsStatement -->
+    
+    <owl:Class rdf:about="http://schema.theodi.org/odrs#RightsStatement">
+        <rdfs:isDefinedBy rdf:resource="http://schema.theodi.org/odrs"/>
+    </owl:Class>
+    
+    <!-- http://creativecommons.org/ns#Permission -->
+    
+    <owl:Class rdf:about="http://creativecommons.org/ns#Permission">
+        <rdfs:isDefinedBy rdf:resource="http://creativecommons.org/ns"/>
+    </owl:Class>
+    
+    <!-- http://creativecommons.org/ns#Requirement -->
+    
+    <owl:Class rdf:about="http://creativecommons.org/ns#Requirement">
+        <rdfs:isDefinedBy rdf:resource="http://creativecommons.org/ns"/>
+    </owl:Class>
+    
+    <!-- http://creativecommons.org/ns#Prohibition -->
+    
+    <owl:Class rdf:about="http://creativecommons.org/ns#Prohibition">
+        <rdfs:isDefinedBy rdf:resource="http://creativecommons.org/ns"/>
+    </owl:Class>
+    
+    <!-- http://www.w3.org/ns/odrl/2/Policy -->
+    
+    <owl:Class rdf:about="http://www.w3.org/ns/odrl/2/Policy">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/odrl/2/"/>
+    </owl:Class>
+    
+    <!-- http://www.w3.org/ns/odrl/2/Permission -->
+    
+    <owl:Class rdf:about="http://www.w3.org/ns/odrl/2/Permission">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/odrl/2/"/>
+    </owl:Class>
+    
+    <!-- http://www.w3.org/ns/odrl/2/Prohibition -->
+    
+    <owl:Class rdf:about="http://www.w3.org/ns/odrl/2/Prohibition">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/odrl/2/"/>
+    </owl:Class>
+    
+    <!-- http://www.w3.org/ns/odrl/2/Agreement" -->
+    
+    <owl:Class rdf:about="http://www.w3.org/ns/odrl/2/Agreement">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/odrl/2/"/>
+    </owl:Class>
+    
+    <!-- http://www.w3.org/ns/odrl/2/Offer" -->
+    
+    <owl:Class rdf:about="http://www.w3.org/ns/odrl/2/Offer">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/odrl/2/"/>
+    </owl:Class>
+    
+    <!-- http://www.w3.org/ns/odrl/2/Privacy" -->
+    
+    <owl:Class rdf:about="http://www.w3.org/ns/odrl/2/Privacy">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/odrl/2/"/>
+    </owl:Class>
+    
+    <!-- http://www.w3.org/ns/odrl/2/Set" -->
+    
+    <owl:Class rdf:about="http://www.w3.org/ns/odrl/2/Set">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/odrl/2/"/>
+    </owl:Class>
+    
+    <!-- http://www.w3.org/ns/odrl/2/Party" -->
+    
+    <owl:Class rdf:about="http://www.w3.org/ns/odrl/2/Party">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/odrl/2/"/>
+    </owl:Class>
+    
+    <!-- http://www.w3.org/ns/odrl/2/Group" -->
+    
+    <owl:Class rdf:about="http://www.w3.org/ns/odrl/2/Group">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/odrl/2/"/>
+    </owl:Class>
+    
+    <!-- http://www.w3.org/ns/odrl/2/Action" -->
+    
+    <owl:Class rdf:about="http://www.w3.org/ns/odrl/2/Action">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/odrl/2/"/>
+    </owl:Class>
+     
+     <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+     
+     <cc:Permission rdf:about="http://creativecommons.org/ns#Reproduction">
+     			<rdfs:isDefinedBy rdf:resource="http://creativecommons.org/ns"/>
+     </cc:Permission>
+     <cc:Permission rdf:about="http://creativecommons.org/ns#Distribution">
+     			<rdfs:isDefinedBy rdf:resource="http://creativecommons.org/ns"/>
+     </cc:Permission>
+     <cc:Permission rdf:about="http://creativecommons.org/ns#DerivativeWorks">
+     			<rdfs:isDefinedBy rdf:resource="http://creativecommons.org/ns"/>
+     </cc:Permission>
+     <cc:Permission rdf:about="http://creativecommons.org/ns#Sharing">
+     			<rdfs:isDefinedBy rdf:resource="http://creativecommons.org/ns"/>
+     </cc:Permission>
+     
+     <cc:Requirement rdf:about="http://creativecommons.org/ns#Notice">
+     			<rdfs:isDefinedBy rdf:resource="http://creativecommons.org/ns"/>
+     </cc:Requirement>
+     <cc:Requirement rdf:about="http://creativecommons.org/ns#Attribution">
+     			<rdfs:isDefinedBy rdf:resource="http://creativecommons.org/ns"/>
+     </cc:Requirement>
+     <cc:Requirement rdf:about="http://creativecommons.org/ns#ShareAlike">
+     			<rdfs:isDefinedBy rdf:resource="http://creativecommons.org/ns"/>
+     </cc:Requirement>
+     <cc:Requirement rdf:about="http://creativecommons.org/ns#SourceCode">
+     			<rdfs:isDefinedBy rdf:resource="http://creativecommons.org/ns"/>
+     </cc:Requirement>
+     <cc:Requirement rdf:about="http://creativecommons.org/ns#Copyleft">
+     			<rdfs:isDefinedBy rdf:resource="http://creativecommons.org/ns"/>
+     </cc:Requirement>
+     <cc:Requirement rdf:about="http://creativecommons.org/ns#LesserCopyleft">
+     			<rdfs:isDefinedBy rdf:resource="http://creativecommons.org/ns"/>
+     </cc:Requirement>
+     
+     <cc:Prohibition rdf:about="http://creativecommons.org/ns#CommercialUse">
+     			<rdfs:isDefinedBy rdf:resource="http://creativecommons.org/ns"/>
+     </cc:Prohibition>
+     <cc:Prohibition rdf:about="http://creativecommons.org/ns#HighIncomeNationUse">
+     			<rdfs:isDefinedBy rdf:resource="http://creativecommons.org/ns"/>
+     </cc:Prohibition>
+     
+     <odrl:Action rdf:about="http://www.w3.org/ns/odrl/2/read">
+     			<rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/odrl/2/"/>
+     </odrl:Action>
+     <odrl:Action rdf:about="http://www.w3.org/ns/odrl/2/write">
+     			<rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/odrl/2/"/>
+     </odrl:Action>
+     <odrl:Action rdf:about="http://www.w3.org/ns/odrl/2/delete">
+     			<rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/odrl/2/"/>
+     </odrl:Action>
+     <odrl:Action rdf:about="http://www.w3.org/ns/odrl/2/copy">
+     			<rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/odrl/2/"/>
+     </odrl:Action>
+     
+    
+</rdf:RDF>

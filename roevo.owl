@@ -31,15 +31,16 @@
     <owl:Ontology rdf:about="http://purl.org/wf4ever/roevo">
       <!-- TODO: Update on release -->
       <owl:versionIRI rdf:resource="https://rawgit.com/wf4ever/ro/master/roevo.owl"/>
-      <owl:versionInfo>1.0.0-SNAPSHOT</owl:versionInfo>
-      <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T15:46:00Z</dct:issued>
-      <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T15:46:00Z</dct:modified>
+      <owl:versionInfo>1.0.1-SNAPSHOT</owl:versionInfo>
+      <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-07-28T15:46:00Z</dct:issued>
+      <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-07-28T15:46:00Z</dct:modified>
 
       <!-- end TODO -->
         <rdfs:comment xml:lang="en">The Research Object Evolution Ontology (roevo) extends the ro ontology to capture the lifecycle and versioning of research objects. ro ontology and other extensions are described at http://wf4ever.github.io/ro/.
         roevo is also an extension of PROV ontology for describing Research Object evolution provenance. PROV ontology is described at http://www.w3.org/TR/prov-o/.</rdfs:comment>
         <owl:imports rdf:resource="http://www.w3.org/ns/prov-o#"/>
         <dc:creator>Raul Palma</dc:creator>
+        <dct:creator rdf:resource="http://orcid.org/0000-0003-4289-4922"/>
         <dc:title xml:lang="en">Research Object Evolution Ontology</dc:title>
         <dc:description xml:lang="en">The Research Object Evolution Ontology (roevo) extends the ro ontology to capture the lifecycle and versioning of research objects (ROs). roevo is also an extension of PROV ontology for describing Research Object evolution provenance.
         roevo enables the representation of the different stages of the ROs lifecycle, their dependencies, as well as the corresponding versions of ROs and their aggregated resources, with the associated changes in these resources.
@@ -47,9 +48,13 @@
         Additional information about roevo and background information is available at http://www.wf4ever-project.org/wiki/display/docs/RO+evolution</dc:description>
         <dc:description rdf:resource="http://www.wf4ever-project.org/wiki/download/attachments/2065027/ROevo_v0.4%2823%29.png"/>
         <dc:contributor>Jun Zhao</dc:contributor>
+        <dc:contributor rdf:resource="http://orcid.org/0000-0001-6935-9028"/>
         <dc:contributor>Khalid Belhajjame</dc:contributor>
+        <dc:contributor rdf:resource="http://orcid.org/0000-0001-6938-0820"/>
         <dc:contributor>Stian Soiland-Reyes</dc:contributor>
+        <dc:contributor rdf:resource="http://orcid.org/0000-0001-9842-9718"/>
         <dc:contributor>Oscar Corcho</dc:contributor>
+        <dc:contributor rdf:resource="http://orcid.org/0000-0002-9260-0753"/>
         <dc:rights xml:lang="en">This ontology is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</dc:rights>
         <dct:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
         <dct:publisher rdf:resource="http://researchobject.org/"/>
@@ -373,7 +378,20 @@ Archived ROs represent the final stage of a RO (release) where it has either rea
         <rdfs:comment>A collection of roevo:Changes activities representing the set of changes in a Research Object between two different versions</rdfs:comment>
     </owl:Class>
 
+		
+		<!-- http://purl.org/wf4ever/roevo#ForkedRO -->
 
+    <owl:Class rdf:about="&roevo;LiveRO">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/roevo"/>
+        <rdfs:label>Forked RO</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ro;ResearchObject"/>
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <rdfs:comment>A subclass of ro:ResearchObject representing a live Research Object that was forked from 
+        another Research Object (live, snapshot, archived) to start a new line of work. 
+        Thus it is a especialisation of a live Research Object.
+        </rdfs:comment>
+    </owl:Class>
+    
 
     <!-- http://purl.org/wf4ever/roevo#LiveRO -->
 

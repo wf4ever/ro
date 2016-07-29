@@ -3,7 +3,7 @@
 
 <!DOCTYPE rdf:RDF [
     <!ENTITY ao "http://purl.org/ao/" >
-    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY dct "http://purl.org/dc/terms/" >
     <!ENTITY prov "http://www.w3.org/ns/prov#" >
     <!ENTITY ro "http://purl.org/wf4ever/ro#" >
     <!ENTITY roevo "http://purl.org/wf4ever/roevo#" >
@@ -27,7 +27,7 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:dcterms="http://purl.org/dc/terms/">
+     xmlns:dct="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="http://purl.org/wf4ever/roevo">
       <!-- TODO: Update on release -->
       <owl:versionIRI rdf:resource="https://rawgit.com/wf4ever/ro/master/roevo.owl"/>
@@ -252,7 +252,7 @@
 
     <!-- http://purl.org/dc/terms/identifier -->
 
-    <owl:DatatypeProperty rdf:about="&dcterms;identifier">
+    <owl:DatatypeProperty rdf:about="&dct;identifier">
       <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </owl:DatatypeProperty>
 
@@ -463,7 +463,7 @@ Snapshot ROs are intended as a record of past activity, ready to be disseminated
         <rdfs:subClassOf rdf:resource="&prov;Entity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&dcterms;identifier"/>
+                <owl:onProperty rdf:resource="&dct;identifier"/>
                 <owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>

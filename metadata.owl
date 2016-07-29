@@ -30,7 +30,7 @@
         <owl:versionInfo>0.0.2016-07-28</owl:versionInfo>
         <rdfs:seeAlso rdf:resource="http://w3id.org/ro/"/>
         <dc:creator>Stian Soiland-Reyes</dc:creator>
-        <dc:contributor>Raul Palma</dc:creator>
+        <dc:contributor>Raul Palma</dc:contributor>
         <dc:description xml:lang="en">The provenance and attributions of the Research Object ontologies</dc:description>
         <rdfs:label xml:lang="en">Metadata and provenance of the Research Object ontologies</rdfs:label>
     </owl:Ontology>

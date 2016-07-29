@@ -1,5 +1,34 @@
-<rdf:RDF xmlns="http://purl.org/wf4ever/wf4ever"
-     xml:base="http://purl.org/wf4ever/wf4ever"
+<?xml version="1.0"?>
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY easc "http://w3id.org/ro/earth-science#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY ro "http://purl.org/wf4ever/ro#" >
+    <!ENTITY dct "http://purl.org/dc/terms/" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY wfprov "http://purl.org/wf4ever/wfprov#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY vann "http://purl.org/vocab/vann/" >
+    <!ENTITY wfdesc "http://purl.org/wf4ever/wfdesc#" >
+    <!ENTITY wf4ever "http://purl.org/wf4ever/wf4ever#" >
+    <!ENTITY roterms "http://purl.org/wf4ever/roterms#" >
+    <!ENTITY rdfg "http://www.w3.org/2004/03/trix/rdfg-1/" >
+    <!ENTITY prov "http://www.w3.org/ns/prov#" >
+    <!ENTITY geo "http://www.opengis.net/ont/geosparql#" >
+    <!ENTITY sf "http://www.opengis.net/ont/sf#" >
+    <!ENTITY gml "http://www.opengis.net/ont/gml#" >
+    <!ENTITY odrs "http://schema.theodi.org/odrs#" >
+    <!ENTITY cc "http://creativecommons.org/ns#" >
+    <!ENTITY odrl "http://www.w3.org/ns/odrl/2/">
+    
+]>
+
+<rdf:RDF xmlns="http://w3id.org/ro/earth-science#"
+     xml:base="http://w3id.org/ro/earth-science"
+     xmlns:easc="http://w3id.org/ro/earth-science#"
      xmlns:dcmi-terms="http://dublincore.org/documents/dcmi-terms/"
      xmlns:ro="http://purl.org/wf4ever/ro#"
      xmlns:dct="http://purl.org/dc/terms/"
@@ -8,6 +37,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:wfdesc="http://purl.org/wf4ever/wfdesc#"
+     xmlns:wf4ever="http://purl.org/wf4ever/wf4ever#"
      xmlns:roterms="http://purl.org/wf4ever/roterms#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
@@ -19,11 +49,10 @@
      xmlns:gml="http://www.opengis.net/ont/gml#"
      xmlns:odrs="http://schema.theodi.org/odrs#"
      xmlns:cc="http://creativecommons.org/ns#"
-     xmlns:odrl="http://www.w3.org/ns/odrl/2/"
-     xmlns:easc="http://w3id.org/ro/earth-science#">
-    <owl:Ontology rdf:about="http://w3id.org/ro/earth-science">
+     xmlns:odrl="http://www.w3.org/ns/odrl/2/">
+     <owl:Ontology rdf:about="http://w3id.org/ro/earth-science">
         <!-- TODO: Update on release -->
-        <owl:imports rdf:resource="https://github.com/wf4ever/ro/blob/earth-science/metadata.owl"/>
+        <owl:imports rdf:resource="https://rawgit.com/wf4ever/ro/earth-science/metadata.owl"/>
         <owl:versionIRI rdf:resource="https://raw.github.com/wf4ever/ro/earth-science/earth-science.owl"/>
         <owl:versionInfo>0.0.2016-07-28</owl:versionInfo>
         <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-07-28T15:35:00Z</dct:issued>
@@ -36,7 +65,6 @@
         <owl:imports rdf:resource="https://rawgit.com/wf4ever/ro/master/wfprov.owl" />
         <owl:imports rdf:resource="https://rawgit.com/wf4ever/ro/master/ro.owl" />
         -->
-        <owl:imports rdf:resource="https://rawgit.com/wf4ever/ro/master/ro.owl" />
         <!-- end TODO -->
         
         <!--
@@ -78,7 +106,7 @@ the annotation of resources in earth-science domain.
         <rdfs:label xml:lang="en">center of</rdfs:label>
         <rdfs:comment xml:lang="en">the center point of the selected feature. Property redefined and adapted from gml v1.0 
         (http://schemas.opengis.net/gml/1.0.0/gml.rdfs) that is not resolvable and incompatible with gml v3 used by geosparql ontology</rdfs:comment>
-        <rdfs:range rdf:resource="&sf:Point"/>
+        <rdfs:range rdf:resource="&sf;Point"/>
         <rdfs:subPropertyOf rdf:resource="&geo;hasGeometry"/>
     </owl:ObjectProperty>
     
@@ -226,7 +254,7 @@ the annotation of resources in earth-science domain.
                     <rdf:Description rdf:about="&ro;ResearchObject"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.openarchives.org/ore/terms/aggregates"/>
-                        <owl:someValuesFrom rdf:resource="&wf4ever:WebService"/>
+                        <owl:someValuesFrom rdf:resource="&wf4ever;WebService"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -248,7 +276,7 @@ the annotation of resources in earth-science domain.
                     <rdf:Description rdf:about="&ro;ResearchObject"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.openarchives.org/ore/terms/aggregates"/>
-                        <owl:someValuesFrom rdf:resource="&dct:BibliographicResource"/>
+                        <owl:someValuesFrom rdf:resource="&dct;BibliographicResource"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -269,7 +297,7 @@ the annotation of resources in earth-science domain.
                     <rdf:Description rdf:about="&ro;ResearchObject"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.openarchives.org/ore/terms/aggregates"/>
-                        <owl:someValuesFrom rdf:resource="&roterms:MeetingMinutes"/>
+                        <owl:someValuesFrom rdf:resource="&roterms;MeetingMinutes"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>

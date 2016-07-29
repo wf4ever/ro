@@ -59,6 +59,8 @@
         <dct:contributor rdf:resource="http://orcid.org/0000-0002-0323-0093"/>
         <dc:contributor xml:lang="en">Khalid Belhajjame</dc:contributor>
         <dct:contributor rdf:resource="http://orcid.org/0000-0001-6938-0820"/>
+        <dc:contributor>Raul Palma</dc:creator>
+        <dct:contributor rdf:resource="http://orcid.org/0000-0003-4289-4922"/>
         <rdfs:comment xml:lang="en">The Research Object vocabularies are built on existing popular vocabularies and standards, such as ORE, DC terms, PROV, to cite a few. In addition to terms that we borrowed and adapted from such vocabularies, we defined new terms under the name space roterms.
 
 These new terms serve two main purposes. They are used to specify annotations that are, to our knowledge, not catered for by existing ontologies, e.g., roterms:Hypothesis and roterms:exampleValue. ii) They are also used to specify shortcuts that make the ontology easy to use and more accessible.
@@ -66,15 +68,15 @@ These new terms serve two main purposes. They are used to specify annotations th
 
         <!-- TODO: Update on release -->
         <owl:versionIRI rdf:resource="https://rawgit.com/wf4ever/ro/master/roterms.owl" />
-        <dcterms:modified rdf:datatype="&xsd;dateTime">2015-07-30T14:55:00Z</dcterms:modified>
-        <dcterms:issued rdf:datatype="&xsd;dateTime">2015-07-30T15:00:00Z</dcterms:issued>
+        <dcterms:modified rdf:datatype="&xsd;dateTime">2016-07-28T14:55:00Z</dcterms:modified>
+        <dcterms:issued rdf:datatype="&xsd;dateTime">2016-07-28T15:00:00Z</dcterms:issued>
         <owl:versionInfo>0.3.3-SNAPSHOT</owl:versionInfo>
         <!-- end TODO -->
         <owl:backwardCompatibleWith rdf:resource="https://cdn.rawgit.com/wf4ever/ro/roterms-0.3.1/roterms.owl" />
-	<owl:backwardCompatibleWith rdf:resource="https://cdn.rawgit.com/wf4ever/ro/roterms-0.3.0/roterms.owl" />
-	<owl:backwardCompatibleWith rdf:resource="https://cdn.rawgit.com/wf4ever/ro/roterms-0.2.0/roterms.owl" />
+				<owl:backwardCompatibleWith rdf:resource="https://cdn.rawgit.com/wf4ever/ro/roterms-0.3.0/roterms.owl" />
+				<owl:backwardCompatibleWith rdf:resource="https://cdn.rawgit.com/wf4ever/ro/roterms-0.2.0/roterms.owl" />
 
-	<dcterms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/" />
+				<dcterms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/" />
         <dcterms:publisher rdf:resource="http://researchobject.org/" />
 
         <vann:preferredNamespacePrefix>roterms</vann:preferredNamespacePrefix>
@@ -399,6 +401,18 @@ When the value of the optional parameter is not provided, the execution of the a
         <rdfs:label xml:lang="en">Paper</rdfs:label>
         <rdfs:subClassOf rdf:resource="&prov;Entity"/>
         <rdfs:comment xml:lang="en">A bibliographic resource about an experiment/investigation (to be replaced by dct:BibliographicResource)</rdfs:comment>
+    </owl:Class>
+
+
+
+		<!-- http://purl.org/wf4ever/roterms#MeetingMinutes -->
+
+    <owl:Class rdf:about="&roterms;MeetingMinutes">
+      <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/roterms#"/>
+        <rdfs:label xml:lang="en">Meeting Minutes</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <rdfs:comment xml:lang="en">Electronic version of the minutes of a meeting. 
+        Term redefined from pdo ontology (ontologies.smile.deri.ie) that is not accesible</rdfs:comment>
     </owl:Class>
 
 

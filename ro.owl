@@ -361,7 +361,14 @@ Aggregated resources MAY also be organised in (potentially nested) ro:Folders to
 </rdfs:comment>
     </owl:Class>
 
+		<!-- http://purl.org/ao/Annotation -->
 
+    <owl:Class rdf:about="http://purl.org/ao/Annotation">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/ns/oa#Annotation"/>
+        <rdfs:comment>This class is deprecated. Use oa:Annotation instead.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/ao/"/>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:Class>
 
     <!-- http://www.w3.org/ns/oa#Annotation -->
 

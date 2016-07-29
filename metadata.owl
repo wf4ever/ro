@@ -17,12 +17,20 @@
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:ro="http://purl.org/wf4ever/ro#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
-     xmlns:dc="http://purl.org/dc/elements/1.1/">
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:pav="http://purl.org/pav/"
+     xmlns:swrc="http://swrc.ontoware.org/ontology#"
+     xmlns:cito="http://purl.org/spar/cito/"
+     xmlns:dbo="http://dbpedia.org/ontology/"
+     xmlns:ov="http://open.vocab.org/terms/"
+     xmlns:bibo="http://purl.org/ontology/bibo/">
+     
     <owl:Ontology rdf:about="https://w3id.org/ro/metadata">
         <owl:versionIRI rdf:resource="https://rawgit.com/wf4ever/ro/master/metadata.owl"/>
-        <owl:versionInfo>0.0.2015-01-28</owl:versionInfo>
+        <owl:versionInfo>0.0.2016-07-28</owl:versionInfo>
         <rdfs:seeAlso rdf:resource="http://w3id.org/ro/"/>
         <dc:creator>Stian Soiland-Reyes</dc:creator>
+        <dc:contributor>Raul Palma</dc:creator>
         <dc:description xml:lang="en">The provenance and attributions of the Research Object ontologies</dc:description>
         <rdfs:label xml:lang="en">Metadata and provenance of the Research Object ontologies</rdfs:label>
     </owl:Ontology>
@@ -46,14 +54,13 @@
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
     </owl:AnnotationProperty>
 
-
-
     <!-- http://purl.org/dc/elements/1.1/creator -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
     </owl:AnnotationProperty>
 
+		<!-- http://purl.org/dc/elements/1.1/rights -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/rights">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
@@ -67,13 +74,11 @@
     </owl:AnnotationProperty>
 
 
-
     <!-- http://purl.org/dc/elements/1.1/title -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
     </owl:AnnotationProperty>
-
 
 
     <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
@@ -83,13 +88,11 @@
     </owl:AnnotationProperty>
 
 
-
     <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/vann/"/>
     </owl:AnnotationProperty>
-
 
 
     <!-- http://purl.org/vocab/vann/usageNote -->
@@ -117,15 +120,17 @@
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </owl:ObjectProperty>
 
-
-
     <!-- http://purl.org/dc/terms/creator -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/creator">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </owl:ObjectProperty>
 
+		<!-- http://purl.org/dc/terms/rights -->
 
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/rights">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    </owl:ObjectProperty>
 
     <!-- http://purl.org/dc/terms/license -->
 
@@ -134,15 +139,73 @@
     </owl:ObjectProperty>
 
 
-
     <!-- http://purl.org/dc/terms/publisher -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/publisher">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </owl:ObjectProperty>
+    
+    <!-- http://purl.org/dc/terms/subject -->
 
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/subject">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://purl.org/dc/terms/isReferencedBy -->
 
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/isReferencedBy">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://purl.org/dc/terms/references -->
 
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/references">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://purl.org/dc/terms/format -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/format">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://purl.org/dc/terms/audience -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/audience">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://purl.org/pav/createdBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/pav/createdBy">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/pav/"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://purl.org/pav/authoredBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/pav/authoredBy">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/pav/"/>
+    </owl:ObjectProperty>
+
+		<!-- http://purl.org/pav/contributedBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/pav/contributedBy">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/pav/"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://xmlns.com/foaf/0.1/depiction -->
+
+    <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/depiction">
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://purl.org/spar/cito/isDocumentedBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/spar/cito/isDocumentedBy">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/cito/"/>
+    </owl:ObjectProperty>
+    
+    
     <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -160,15 +223,11 @@
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </owl:DatatypeProperty>
 
-
-
     <!-- http://purl.org/dc/terms/issued -->
 
     <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/issued">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </owl:DatatypeProperty>
-
-
 
     <!-- http://purl.org/dc/terms/modified -->
 
@@ -176,16 +235,49 @@
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </owl:DatatypeProperty>
 
-
-
     <!-- http://purl.org/dc/terms/title -->
 
     <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/title">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </owl:DatatypeProperty>
 
+		<!-- http://purl.org/dc/terms/description -->
 
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/description">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    </owl:DatatypeProperty>
+    
+    <!-- http://purl.org/dc/terms/identifier -->
 
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/identifier">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    </owl:DatatypeProperty>
+    
+    <!-- http://swrc.ontoware.org/ontology#keywords -->
+
+    <owl:DatatypeProperty rdf:about="http://swrc.ontoware.org/ontology#keywords">
+        <rdfs:isDefinedBy rdf:resource="http://swrc.ontoware.org/ontology"/>
+    </owl:DatatypeProperty>
+    
+    <!-- http://dbpedia.org/ontology/fileSize -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/ontology/fileSize">
+        <rdfs:isDefinedBy rdf:resource="http://dbpedia.org/ontology/"/>
+    </owl:DatatypeProperty>
+    
+    <!-- http://open.vocab.org/terms/hasChecksum -->
+
+    <owl:DatatypeProperty rdf:about="http://open.vocab.org/terms/hasChecksum">
+        <rdfs:isDefinedBy rdf:resource="http://open.vocab.org/terms/"/>
+    </owl:DatatypeProperty>
+    
+    <!-- http://purl.org/ontology/bibo/doi -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ontology/bibo/doi">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/bibo/"/>
+    </owl:DatatypeProperty>
+    
+    
     <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //

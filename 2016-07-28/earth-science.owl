@@ -153,9 +153,21 @@ the annotation of resources in earth-science domain.
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/odrl/2/"/>
     </owl:ObjectProperty>
     
-    <!-- http://www.w3.org/ns/odrl/2/constraint" -->
+    <!-- http://www.w3.org/ns/odrl/2/permission" -->
     
-    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/odrl/2/constraint">
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/odrl/2/permission">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/odrl/2/"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.w3.org/ns/odrl/2/prohibition" -->
+    
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/odrl/2/prohibition">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/odrl/2/"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.w3.org/ns/odrl/2/assignee" -->
+    
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/odrl/2/assignee">
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/odrl/2/"/>
     </owl:ObjectProperty>
     

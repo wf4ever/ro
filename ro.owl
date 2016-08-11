@@ -25,7 +25,7 @@
         <owl:imports rdf:resource="https://rawgit.com/wf4ever/ro/master/metadata.owl"/>
         <owl:versionInfo>1.0.0-SNAPSHOT</owl:versionInfo>
         <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T15:46:00Z</dct:issued>
-        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-28T15:46:00Z</dct:modified>
+        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-07-28T15:46:00Z</dct:modified>
 
       <!-- FIXME end-->
         <rdfs:label xml:lang="en">Research Object ontology</rdfs:label>

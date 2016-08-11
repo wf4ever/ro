@@ -84,7 +84,7 @@ the annotation of resources in earth-science domain.
         <vann:preferredNamespaceUri>http://w3id.org/ro/earth-science#</vann:preferredNamespaceUri>
         <dc:creator>Raul Palma</dc:creator>
         <dct:creator rdf:resource="http://orcid.org/0000-0003-4289-4922"/>
-        <dc:creator>Jose Manuel Gomez-Perez</dc:creator>        
+        <dc:creator>Jose Manuel Gomez Perez</dc:creator>        
         <dct:creator rdf:resource="http://orcid.org/0000-0002-5491-6431"/>
         <dct:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
         <dc:rights xml:lang="en">This ontology is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</dc:rights>

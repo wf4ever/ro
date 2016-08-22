@@ -2,7 +2,7 @@
 
 <!DOCTYPE rdf:RDF [
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY easc "http://w3id.org/ro/earth-science#" >
+    <!ENTITY roes "http://w3id.org/ro/earth-science#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
@@ -28,7 +28,7 @@
 
 <rdf:RDF xmlns="http://w3id.org/ro/earth-science#"
      xml:base="http://w3id.org/ro/earth-science"
-     xmlns:easc="http://w3id.org/ro/earth-science#"
+     xmlns:roes="http://w3id.org/ro/earth-science#"
      xmlns:dcmi-terms="http://dublincore.org/documents/dcmi-terms/"
      xmlns:ro="http://purl.org/wf4ever/ro#"
      xmlns:dct="http://purl.org/dc/terms/"
@@ -80,7 +80,7 @@ the annotation of resources in earth-science domain.
         <dc:title xml:lang="en">earth-science ro ontology</dc:title>
         <rdfs:seeAlso rdf:resource="http://w3id.org/ro/"/>
 
-        <vann:preferredNamespacePrefix>easc</vann:preferredNamespacePrefix>
+        <vann:preferredNamespacePrefix>roes</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>http://w3id.org/ro/earth-science#</vann:preferredNamespaceUri>
         <dc:creator>Raul Palma</dc:creator>
         <dct:creator rdf:resource="http://orcid.org/0000-0003-4289-4922"/>
@@ -102,7 +102,7 @@ the annotation of resources in earth-science domain.
     
     <!-- http://w3id.org/ro/earth-science#centerOf -->
 
-    <owl:ObjectProperty rdf:about="&easc;centerOf">
+    <owl:ObjectProperty rdf:about="&roes;centerOf">
       <rdfs:isDefinedBy rdf:resource="http://w3id.org/ro/earth-science"/>
         <rdfs:label xml:lang="en">center of</rdfs:label>
         <rdfs:comment xml:lang="en">the center point of the selected feature. Property redefined and adapted from gml v1.0 
@@ -181,7 +181,7 @@ the annotation of resources in earth-science domain.
      
      <!-- http://w3id.org/ro/earth-science#distributionCategory -->
 
-    <owl:DatatypeProperty rdf:about="&easc;distributionCategory">
+    <owl:DatatypeProperty rdf:about="&roes;distributionCategory">
       <rdfs:isDefinedBy rdf:resource="http://w3id.org/ro/earth-science"/>
         <rdfs:label xml:lang="en">distribution category</rdfs:label>
         <rdfs:comment>Intended use of the RO (Official use, Internal use, Releasable to the Public)</rdfs:comment>
@@ -236,7 +236,7 @@ the annotation of resources in earth-science domain.
      
      <!-- http://w3id.org/ro/earth-science#DataResearchObject -->
      
-     <owl:Class rdf:about="&easc;DataResearchObject">
+     <owl:Class rdf:about="&roes;DataResearchObject">
       <rdfs:label xml:lang="en">Data-centric Research Object</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://w3id.org/ro/earth-science"/>
         <owl:equivalentClass>
@@ -258,7 +258,7 @@ the annotation of resources in earth-science domain.
     
     <!-- http://w3id.org/ro/earth-science#ServiceResearchObject -->
     
-    <owl:Class rdf:about="&easc;ServiceResearchObject">
+    <owl:Class rdf:about="&roes;ServiceResearchObject">
       <rdfs:label xml:lang="en">Service-centric Research Object</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://w3id.org/ro/earth-science"/>
         <owl:equivalentClass>
@@ -280,7 +280,7 @@ the annotation of resources in earth-science domain.
     
     <!-- http://w3id.org/ro/earth-science#BibliographyResearchObject -->
      
-    <owl:Class rdf:about="&easc;BibliographyResearchObject">
+    <owl:Class rdf:about="&roes;BibliographyResearchObject">
       <rdfs:label xml:lang="en">Bibliography-centric Research Object</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://w3id.org/ro/earth-science"/>
         <owl:equivalentClass>
@@ -301,7 +301,7 @@ the annotation of resources in earth-science domain.
     
     <!-- http://w3id.org/ro/earth-science#MinutesResearchObject -->
     
-    <owl:Class rdf:about="&easc;MinutesResearchObject">
+    <owl:Class rdf:about="&roes;MinutesResearchObject">
       <rdfs:label xml:lang="en">Minutes-centric Research Object</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://w3id.org/ro/earth-science"/>
         <owl:equivalentClass>

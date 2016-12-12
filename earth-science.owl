@@ -23,7 +23,9 @@
     <!ENTITY odrs "http://schema.theodi.org/odrs#" >
     <!ENTITY cc "http://creativecommons.org/ns#" >
     <!ENTITY odrl "http://www.w3.org/ns/odrl/2/">
-    
+    <!ENTITY voag "http://voag.linkedmodel.org/schema/voag#">
+    <!ENTITY pav "http://purl.org/pav/" >
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/">
 ]>
 
 <rdf:RDF xmlns="http://w3id.org/ro/earth-science#"
@@ -49,14 +51,17 @@
      xmlns:gml="http://www.opengis.net/ont/gml#"
      xmlns:odrs="http://schema.theodi.org/odrs#"
      xmlns:cc="http://creativecommons.org/ns#"
-     xmlns:odrl="http://www.w3.org/ns/odrl/2/">
+     xmlns:odrl="http://www.w3.org/ns/odrl/2/"
+     xmlns:voag="http://voag.linkedmodel.org/schema/voag#"
+     xmlns:pav="http://purl.org/pav/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/">
      <owl:Ontology rdf:about="http://w3id.org/ro/earth-science">
         <!-- TODO: Update on release -->
         <owl:imports rdf:resource="https://rawgit.com/wf4ever/ro/earth-science/metadata.owl"/>
         <owl:versionIRI rdf:resource="https://raw.github.com/wf4ever/ro/earth-science/earth-science.owl"/>
-        <owl:versionInfo>0.0.2016-07-28</owl:versionInfo>
-        <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-07-28T15:35:00Z</dct:issued>
-        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-07-28T15:35:00Z</dct:modified>
+        <owl:versionInfo>0.0.2016-12-13</owl:versionInfo>
+        <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-12-13T10:00:00Z</dct:issued>
+        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-13-12T10:00:00Z</dct:modified>
         <!--
         <owl:imports rdf:resource="http://purl.org/wf4ever/ro"/>
         <owl:imports rdf:resource="http://purl.org/wf4ever/wfdesc"/>
@@ -100,17 +105,6 @@ the annotation of resources in earth-science domain.
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
     
-    <!-- http://w3id.org/ro/earth-science#centerOf -->
-
-    <owl:ObjectProperty rdf:about="&roes;centerOf">
-      <rdfs:isDefinedBy rdf:resource="http://w3id.org/ro/earth-science"/>
-        <rdfs:label xml:lang="en">center of</rdfs:label>
-        <rdfs:comment xml:lang="en">the center point of the selected feature. Property redefined and adapted from gml v1.0 
-        (http://schemas.opengis.net/gml/1.0.0/gml.rdfs) that is not resolvable and incompatible with gml v3 used by geosparql ontology</rdfs:comment>
-        <rdfs:range rdf:resource="&sf;Point"/>
-        <rdfs:subPropertyOf rdf:resource="&geo;hasGeometry"/>
-    </owl:ObjectProperty>
-    
     <!-- http://www.opengis.net/ont/geosparql#hasGeometry -->
     
     <owl:ObjectProperty rdf:about="http://www.opengis.net/ont/geosparql#hasGeometry">
@@ -120,6 +114,12 @@ the annotation of resources in earth-science domain.
     <!-- http://schema.theodi.org/odrs#attributionURL -->
     
     <owl:ObjectProperty rdf:about="http://schema.theodi.org/odrs#attributionURL">
+        <rdfs:isDefinedBy rdf:resource="http://schema.theodi.org/odrs"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://schema.theodi.org/odrs#copyrightHolder -->
+    
+    <owl:ObjectProperty rdf:about="http://schema.theodi.org/odrs#copyrightHolder">
         <rdfs:isDefinedBy rdf:resource="http://schema.theodi.org/odrs"/>
     </owl:ObjectProperty>
     
@@ -141,34 +141,72 @@ the annotation of resources in earth-science domain.
         <rdfs:isDefinedBy rdf:resource="http://creativecommons.org/ns"/>
     </owl:ObjectProperty>
     
-    <!-- http://www.w3.org/ns/odrl/2/target" -->
+    <!-- http://www.w3.org/ns/odrl/2/target -->
     
     <owl:ObjectProperty rdf:about="http://www.w3.org/ns/odrl/2/target">
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/odrl/2/"/>
     </owl:ObjectProperty>
     
-    <!-- http://www.w3.org/ns/odrl/2/action" -->
+    <!-- http://www.w3.org/ns/odrl/2/action -->
     
     <owl:ObjectProperty rdf:about="http://www.w3.org/ns/odrl/2/action">
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/odrl/2/"/>
     </owl:ObjectProperty>
     
-    <!-- http://www.w3.org/ns/odrl/2/permission" -->
+    <!-- http://www.w3.org/ns/odrl/2/permission -->
     
     <owl:ObjectProperty rdf:about="http://www.w3.org/ns/odrl/2/permission">
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/odrl/2/"/>
     </owl:ObjectProperty>
     
-    <!-- http://www.w3.org/ns/odrl/2/prohibition" -->
+    <!-- http://www.w3.org/ns/odrl/2/prohibition -->
     
     <owl:ObjectProperty rdf:about="http://www.w3.org/ns/odrl/2/prohibition">
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/odrl/2/"/>
     </owl:ObjectProperty>
     
-    <!-- http://www.w3.org/ns/odrl/2/assignee" -->
+    <!-- http://www.w3.org/ns/odrl/2/assignee -->
     
     <owl:ObjectProperty rdf:about="http://www.w3.org/ns/odrl/2/assignee">
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/odrl/2/"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://voag.linkedmodel.org/schema/voag#isApprovedBy -->
+    
+    <owl:ObjectProperty rdf:about="http://voag.linkedmodel.org/schema/voag#isApprovedBy">
+        <rdfs:isDefinedBy rdf:resource="http://voag.linkedmodel.org/schema/voag"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://purl.org/pav/curatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/pav/curatedBy">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/pav/"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://xmlns.com/foaf/0.1/fundedBy -->
+
+    <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/fundedBy">
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://w3id.org/ro/earth-science#centerOf -->
+
+    <owl:ObjectProperty rdf:about="&roes;centerOf">
+      	<rdfs:isDefinedBy rdf:resource="http://w3id.org/ro/earth-science"/>
+      	<rdfs:label xml:lang="en">center of</rdfs:label>
+      	<rdfs:comment xml:lang="en">the center point of the selected feature. Property redefined and adapted from gml v1.0 
+      	(http://schemas.opengis.net/gml/1.0.0/gml.rdfs) that is not resolvable and incompatible with gml v3 used by geosparql ontology</rdfs:comment>
+      	<rdfs:range rdf:resource="&sf;Point"/>
+      	<rdfs:subPropertyOf rdf:resource="&geo;hasGeometry"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://w3id.org/ro/earth-science#editedBy -->
+
+    <owl:ObjectProperty rdf:about="&roes;editedBy">
+      	<rdfs:isDefinedBy rdf:resource="http://w3id.org/ro/earth-science"/>
+      	<rdfs:label xml:lang="en">edited by</rdfs:label>
+      	<rdfs:comment xml:lang="en">Specifies an agent who edited the target object</rdfs:comment>
+      	<rdfs:subPropertyOf rdf:resource="&pav;contributedBy"/>
     </owl:ObjectProperty>
     
     <!--
@@ -178,17 +216,6 @@ the annotation of resources in earth-science domain.
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-     
-     <!-- http://w3id.org/ro/earth-science#distributionCategory -->
-
-    <owl:DatatypeProperty rdf:about="&roes;distributionCategory">
-      <rdfs:isDefinedBy rdf:resource="http://w3id.org/ro/earth-science"/>
-        <rdfs:label xml:lang="en">distribution category</rdfs:label>
-        <rdfs:comment>Intended use of the RO (Official use, Internal use, Releasable to the Public)</rdfs:comment>
-        <rdfs:domain rdf:resource="&ro;ResearchObject"/>
-        <rdfs:range rdf:resource="&rdfs;Literal"/>
-    </owl:DatatypeProperty>
-    
     
     <!-- http://www.w3.org/ns/prov#generatedAtTime -->
 
@@ -225,6 +252,16 @@ the annotation of resources in earth-science domain.
     <owl:DatatypeProperty rdf:about="http://schema.theodi.org/odrs#copyrightYear">
         <rdfs:isDefinedBy rdf:resource="http://schema.theodi.org/odrs"/>
     </owl:DatatypeProperty>
+    
+    <!-- http://w3id.org/ro/earth-science#distributionCategory -->
+
+    <owl:DatatypeProperty rdf:about="&roes;distributionCategory">
+      <rdfs:isDefinedBy rdf:resource="http://w3id.org/ro/earth-science"/>
+        <rdfs:label xml:lang="en">distribution category</rdfs:label>
+        <rdfs:comment>Intended use of the RO (Official use, Internal use, Releasable to the Public)</rdfs:comment>
+        <rdfs:domain rdf:resource="&ro;ResearchObject"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
      
     <!--
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -237,9 +274,9 @@ the annotation of resources in earth-science domain.
      <!-- http://w3id.org/ro/earth-science#DataResearchObject -->
      
      <owl:Class rdf:about="&roes;DataResearchObject">
-      <rdfs:label xml:lang="en">Data-centric Research Object</rdfs:label>
+      <rdfs:label xml:lang="en">Data Research Object</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://w3id.org/ro/earth-science"/>
-        <owl:equivalentClass>
+      <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&ro;ResearchObject"/>
@@ -249,41 +286,42 @@ the annotation of resources in earth-science domain.
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:comment xml:lang="en">A data-centric research object is a research object that aggregates at least one artifact. 
-        It might of course aggregates any other kind of resources, but MUST aggregate at least one wfprov:Artifact, 
-        such as wf4ever:Dataset, wf4ever:Document, wf4ever:File, wf4ever:Image.
-        </rdfs:comment>
+      </owl:equivalentClass>
+      <rdfs:comment xml:lang="en">A data research object is a research object that aggregates at least one artifact. 
+      It might of course aggregates any other kind of resources, but MUST aggregate at least one wfprov:Artifact, 
+      such as wf4ever:Dataset, wf4ever:Document, wf4ever:File, wf4ever:Image.
+      </rdfs:comment>
     </owl:Class>
     
-    <!-- http://w3id.org/ro/earth-science#ServiceResearchObject -->
+    <!-- http://w3id.org/ro/earth-science#ResearchProductResearchObject -->
     
-    <owl:Class rdf:about="&roes;ServiceResearchObject">
-      <rdfs:label xml:lang="en">Service-centric Research Object</rdfs:label>
+    <owl:Class rdf:about="&roes;ResearchProductResearchObject">
+      <rdfs:label xml:lang="en">Research Product Research Object</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://w3id.org/ro/earth-science"/>
-        <owl:equivalentClass>
+      <rdfs:subClassOf rdf:resource="&roes;DataResearchObject"/>
+      <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&ro;ResearchObject"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.openarchives.org/ore/terms/aggregates"/>
-                        <owl:someValuesFrom rdf:resource="&wf4ever;WebService"/>
+                        <owl:someValuesFrom rdf:resource="&wfdesc;Process"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:comment xml:lang="en">A service-centric research object is a research object that aggregates at least one web service. 
-        It might of course aggregates any other kind of resources, but MUST aggregate at least one wfprov:WebService, 
-        such as wf4ever:RESTService, wf4ever:SOAPService.
-        </rdfs:comment>
+      </owl:equivalentClass>
+      <rdfs:comment xml:lang="en">A research product research object is a research object that aggregates at least one research product artifact and one process description. 
+      It might of course aggregates any other kind of resources, but MUST aggregate at least one wfprov:Artifact, such as wf4ever:Dataset, wf4ever:Document, wf4ever:File, 
+      wf4ever:Image, as well as the wfdesc:Process that generated or was used to derive such artifact.
+      </rdfs:comment>
     </owl:Class>
     
     <!-- http://w3id.org/ro/earth-science#BibliographyResearchObject -->
      
     <owl:Class rdf:about="&roes;BibliographyResearchObject">
-      <rdfs:label xml:lang="en">Bibliography-centric Research Object</rdfs:label>
+      <rdfs:label xml:lang="en">Bibliography Research Object</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://w3id.org/ro/earth-science"/>
-        <owl:equivalentClass>
+      <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&ro;ResearchObject"/>
@@ -293,18 +331,18 @@ the annotation of resources in earth-science domain.
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:comment xml:lang="en">A bibliography-centric research object is a research object that aggregates at least one bibliographic resource. 
-        It might of course aggregates any other kind of resources, but MUST aggregate at least one dct:BibliographicResource.
-        </rdfs:comment>
+      </owl:equivalentClass>
+      <rdfs:comment xml:lang="en">A bibliography research object is a research object that aggregates at least one bibliographic resource. 
+      It might of course aggregates any other kind of resources, but MUST aggregate at least one dct:BibliographicResource.
+      </rdfs:comment>
     </owl:Class>
     
-    <!-- http://w3id.org/ro/earth-science#MinutesResearchObject -->
+    <!-- http://w3id.org/ro/earth-science#DiscussionResearchObject -->
     
-    <owl:Class rdf:about="&roes;MinutesResearchObject">
-      <rdfs:label xml:lang="en">Minutes-centric Research Object</rdfs:label>
+    <owl:Class rdf:about="&roes;DiscussionResearchObject">
+      <rdfs:label xml:lang="en">Discussion Research Object</rdfs:label>
       <rdfs:isDefinedBy rdf:resource="http://w3id.org/ro/earth-science"/>
-        <owl:equivalentClass>
+      <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&ro;ResearchObject"/>
@@ -314,11 +352,85 @@ the annotation of resources in earth-science domain.
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:comment xml:lang="en">A minutes-centric research object is a research object that aggregates at least one meeting minutes resource. 
-        It might of course aggregates any other kind of resources, but MUST aggregate at least one roterms:MeetingMinutes.
-        </rdfs:comment>
+      </owl:equivalentClass>
+      <rdfs:comment xml:lang="en">A discussion research object is a research object that aggregates at least one meeting minutes resource. 
+      It might of course aggregates any other kind of resources, but MUST aggregate at least one roterms:MeetingMinutes.
+      </rdfs:comment>
     </owl:Class>
+    
+    <!-- http://w3id.org/ro/earth-science#ProcessResearchObject -->
+    
+    <owl:Class rdf:about="&roes;ProcessResearchObject">
+      <rdfs:label xml:lang="en">Process Research Object</rdfs:label>
+      <rdfs:isDefinedBy rdf:resource="http://w3id.org/ro/earth-science"/>
+      <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ro;ResearchObject"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.openarchives.org/ore/terms/aggregates"/>
+                        <owl:someValuesFrom rdf:resource="&wfdesc;Process"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+      </owl:equivalentClass>
+      <rdfs:comment xml:lang="en">A process research object is a research object that aggregates at least one process description. 
+      It might of course aggregates any other kind of resources, but MUST aggregate at least one wfdesc:Process.
+      </rdfs:comment>
+    </owl:Class>
+    
+    <!-- http://w3id.org/ro/earth-science#ServiceResearchObject -->
+    
+    <owl:Class rdf:about="&roes;ServiceResearchObject">
+      <rdfs:label xml:lang="en">Service Research Object</rdfs:label>
+      <rdfs:isDefinedBy rdf:resource="http://w3id.org/ro/earth-science"/>
+      <rdfs:subClassOf rdf:resource="&roes;ProcessResearchObject"/>
+      <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ro;ResearchObject"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.openarchives.org/ore/terms/aggregates"/>
+                        <owl:someValuesFrom rdf:resource="&wf4ever;WebService"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+      </owl:equivalentClass>
+      <rdfs:comment xml:lang="en">A service research object is a research object that aggregates at least one web service. 
+      It might of course aggregates any other kind of resources, but MUST aggregate at least one wfprov:WebService, 
+      such as wf4ever:RESTService, wf4ever:SOAPService.
+      </rdfs:comment>
+    </owl:Class>
+    
+    <!-- http://w3id.org/ro/earth-science#CodeResearchObject -->
+    
+    <owl:Class rdf:about="&roes;CodeResearchObject">
+      <rdfs:label xml:lang="en">Code Research Object</rdfs:label>
+      <rdfs:isDefinedBy rdf:resource="http://w3id.org/ro/earth-science"/>
+      <rdfs:subClassOf rdf:resource="&roes;ProcessResearchObject"/>
+      <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ro;ResearchObject"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.openarchives.org/ore/terms/aggregates"/>
+                        <owl:someValuesFrom rdf:resource="&wf4ever;Script"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+      </owl:equivalentClass>
+      <rdfs:comment xml:lang="en">A code research object is a research object that aggregates at least one software script (e.g., R script, Python script). 
+      It might of course aggregates any other kind of resources, but MUST aggregate at least one wf4ever:Script.
+      </rdfs:comment>
+    </owl:Class>
+    
+    <!-- http://w3id.org/ro/earth-science#WorkflowResearchObject -->
+    
+    <owl:Class rdf:about="&wf4ever;WorkflowResearchObject">
+    	<rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/wf4ever"/>
+    	<rdfs:subClassOf rdf:resource="&roes;ProcessResearchObject"/>
+    </owl:Class>
+    
     
     <!-- http://www.opengis.net/ont/sf#Polygon -->
     

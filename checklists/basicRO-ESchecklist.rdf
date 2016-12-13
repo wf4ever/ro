@@ -195,7 +195,7 @@
           FILTER NOT EXISTS { ?ro rdf:type roterms:WorkflowRunBundle  }
         </minim:forall>
         <minim:exists>
-          ?ro dcterms:created ?rocreator .
+          ?ro dcterms:creator ?rocreator .
         </minim:exists>
         <minim:showpass>Research Object has creator</minim:showpass>
         <minim:showfail>Research Object does not have creator</minim:showfail>

@@ -191,11 +191,6 @@
   <minim:Requirement rdf:about="#RO_has_creator">
     <minim:isDerivedBy>
       <minim:ContentMatchRequirementRule>
-        <minim:forall>
-          ?ro rdf:type ro:ResearchObject .
-          FILTER NOT EXISTS { ?ro rdf:type ore:AggregatedResource }
-          FILTER NOT EXISTS { ?ro rdf:type roterms:WorkflowRunBundle  }
-        </minim:forall>
         <minim:exists>
           ?ro dcterms:creator ?rocreator .
         </minim:exists>

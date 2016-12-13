@@ -96,6 +96,7 @@
     <minim:hasMustRequirement   rdf:resource="#RO_has_title" />
     <minim:hasMustRequirement 	rdf:resource="#RO_has_description" />
     <minim:hasMustRequirement 	rdf:resource="#RO_has_creator" />
+    <minim:hasMustRequirement 	rdf:resource="#RO_has_created" />
     <!--<minim:hasMustRequirement 	rdf:resource="#RO_has_keywords" />
     <minim:hasShouldRequirement rdf:resource="#RO_has_ROtype" />
     <minim:hasShouldRequirement rdf:resource="#RO_has_subject" />
@@ -203,6 +204,26 @@
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
     <minim:seq>003</minim:seq>
+  </minim:Requirement>
+  
+  <!-- RO created is present -->
+  <minim:Requirement rdf:about="#RO_has_created">
+    <minim:isDerivedBy>
+      <minim:ContentMatchRequirementRule>
+        <minim:forall>
+          ?ro rdf:type ro:ResearchObject .
+          FILTER NOT EXISTS { ?ro rdf:type ore:AggregatedResource }
+          FILTER NOT EXISTS { ?ro rdf:type roterms:WorkflowRunBundle  }
+        </minim:forall>
+        <minim:exists>
+          ?ro dcterms:created ?rocreated .
+        </minim:exists>
+        <minim:showpass>Research Object has created date</minim:showpass>
+        <minim:showfail>Research Object does not have created date</minim:showfail>
+        <minim:derives rdf:resource="#RO_has_created" />
+      </minim:ContentMatchRequirementRule>
+    </minim:isDerivedBy>
+    <minim:seq>030</minim:seq>
   </minim:Requirement>
   
   <!-- RO keywords/tags is present -->

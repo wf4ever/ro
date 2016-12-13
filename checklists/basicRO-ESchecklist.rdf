@@ -96,14 +96,15 @@
     <minim:hasMustRequirement   rdf:resource="#RO_has_title" />
     <minim:hasMustRequirement 	rdf:resource="#RO_has_description" />
     <minim:hasMustRequirement 	rdf:resource="#RO_has_creator" />
-    <minim:hasMustRequirement 	rdf:resource="#RO_has_created" />
-    <minim:hasMustRequirement 	rdf:resource="#RO_has_comment" />
-    <!--<minim:hasMustRequirement 	rdf:resource="#RO_has_keywords" />
+    <minim:hasMustRequirement 	rdf:resource="#RO_has_keywords" />
     <minim:hasShouldRequirement rdf:resource="#RO_has_ROtype" />
+    <!--
     <minim:hasShouldRequirement rdf:resource="#RO_has_subject" />
     <minim:hasShouldRequirement rdf:resource="#RO_has_sketch" /> -->
     
     <!--
+    <minim:hasMustRequirement 	rdf:resource="#RO_has_created" />
+    <minim:hasMustRequirement 	rdf:resource="#RO_has_comment" />
     <minim:hasShouldRequirement rdf:resource="#RO_has_hypothesys" />
     <minim:hasShouldRequirement rdf:resource="#RO_has_sample_input" />
     <minim:hasMustRequirement   rdf:resource="#RO_has_workflow" />

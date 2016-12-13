@@ -95,8 +95,8 @@
     </rdfs:comment>
     <minim:hasMustRequirement   rdf:resource="#RO_has_title" />
     <minim:hasMustRequirement 	rdf:resource="#RO_has_description" />
-    <!--<minim:hasMustRequirement 	rdf:resource="#RO_has_creator" />
-    <minim:hasMustRequirement 	rdf:resource="#RO_has_keywords" />
+    <minim:hasMustRequirement 	rdf:resource="#RO_has_creator" />
+    <!--<minim:hasMustRequirement 	rdf:resource="#RO_has_keywords" />
     <minim:hasShouldRequirement rdf:resource="#RO_has_ROtype" />
     <minim:hasShouldRequirement rdf:resource="#RO_has_subject" />
     <minim:hasShouldRequirement rdf:resource="#RO_has_sketch" /> -->

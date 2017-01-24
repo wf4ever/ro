@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY rdf     "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY rdfs    "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY owl     "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd     "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml     "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfg    "http://www.w3.org/2004/03/trix/rdfg-1/" >
+    <!ENTITY ore     "http://www.openarchives.org/ore/terms/" >
+    <!ENTITY ao      "http://purl.org/ao/" >
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY foaf    "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY ro      "http://purl.org/wf4ever/ro#" >
+    <!ENTITY wfprov  "http://purl.org/wf4ever/wfprov#" >
+    <!ENTITY wfdesc  "http://purl.org/wf4ever/wfdesc#" >
+    <!ENTITY wf4ever "http://purl.org/wf4ever/wf4ever#" >
+    <!ENTITY minim   "http://purl.org/minim/minim#" >
+    <!ENTITY swrc		 "http://swrc.ontoware.org/ontology#">
+    <!ENTITY roes 	 "http://w3id.org/ro/earth-science#" >
+    <!ENTITY odrs 	 "http://schema.theodi.org/odrs#" >
+    <!ENTITY roterms "http://purl.org/wf4ever/roterms#" >
+    <!ENTITY cito    "http://purl.org/spar/cito" >
+    <!ENTITY dbo     "http://dbpedia.org/ontology" >
+]>
+
+<rdf:RDF xmlns="."
+     xmlns:rdf="&rdf;"
+     xmlns:rdfs="&rdfs;"
+     xmlns:owl="&owl;"
+     xmlns:xsd="&xsd;"
+     xmlns:xml="&xml;"
+     xmlns:rdfg="&rdfg;"
+     xmlns:ore="&ore;"
+     xmlns:ao="&ao;"
+     xmlns:dcterms="&dcterms;"
+     xmlns:foaf="&foaf;"
+     xmlns:ro="&ro;"
+     xmlns:wfprov="&wfprov;"
+     xmlns:wfdesc="&wfdesc;"
+     xmlns:wf4ever="&wf4ever;"
+     xmlns:minim="&minim;"
+     xmlns:swrc="&swrc;"
+     xmlns:roes="&roes;"
+     xmlns:odrs="&odrs;"
+     xmlns:roterms="&roterms;"
+     xmlns:cito="&cito;"
+     xmlns:dbo="&dbo;"
+>
+
+  <!-- ===========
+       CONSTRAINTS 
+       ===========
+    -->
+
+  <!-- Target for Minimum information requirement 
+
+       Minim invokes minimum information models for a specified purpose
+       relating to a specified target.  The requirement may apply to some
+       resource other than the specified target.
+    -->
+
+  <rdf:Description rdf:about="http://workflow-experiment#ChecklistConstraints">
+
+    <minim:hasConstraint>
+      <minim:Constraint rdf:about="#experiment-complete">
+        <minim:forTargetTemplate>{+targetro}</minim:forTargetTemplate>
+        <minim:forPurpose>ready-to-release</minim:forPurpose>
+        <minim:toModel rdf:resource="#experiment_complete_model" />
+        <!-- <minim:onResourceTemplate>{+targetro}</minim:onResourceTemplate> -->
+        <rdfs:comment>
+          Constraint to be satisfied if the target RO is to be considered a
+          complete and fully-described experiment.
+        </rdfs:comment>
+      </minim:Constraint>
+    </minim:hasConstraint>
+
+    <minim:hasConstraint>
+      <minim:Constraint rdf:about="#wf-accessible">
+        <minim:forTargetTemplate>{+targetro}</minim:forTargetTemplate>
+        <minim:forPurpose>wf-accessible</minim:forPurpose>
+        <minim:toModel rdf:resource="#wf_accessible_model" />
+        <rdfs:comment>
+          Constraint to test workflow accessible item in isolation
+        </rdfs:comment>
+      </minim:Constraint>
+    </minim:hasConstraint>
+    
+
+  </rdf:Description>
+
+  <!-- ======
+       MODELS
+       ======
+    -->
+
+  <!-- Model (checklist) for complete experiment RO
+    -->
+  <minim:Model rdf:about="#experiment_complete_model">
+    <rdfs:label>Complete experiment</rdfs:label>
+    <rdfs:comment>
+      This model defines information that must be satisfied by the target RO
+      for the target RO to be considered a complete and fully-described experiment.
+    </rdfs:comment>
+    <minim:hasMustRequirement   rdf:resource="#RO_has_title" />
+    <minim:hasMustRequirement 	rdf:resource="#RO_has_description" />
+    <minim:hasMustRequirement 	rdf:resource="#RO_has_creator" />
+    <minim:hasMustRequirement   rdf:resource="#RO_has_copyrightholder" />
+    <minim:hasMustRequirement 	rdf:resource="#RO_has_keywords" />
+    <minim:hasShouldRequirement rdf:resource="#RO_has_sketch" />
+    <minim:hasShouldRequirement rdf:resource="#RO_has_subject" />
+    <minim:hasShouldRequirement rdf:resource="#RO_has_ancillarydoc" />  
+    <minim:hasMustRequirement   rdf:resource="#RO_has_workflow" />
+    <minim:hasShouldRequirement rdf:nodeID="Nb0d6e070b150465b880a2d97ef76d7ff"/> <!-- workflow definition available -->
+    <minim:hasShouldRequirement rdf:nodeID="Nf9e16f14c0b0489ca7451187b8f32336"/> <!-- services available -->
+    <minim:hasShouldRequirement rdf:nodeID="N7580aa07c8e74409974b1c3f99987bf3"/> <!-- workflow run available -->
+    <minim:hasMustRequirement   rdf:resource="#WF_has_inputdata" />
+    <minim:hasMustRequirement   rdf:resource="#WF_has_outputdata" />
+    <minim:hasShouldRequirement rdf:resource="#WF_has_swrequirements" />
+    <minim:hasMustRequirement   rdf:resource="#input_has_format" />
+    <minim:hasMustRequirement   rdf:resource="#input_has_filesize" />
+  </minim:Model>
+
+  <!-- Model (checklist) for WF accessible
+    -->
+  <minim:Model rdf:about="#wf_accessible_model">
+    <rdfs:label>Workflow accessible</rdfs:label>
+    <rdfs:comment>
+      Model to test workflow accessible item in isolation
+    </rdfs:comment>
+    <minim:hasMustRequirement rdf:resource="#WF_accessible" />
+  </minim:Model>
+
+  <!-- =================
+       REQUIREMENT RULES
+       =================
+    -->
+    
+  <!-- RO title is present -->
+  <minim:Requirement rdf:about="#RO_has_title">
+    <minim:isDerivedBy>
+      <minim:ContentMatchRequirementRule>
+        <minim:forall>
+          ?ro rdf:type ro:ResearchObject .
+          FILTER NOT EXISTS { ?ro rdf:type ore:AggregatedResource }
+          FILTER NOT EXISTS { ?ro rdf:type roterms:WorkflowRunBundle  }
+        </minim:forall>
+        <minim:exists>
+          ?ro dcterms:title ?rotitle .
+        </minim:exists>
+        <minim:showpass>Research Object has title</minim:showpass>
+        <minim:showfail>Research Object does not have title</minim:showfail>
+        <minim:derives rdf:resource="#RO_has_title" />
+      </minim:ContentMatchRequirementRule>
+    </minim:isDerivedBy>
+    <minim:seq>001</minim:seq>
+  </minim:Requirement>
+  
+  <!-- RO description is present -->
+  <minim:Requirement rdf:about="#RO_has_description">
+    <minim:isDerivedBy>
+      <minim:ContentMatchRequirementRule>
+        <minim:forall>
+          ?ro rdf:type ro:ResearchObject .
+          FILTER NOT EXISTS { ?ro rdf:type ore:AggregatedResource }
+          FILTER NOT EXISTS { ?ro rdf:type roterms:WorkflowRunBundle  }
+        </minim:forall>
+        <minim:exists>
+          ?ro dcterms:description ?rodescription .
+        </minim:exists>
+        <minim:showpass>Research Object has description</minim:showpass>
+        <minim:showfail>Research Object does not have description</minim:showfail>
+        <minim:derives rdf:resource="#RO_has_description" />
+      </minim:ContentMatchRequirementRule>
+    </minim:isDerivedBy>
+    <minim:seq>002</minim:seq>
+  </minim:Requirement>
+
+	<!-- RO creator is present -->
+  <minim:Requirement rdf:about="#RO_has_creator">
+    <minim:isDerivedBy>
+      <minim:ContentMatchRequirementRule>
+        <minim:forall>
+          ?ro rdf:type ro:ResearchObject .
+          FILTER NOT EXISTS { ?ro rdf:type ore:AggregatedResource }
+          FILTER NOT EXISTS { ?ro rdf:type roterms:WorkflowRunBundle  }
+        </minim:forall>
+        <minim:exists>
+          ?ro dcterms:creator ?rocreator .
+        </minim:exists>
+        <minim:showpass>Research Object has creator</minim:showpass>
+        <minim:showfail>Research Object does not have creator</minim:showfail>
+        <minim:derives rdf:resource="#RO_has_creator" />
+      </minim:ContentMatchRequirementRule>
+    </minim:isDerivedBy>
+    <minim:seq>003</minim:seq>
+  </minim:Requirement>
+  
+  <!-- RO copyright holder is present -->
+  <minim:Requirement rdf:about="#RO_has_copyrightholder">
+    <minim:isDerivedBy>
+      <minim:ContentMatchRequirementRule>
+        <minim:forall>
+          ?ro rdf:type ro:ResearchObject .
+          FILTER NOT EXISTS { ?ro rdf:type ore:AggregatedResource }
+          FILTER NOT EXISTS { ?ro rdf:type roterms:WorkflowRunBundle  }
+        </minim:forall>
+        <minim:exists>
+          ?ro odrs:copyrightHolder ?rocopyrightholder .
+        </minim:exists>
+        <minim:showpass>Research Object has copyright holder</minim:showpass>
+        <minim:showfail>Research Object does not have copyright holder</minim:showfail>
+        <minim:derives rdf:resource="#RO_has_copyrightholder" />
+      </minim:ContentMatchRequirementRule>
+    </minim:isDerivedBy>
+    <minim:seq>004</minim:seq>
+  </minim:Requirement>
+  
+  <!-- RO keywords/tags is present -->
+  <minim:Requirement rdf:about="#RO_has_keywords">
+    <minim:isDerivedBy>
+      <minim:ContentMatchRequirementRule>
+        <minim:forall>
+          ?ro rdf:type ro:ResearchObject .
+          FILTER NOT EXISTS { ?ro rdf:type ore:AggregatedResource }
+          FILTER NOT EXISTS { ?ro rdf:type roterms:WorkflowRunBundle  }
+        </minim:forall>
+        <minim:exists>
+          ?ro swrc:keywords ?rokeywords .
+        </minim:exists>
+        <minim:showpass>Research Object has keywords</minim:showpass>
+        <minim:showfail>Research Object does not have keywords</minim:showfail>
+        <minim:derives rdf:resource="#RO_has_keywords" />
+      </minim:ContentMatchRequirementRule>
+    </minim:isDerivedBy>
+    <minim:seq>005</minim:seq>
+  </minim:Requirement>
+  
+  <!-- RO sketch is present -->
+  <minim:Requirement rdf:about="#RO_has_sketch">
+    <minim:isDerivedBy>
+      <minim:ContentMatchRequirementRule>
+        <minim:exists>
+          ?ro ore:aggregates [ rdf:type roterms:Sketch ] .
+        </minim:exists>
+        <minim:showpass>Research Object has sketch</minim:showpass>
+        <minim:showfail>Research Object does not have sketch</minim:showfail>
+        <minim:derives rdf:resource="#RO_has_sketch" />
+      </minim:ContentMatchRequirementRule>
+    </minim:isDerivedBy>
+    <minim:seq>006</minim:seq>
+  </minim:Requirement>
+    
+  <!-- RO subject is present -->
+  <minim:Requirement rdf:about="#RO_has_subject">
+    <minim:isDerivedBy>
+      <minim:ContentMatchRequirementRule>
+        <minim:forall>
+          ?ro rdf:type ro:ResearchObject .
+          FILTER NOT EXISTS { ?ro rdf:type ore:AggregatedResource }
+          FILTER NOT EXISTS { ?ro rdf:type roterms:WorkflowRunBundle  }
+        </minim:forall>
+        <minim:exists>
+          ?ro dcterms:subject ?subject .
+        </minim:exists>
+        <minim:showpass>Research Object has subject</minim:showpass>
+        <minim:showfail>Research Object does not have subject</minim:showfail>
+        <minim:derives rdf:resource="#RO_has_subject" />
+      </minim:ContentMatchRequirementRule>
+    </minim:isDerivedBy>
+    <minim:seq>007</minim:seq>
+  </minim:Requirement>
+  
+  <!-- RO has ancillary documentation -->
+  <minim:Requirement rdf:about="#RO_has_ancillarydoc">
+    <minim:isDerivedBy>
+      <minim:ContentMatchRequirementRule>
+        <minim:forall>
+          ?ro rdf:type ro:ResearchObject .
+          FILTER NOT EXISTS { ?ro rdf:type ore:AggregatedResource }
+          FILTER NOT EXISTS { ?ro rdf:type roterms:WorkflowRunBundle  }
+        </minim:forall>
+        <minim:exists>
+          ?ro cito:isDocumentedBy ?doc .
+        </minim:exists>
+        <minim:showpass>Research Object has ancillary documentation</minim:showpass>
+        <minim:showfail>Research Object does not have ancillary documentation</minim:showfail>
+        <minim:derives rdf:resource="#RO_has_ancillarydoc" />
+      </minim:ContentMatchRequirementRule>
+    </minim:isDerivedBy>
+    <minim:seq>008</minim:seq>
+  </minim:Requirement>
+
+  <!--
+        Workflow
+  -->
+
+  <!-- Workflow instance description is present -->
+  <minim:Requirement rdf:about="#RO_has_workflow">
+    <minim:isDerivedBy>
+      <minim:ContentMatchRequirementRule>
+        <minim:exists>
+          ?ro ore:aggregates [ rdf:type wfdesc:Workflow ] .
+        </minim:exists>
+        <minim:showpass>Workflow resource is present</minim:showpass>
+        <minim:showfail>No workflow resource found. For workflows to be recognized, they must be annotated with type Workflow.</minim:showfail>
+        <minim:derives rdf:resource="#RO_has_workflow" />
+      </minim:ContentMatchRequirementRule>
+    </minim:isDerivedBy>
+    <minim:seq>010</minim:seq>
+  </minim:Requirement>
+  
+  <!-- Workflow definition is present -->
+  <rdf:Description rdf:nodeID="Nb0d6e070b150465b880a2d97ef76d7ff">
+    <minim:seq>011</minim:seq>
+    <rdf:type rdf:resource="http://purl.org/minim/minim#Requirement"/>
+    <minim:isDerivedBy rdf:resource="#req_workflow_definition"/>
+  </rdf:Description>
+  
+  <rdf:Description rdf:about="#req_workflow_definition">
+    <rdf:type rdf:resource="http://purl.org/minim/minim#QueryTestRule"/>
+    <minim:showfail>Workflow definition %(wfdef)s for %(wf)s is not accessible. The wf definition is the resource understood by a workfow engine (e.g., t2flow, ga, kar), and it is referenced by a workflow. With a .t2flow, use "Annotate and Transform" in ROHUB to create the anotation.</minim:showfail>
+    <minim:showmiss>No workflow resource found (for checking wf definition). The wf definition is the resource understood by a workfow engine (e.g., t2flow, ga, kar), and it is referenced by a workflow. With a .t2flow, use "Annotate and Transform" in ROHUB to create the anotation.</minim:showmiss>
+    <minim:isLiveTemplate>{+wfdef}</minim:isLiveTemplate>
+    <minim:query rdf:nodeID="Nc25db8dd938a4c2e94a250353e420830"/>
+    <minim:showpass>All workflow definitions referenced by workflow reources are accessible. The wf definition is the resource understood by a workfow engine (e.g, t2flow, ga, kar).</minim:showpass>
+  </rdf:Description>
+  
+  <rdf:Description rdf:nodeID="Nc25db8dd938a4c2e94a250353e420830">
+    <minim:sparql_query>
+    	?wf rdf:type wfdesc:Workflow
+  		; wfdesc:hasWorkflowDefinition ?wfdef .
+  	</minim:sparql_query>
+  </rdf:Description>
+  
+  <!-- Workflow Run is present -->
+  <rdf:Description rdf:nodeID="N7580aa07c8e74409974b1c3f99987bf3">
+    <rdf:type rdf:resource="http://purl.org/minim/minim#Requirement"/>
+    <minim:isDerivedBy rdf:resource="#req_sample_data"/>
+    <minim:seq>012</minim:seq>
+  </rdf:Description>
+  
+  <rdf:Description rdf:about="#req_sample_data">
+    <rdf:type rdf:resource="http://purl.org/minim/minim#QueryTestRule"/>
+    <minim:showfail>No workflow run indicated for any workflow</minim:showfail>
+    <minim:exists rdf:nodeID="Nb3f7714962104f7ea59f57b54cd57ee5"/>
+    <minim:showpass>Workflow run is indicated</minim:showpass>
+    <minim:showmiss>No workflow resource found (for checking workflow run). The workflow run is the execution provenance of the workflow, e.g., Taverna can export it as an robundle that can be imported in ROHUB</minim:showmiss>
+  </rdf:Description>
+  
+  <rdf:Description rdf:nodeID="Nb3f7714962104f7ea59f57b54cd57ee5">
+    <minim:sparql_query>
+    	?wf rdf:type wfdesc:Workflow .
+			?wfrun rdf:type wfprov:WorkflowRun ;
+    	wfprov:describedByWorkflow ?wf
+    </minim:sparql_query>
+  </rdf:Description>
+
+  <!--
+        Workflow services used
+  -->
+
+  
+  
+  <!-- All workflow services are accessible -->
+  <rdf:Description rdf:nodeID="Nf9e16f14c0b0489ca7451187b8f32336">
+    <rdf:type rdf:resource="http://purl.org/minim/minim#Requirement"/>
+    <minim:seq>013</minim:seq>
+    <minim:isDerivedBy rdf:resource="#req_live_web_service"/>
+  </rdf:Description>
+  
+  <rdf:Description rdf:about="#req_live_web_service">
+  	<minim:listpass rdf:nodeID="N5bc03c1e374e43aa8a71b96f20af19e4"/>
+    <minim:listfail rdf:nodeID="Na1a33851990347d9876082887fb48443"/>
+    <minim:listfail rdf:nodeID="N3e38e02d4bd043458ad301d7cb7c8d00"/>
+    <minim:showfail>Some services used by workflows %(wf_list)s are not accessible: %(wfservices_fail)s.  Accessible services referenced are %(wfservices_pass)s.</minim:showfail>
+    <minim:showpass>All referenced workflow services are accessible: %(wfservices_pass)s</minim:showpass>
+    <rdf:type rdf:resource="http://purl.org/minim/minim#QueryTestRule"/>
+    <minim:showmiss>No workflow service references found. These are provided as part of a workflow description or using the "Annotate and Transform" option that creates a workflow description with references to any workflow services used.</minim:showmiss>
+    <minim:isLiveTemplate>{+wfservice}</minim:isLiveTemplate>
+    <minim:query rdf:nodeID="N5340afd3e3fe4af1982d36ae2a24c59b"/>
+  </rdf:Description>
+  
+  <rdf:Description rdf:nodeID="N5340afd3e3fe4af1982d36ae2a24c59b">
+    <minim:sparql_query>
+    	?wf rdf:type wfdesc:Process .
+  		{ ?wf wf4ever:serviceURI ?wfservice }
+  		UNION
+  		{ ?wf wf4ever:wsdlURI ?wfservice }
+  		UNION
+  		{ ?wf wf4ever:rootURI ?wfservice }
+  	</minim:sparql_query>
+  </rdf:Description>
+
+  <rdf:Description rdf:nodeID="N5bc03c1e374e43aa8a71b96f20af19e4">
+    <rdf:type rdf:resource="http://purl.org/minim/minim#ValueCollector"/>
+    <minim:collectVar>wfservice</minim:collectVar>
+    <minim:collectList>wfservices_pass</minim:collectList>
+  </rdf:Description>
+  
+  <rdf:Description rdf:nodeID="Na1a33851990347d9876082887fb48443">
+    <rdf:type rdf:resource="http://purl.org/minim/minim#ValueCollector"/>
+    <minim:collectList>wfservices_fail</minim:collectList>
+    <minim:collectVar>wfservice</minim:collectVar>
+  </rdf:Description>
+  
+  <rdf:Description rdf:nodeID="N3e38e02d4bd043458ad301d7cb7c8d00">
+    <rdf:type rdf:resource="http://purl.org/minim/minim#ValueCollector"/>
+    <minim:collectVar>wf</minim:collectVar>
+    <minim:collectList>wf_list</minim:collectList>
+  </rdf:Description>
+  
+  
+  <!-- WF has sw requirements -->
+  <minim:Requirement rdf:about="#WF_has_swrequirements">
+    <minim:isDerivedBy>
+      <minim:ContentMatchRequirementRule>
+        <minim:exists>
+        {
+          ?wp rdf:type wfdesc:Process
+   					; roterms:requiresSoftware ?anything . 
+   			}
+				UNION
+  			{
+  				?wp rdf:type wfdesc:Workflow
+    				; roterms:requiresSoftware ?anything .
+    		}
+        </minim:exists>
+        <minim:showpass>Workflow process software dependencies are indicated</minim:showpass>
+        <minim:showfail>No workflow process software dependencies found</minim:showfail>
+        <minim:derives rdf:resource="#WF_has_swrequirements" />
+      </minim:ContentMatchRequirementRule>
+    </minim:isDerivedBy>
+    <minim:seq>014</minim:seq>
+  </minim:Requirement>
+  
+  
+  <!--
+        Workflow inputs
+  -->
+
+  <!-- Workflow input data is present -->
+  <minim:Requirement rdf:about="#WF_has_inputdata">
+    <minim:isDerivedBy>
+      <minim:ContentMatchRequirementRule>
+        <minim:forall>
+          {
+           ?wf rdf:type wfdesc:Workflow .
+          }
+          UNION
+          {
+           ?wf rdf:type wfdesc:Process .
+          }
+        </minim:forall>
+        <minim:exists>
+          ?wf wfdesc:hasInput ?input .
+        </minim:exists>
+        <minim:showpass>All processes (e.g., workflows) have input defined</minim:showpass>
+        <minim:showfail>One or more process (e.g., workflow) has no input defined, including &lt;i&gt;%(wf)s &lt;/i&gt;</minim:showfail>
+        <minim:showmiss>No processes (e.g., workflows) found (for checking input data)</minim:showmiss>
+        <minim:derives rdf:resource="#WF_has_inputdata" />
+      </minim:ContentMatchRequirementRule>
+    </minim:isDerivedBy>
+    <minim:seq>015</minim:seq>
+  </minim:Requirement>
+
+  <!--
+        Workflow outputs
+  -->
+
+	<!-- Workflow output data is present -->
+  <minim:Requirement rdf:about="#WF_has_outputdata">
+    <minim:isDerivedBy>
+      <minim:ContentMatchRequirementRule>
+        <minim:forall>
+          {
+           ?wf rdf:type wfdesc:Workflow .
+          }
+          UNION
+          {
+           ?wf rdf:type wfdesc:Process .
+          }
+        </minim:forall>
+        <minim:exists>
+          ?wf wfdesc:hasOutput ?input .
+        </minim:exists>
+        <minim:showpass>All processes (e.g., workflows) have output defined</minim:showpass>
+        <minim:showfail>One or more process (e.g., workflow) has no output defined, including &lt;i&gt;%(wf)s &lt;/i&gt;</minim:showfail>
+        <minim:showmiss>No processes (e.g., workflows) found (for checking output data)</minim:showmiss>
+        <minim:derives rdf:resource="#WF_has_outputdata" />
+      </minim:ContentMatchRequirementRule>
+    </minim:isDerivedBy>
+    <minim:seq>016</minim:seq>
+  </minim:Requirement>
+  
+  
+
+  <!--
+        Experiment results, conclusions, etc
+  -->	
+
+  
+  <!--
+        Other diagnostics
+  -->
+
+  <!-- RO annotations bodies present -->
+  <minim:Requirement rdf:about="#RO_live_annotations">
+    <minim:isDerivedBy>
+      <minim:ContentMatchRequirementRule>
+        <minim:forall>
+          ?astub rdf:type ro:AggregatedAnnotation ;
+            ao:body ?abody .
+        </minim:forall>
+        <minim:isLiveTemplate>
+          {+abody}
+        </minim:isLiveTemplate>
+        <minim:showpass>Annotations bodies are all accessible</minim:showpass>
+        <minim:showfail>Annotation body %(abody)s for %(astub)s is not accessible</minim:showfail>
+        <minim:derives rdf:resource="#RO_live_annotations" />
+      </minim:ContentMatchRequirementRule>
+    </minim:isDerivedBy>
+    <minim:seq>102</minim:seq>
+  </minim:Requirement>
+  
+  <!-- input has format -->
+  <minim:Requirement rdf:about="#input_has_format">
+    <minim:isDerivedBy>
+      <minim:ContentMatchRequirementRule>
+        <minim:forall>
+          {
+           ?input rdf:type wf4ever:Dataset .
+          }
+          UNION
+          {
+           ?input rdf:type wf4ever:Document .
+          }
+          UNION
+          {
+           ?input rdf:type wf4ever:File .
+          }
+          UNION
+          {
+           ?input rdf:type wf4ever:Image .
+          }
+        </minim:forall>
+        <minim:exists>
+          ?input dc:format ?format .
+        </minim:exists>
+        <minim:showpass>All data artifacts have format indicated</minim:showpass>
+        <minim:showfail>One or more data artifact has no format indicated, including &lt;i&gt;%(input)s &lt;/i&gt;</minim:showfail>
+        <minim:showmiss>No data artifacts found (for checking format). For data artifacts to be recognized, they must be annotated with their appropriate type (e.g., dataset, document, file, image).</minim:showmiss>
+        <minim:derives rdf:resource="#input_has_format" />
+      </minim:ContentMatchRequirementRule>
+    </minim:isDerivedBy>
+    <minim:seq>020</minim:seq>
+  </minim:Requirement>
+  
+  <!-- input has filesize -->
+  <minim:Requirement rdf:about="#input_has_filesize">
+    <minim:isDerivedBy>
+      <minim:ContentMatchRequirementRule>
+        <minim:forall>
+          {
+           ?input rdf:type wf4ever:Dataset .
+          }
+          UNION
+          {
+           ?input rdf:type wf4ever:Document .
+          }
+          UNION
+          {
+           ?input rdf:type wf4ever:File .
+          }
+          UNION
+          {
+           ?input rdf:type wf4ever:Image .
+          }
+        </minim:forall>
+        <minim:exists>
+          ?input dbo:filesize ?filesize .
+        </minim:exists>
+        <minim:showpass>All data artifacts have filesize indicated</minim:showpass>
+        <minim:showfail>One or more data artifact has no filesize indicated, including &lt;i&gt;%(input)s &lt;/i&gt;</minim:showfail>
+        <minim:showmiss>No data artifacts found (for checking filesize). For data artifacts to be recognized, they must be annotated with their appropriate type (e.g., dataset, document, file, image).</minim:showmiss>
+        <minim:derives rdf:resource="#input_has_filesize" />
+      </minim:ContentMatchRequirementRule>
+    </minim:isDerivedBy>
+    <minim:seq>021</minim:seq>
+  </minim:Requirement>
+  
+  
+  
+
+</rdf:RDF>

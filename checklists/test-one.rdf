@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:minim="http://purl.org/minim/minim#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+
+	<rdf:Description rdf:nodeID="Nb0d6e070b150465b880a2d97ef76d7ff">
+    <minim:seq>req_05</minim:seq>
+    <rdf:type rdf:resource="http://purl.org/minim/minim#Requirement"/>
+    <minim:isDerivedBy rdf:resource="#req_workflow_definition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#req_workflow_definition">
+    <rdf:type rdf:resource="http://purl.org/minim/minim#QueryTestRule"/>
+    <minim:showfail>Workflow definition %(wfdef)s for %(wflab)s is not accessible</minim:showfail>
+    <minim:showmiss>No workflow definitions found.  A workflow definition is referenced by a workflow description annotation using the "wfdesc" vocabulary.  If a .t2flow file is present in a myExperiment pack, use the "Annotate and Transform" option to create the anotation.</minim:showmiss>
+    <minim:isLiveTemplate>{+wfdef}</minim:isLiveTemplate>
+    <minim:query rdf:nodeID="Nc25db8dd938a4c2e94a250353e420830"/>
+    <minim:showpass>All referenced workflow definitions are accessible</minim:showpass>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc25db8dd938a4c2e94a250353e420830">
+    <minim:sparql_query>?wf rdf:type wfdesc:Workflow
+  ; rdfs:label ?wflab
+  ; wfdesc:hasWorkflowDefinition ?wfdef</minim:sparql_query>
+    <minim:result_mod>ORDER BY ?wflab</minim:result_mod>
+  </rdf:Description>
+  
+  <rdf:Description rdf:about="#model_complete">
+    <rdf:type rdf:resource="http://purl.org/minim/minim#Model"/>
+    <minim:hasShouldRequirement rdf:nodeID="Nb0d6e070b150465b880a2d97ef76d7ff"/>
+  </rdf:Description>
+ 
+  <rdf:Description rdf:nodeID="Ndf7b94b501a84504800530811886d14e">
+    <minim:forPurpose>complete</minim:forPurpose>
+    <rdf:type rdf:resource="http://purl.org/minim/minim#Checklist"/>
+    <minim:forTargetTemplate>{+targetro}</minim:forTargetTemplate>
+    <minim:toModel rdf:resource="#model_complete"/>
+  </rdf:Description> 
+  
+  <rdf:Description rdf:about="#ChecklistConstraints">
+    <minim:hasChecklist rdf:nodeID="Ndf7b94b501a84504800530811886d14e"/>
+  </rdf:Description>
+  
+ 
+</rdf:RDF>

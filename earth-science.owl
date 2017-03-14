@@ -229,6 +229,18 @@ the annotation of resources in earth-science domain.
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o"/>
     </owl:DatatypeProperty>
     
+    <!-- http://www.w3.org/ns/prov#startedAtTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/prov#startedAtTime">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o"/>
+    </owl:DatatypeProperty>
+    
+    <!-- http://www.w3.org/ns/prov#endedAtTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/prov#endedAtTime">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o"/>
+    </owl:DatatypeProperty>
+    
     <!-- http://www.opengis.net/ont/geosparql#asWKT -->
     
     <owl:DatatypeProperty rdf:about="http://www.opengis.net/ont/geosparql#asWKT">

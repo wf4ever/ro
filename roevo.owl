@@ -395,7 +395,7 @@ Archived ROs represent the final stage of a RO (release) where it has either rea
         <rdfs:label>Forked RO</rdfs:label>
         <rdfs:subClassOf rdf:resource="&ro;ResearchObject"/>
         <rdfs:subClassOf rdf:resource="&prov;Entity"/>
-        <rdfs:subClassOf rdf:resource="&prov;LiveRO"/>
+        <rdfs:subClassOf rdf:resource="&roevo;LiveRO"/>
         <rdfs:comment>A subclass of ro:ResearchObject representing a live Research Object that was forked from 
         another Research Object (live, snapshot, archived) to start a new line of work. 
         Thus it is a especialisation of a live Research Object.

@@ -20,10 +20,9 @@
     <!ENTITY roes 	 "http://w3id.org/ro/earth-science#" >
     <!ENTITY odrs 	 "http://schema.theodi.org/odrs#" >
     <!ENTITY roterms "http://purl.org/wf4ever/roterms#" >
-    <!ENTITY cito    "http://purl.org/spar/cito" >
-    <!ENTITY dbo     "http://dbpedia.org/ontology" >
-    <!ENTITY bibo    "http://purl.org/ontology/bibo" >
-    <!ENTITY dc      "http://purl.org/dc/elements/1.1" >
+    <!ENTITY cito    "http://purl.org/spar/cito/" >
+    <!ENTITY dbo     "http://dbpedia.org/ontology/" >
+    <!ENTITY bibo    "http://purl.org/ontology/bibo/" >
     <!ENTITY prov 	 "http://www.w3.org/ns/prov#" >
 ]>
 
@@ -50,7 +49,6 @@
      xmlns:cito="&cito;"
      xmlns:dbo="&dbo;"
      xmlns:bibo="&bibo;"
-     xmlns:dc="&dc;"
      xmlns:prov="&prov;"
 >
 

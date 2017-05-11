@@ -20,10 +20,9 @@
     <!ENTITY roes 	 "http://w3id.org/ro/earth-science#" >
     <!ENTITY odrs 	 "http://schema.theodi.org/odrs#" >
     <!ENTITY roterms "http://purl.org/wf4ever/roterms#" >
-    <!ENTITY cito    "http://purl.org/spar/cito" >
-    <!ENTITY dbo     "http://dbpedia.org/ontology" >
-    <!ENTITY bibo    "http://purl.org/ontology/bibo" >
-    <!ENTITY dc      "http://purl.org/dc/elements/1.1" >
+    <!ENTITY cito    "http://purl.org/spar/cito/" >
+    <!ENTITY dbo     "http://dbpedia.org/ontology/" >
+    <!ENTITY bibo    "http://purl.org/ontology/bibo/" >
 ]>
 
 <rdf:RDF xmlns="."
@@ -49,7 +48,6 @@
      xmlns:cito="&cito;"
      xmlns:dbo="&dbo;"
      xmlns:bibo="&bibo;"
-     xmlns:dc="&dc;"
 >
 
   <!-- ===========
@@ -446,7 +444,7 @@
         </minim:forall>
         <minim:exists>
           ?ro bibo:doi ?doi ;
-              dc:identifier ?doi .
+              dcterms:identifier ?doi .
         </minim:exists>
         <minim:showpass>Research Object has DOI</minim:showpass>
         <minim:showfail>Research Object does not have DOI</minim:showfail>

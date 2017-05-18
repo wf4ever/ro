@@ -112,7 +112,8 @@
     <minim:hasShouldRequirement rdf:resource="#RO_has_ancillarydoc" />  
     <minim:hasMustRequirement   rdf:resource="#RO_has_workflow" />
     <minim:hasShouldRequirement rdf:nodeID="Nb0d6e070b150465b880a2d97ef76d7ff"/> <!-- workflow definition available -->
-    <minim:hasMayRequirement	  rdf:nodeID="Nf9e16f14c0b0489ca7451187b8f32336"/> <!-- services available -->
+    <minim:hasShouldRequirement rdf:nodeID="Nf9e16f14c0b0489ca7451187b8f32336"/>  <!-- services available -->
+    <!-- <minim:hasShouldRequirement rdf:resource="#WF_services_accessible" /> -->
     <minim:hasShouldRequirement rdf:nodeID="N7580aa07c8e74409974b1c3f99987bf3"/> <!-- workflow run available -->
     <minim:hasMustRequirement   rdf:resource="#WF_has_inputdata" />
     <minim:hasMustRequirement   rdf:resource="#WF_has_outputdata" />
@@ -410,6 +411,38 @@
     <minim:collectList>wf_list</minim:collectList>
   </rdf:Description>
   
+  <!-- All workflow services are accessible -->
+  <minim:Requirement rdf:about="#WF_services_accessible">
+    <minim:isDerivedBy>
+      <minim:ContentMatchRequirementRule>
+        <minim:forall>
+          ?pr rdf:type wfdesc:Process ;
+              rdfs:label ?prlab .
+            {
+            ?pr wf4ever:serviceURI ?pruri .
+            }
+          UNION
+            {
+            ?pr wf4ever:wsdlURI ?pruri .
+            }
+          UNION
+  					{ 
+  					?pr wf4ever:rootURI ?pruri .
+  					}
+        </minim:forall>
+        <minim:orderby>ORDER BY ?prlab</minim:orderby>
+        <minim:isLiveTemplate>
+          {+pruri}
+        </minim:isLiveTemplate>
+        <minim:showpass>All web services used by workflows are accessible</minim:showpass>
+        <minim:showfail___>Web service &lt;a href="%(pruri)s"&gt;&lt;i&gt;%(prlab)s&lt;/i&gt;&lt;/a&gt; is not accessible</minim:showfail___>
+        <minim:showfail>One or more web services used by one of the workflows are inaccessible, including &lt;a href="%(pruri)s"&gt;&lt;i&gt;%(prlab)s&lt;/i&gt;&lt;/a&gt;</minim:showfail>
+        <minim:showmiss___>No workflow services are referenced</minim:showmiss___>
+        <minim:derives rdf:resource="#WF_services_accessible" />
+      </minim:ContentMatchRequirementRule>
+    </minim:isDerivedBy>
+    <minim:seq>013</minim:seq>
+  </minim:Requirement>
   
   <!-- WF has sw requirements -->
   <minim:Requirement rdf:about="#WF_has_swrequirements">

@@ -451,6 +451,7 @@
           {
            ?wf rdf:type wfdesc:Process .
           }
+          FILTER  EXISTS { ?ro ore:aggregates ?wf}
         </minim:forall>
         <minim:exists>
           ?wf wfdesc:hasInput ?input .

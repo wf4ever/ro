@@ -112,8 +112,8 @@
     <minim:hasShouldRequirement rdf:resource="#RO_has_ancillarydoc" />  
     <minim:hasMustRequirement   rdf:resource="#RO_has_workflow" />
     <minim:hasShouldRequirement rdf:nodeID="Nb0d6e070b150465b880a2d97ef76d7ff"/> <!-- workflow definition available -->
-    <minim:hasShouldRequirement rdf:nodeID="Nf9e16f14c0b0489ca7451187b8f32336"/>  <!-- services available -->
-    <!-- <minim:hasShouldRequirement rdf:resource="#WF_services_accessible" /> -->
+    <!-- <minim:hasShouldRequirement rdf:nodeID="Nf9e16f14c0b0489ca7451187b8f32336"/>  services available -->
+    <minim:hasShouldRequirement rdf:resource="#WF_services_accessible" /> 
     <minim:hasShouldRequirement rdf:nodeID="N7580aa07c8e74409974b1c3f99987bf3"/> <!-- workflow run available -->
     <minim:hasMustRequirement   rdf:resource="#WF_has_inputdata" />
     <minim:hasMustRequirement   rdf:resource="#WF_has_outputdata" />

@@ -359,6 +359,7 @@
   <rdf:Description rdf:nodeID="Nc0f481e0164d423cb30db7800f737ccc">
     <minim:sparql_query>
     	?wf rdf:type wfdesc:Workflow
+    	FILTER  EXISTS { ?ro ore:aggregates ?wf}
   	</minim:sparql_query>
   </rdf:Description>
   
@@ -406,7 +407,7 @@
     <minim:listfail rdf:nodeID="Na1a33851990347d9876082887fb48443"/>
     <minim:listfail rdf:nodeID="N3e38e02d4bd043458ad301d7cb7c8d00"/>
     <minim:showfail>Some Web services %(wf_list)s are not accessible: %(wfservices_fail)s.  Accessible services referenced are %(wfservices_pass)s.</minim:showfail>
-    <minim:showpass>All found Web services are accessible (or none found): %(wfservices_pass)s</minim:showpass>
+    <minim:showpass>All Web services found are accessible (or none found): %(wfservices_pass)s</minim:showpass>
     <rdf:type rdf:resource="http://purl.org/minim/minim#QueryTestRule"/>
     
     <minim:isLiveTemplate>{+wfservice}</minim:isLiveTemplate>

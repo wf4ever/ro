@@ -342,22 +342,54 @@
   
   <rdf:Description rdf:about="#req_sample_data">
     <rdf:type rdf:resource="http://purl.org/minim/minim#QueryTestRule"/>
-    <minim:showfail>No workflow run indicated for any workflow</minim:showfail>
+    <minim:query rdf:nodeID="Nc0f481e0164d423cb30db7800f737ccc"/>
+    <minim:listfail rdf:nodeID="N36a12140df24434091ccf4fe898b110c"/>
+    <minim:showfail>The following workflows did not indicate any run: %(wf_list)s.</minim:showfail>
     <minim:exists rdf:nodeID="Nb3f7714962104f7ea59f57b54cd57ee5"/>
-    <minim:showpass>Workflow run is indicated</minim:showpass>
+    <minim:showpass>All workflows have indicated run(s)</minim:showpass>
     <minim:showmiss>No workflow resource found (for checking workflow run). The workflow run is the execution provenance of the workflow, e.g., Taverna can export it as an robundle that can be imported in ROHUB</minim:showmiss>
+  </rdf:Description>
+  
+  <rdf:Description rdf:nodeID="N36a12140df24434091ccf4fe898b110c">
+    <minim:collectVar>wf</minim:collectVar>
+    <rdf:type rdf:resource="http://purl.org/minim/minim#ValueCollector"/>
+    <minim:collectList>wf_list</minim:collectList>
+  </rdf:Description>
+  
+  <rdf:Description rdf:nodeID="Nc0f481e0164d423cb30db7800f737ccc">
+    <minim:sparql_query>
+    	?wf rdf:type wfdesc:Workflow
+  	</minim:sparql_query>
   </rdf:Description>
   
   <rdf:Description rdf:nodeID="Nb3f7714962104f7ea59f57b54cd57ee5">
     <minim:sparql_query>
-    	?wf rdf:type wfdesc:Workflow .
-			?wfrun rdf:type wfprov:WorkflowRun ;
-    	wfprov:describedByWorkflow ?wf
+			{
+				?wfrun rdf:type wfprov:WorkflowRun ;
+    		wfprov:describedByWorkflow ?wf
+    	}
+    	UNION
+    	{
+    		?wfrun rdf:type roterms:ExampleRun ;
+    		wfprov:describedByWorkflow ?wf
+    	}
+    	UNION
+    	{
+    		?wfrun rdf:type roterms:ProspectiveRun ;
+    		wfprov:describedByWorkflow ?wf
+    	}
+    	UNION
+    	{
+    		?wfrun rdf:type roterms:ResultGenerationRun ;
+    		wfprov:describedByWorkflow ?wf
+    	}
     </minim:sparql_query>
   </rdf:Description>
 
   <!--
         Workflow services used
+        missing values are displayed as error (fail): 
+        <minim:showmiss>No Web services references were found. To solve this issue, if there is(are) service(s) being used by a Taverna workflow, use the "Annotate and Transform" option to extract references to these services.</minim:showmiss>
   -->
 
   
@@ -374,7 +406,7 @@
     <minim:listfail rdf:nodeID="Na1a33851990347d9876082887fb48443"/>
     <minim:listfail rdf:nodeID="N3e38e02d4bd043458ad301d7cb7c8d00"/>
     <minim:showfail>Some Web services %(wf_list)s are not accessible: %(wfservices_fail)s.  Accessible services referenced are %(wfservices_pass)s.</minim:showfail>
-    <minim:showpass>All Web services are accessible: %(wfservices_pass)s</minim:showpass>
+    <minim:showpass>All found Web services are accessible (or none found): %(wfservices_pass)s</minim:showpass>
     <rdf:type rdf:resource="http://purl.org/minim/minim#QueryTestRule"/>
     
     <minim:isLiveTemplate>{+wfservice}</minim:isLiveTemplate>
@@ -410,37 +442,6 @@
     <minim:collectList>wf_list</minim:collectList>
   </rdf:Description>
   
-  <!-- WF services -->
-  
-  <rdf:Description rdf:nodeID="N1337fb3e39504c4ca1301e45ee8b5d4a">
-    <rdf:type rdf:resource="http://purl.org/minim/minim#Requirement"/>
-    <minim:isDerivedBy rdf:resource="#req_web_service_enumeration"/>
-    <minim:seq>013</minim:seq>
-  </rdf:Description>  
-  
-  <rdf:Description rdf:about="#req_web_service_enumeration">
-    <minim:listpass rdf:nodeID="N5bc03c1e374e43aa8a71b96f20af19e4"/>
-    <minim:showpass>All Web services are accessible: %(wfservices_pass)s</minim:showpass>
-    <minim:listfail rdf:nodeID="Na1a33851990347d9876082887fb48443"/>
-    <minim:query rdf:nodeID="N5bf255aa21a44fb3b0793f5674522dfd"/>
-    <minim:isLiveTemplate>{+wfservice}</minim:isLiveTemplate>
-    <minim:showfail>Some Web services %(wflab_list)s are not accessible: %(wfservices_fail)s.  Accessible services referenced are %(wfservices_pass)s.</minim:showfail>
-    <rdf:type rdf:resource="http://purl.org/minim/minim#QueryTestRule"/>
-    <minim:listfail rdf:nodeID="N3e38e02d4bd043458ad301d7cb7c8d00"/>
-    
-    <minim:showmiss>No Web services references were found. To solve this issue, if there is(are) service(s) being used by a Taverna workflow, use the "Annotate and Transform" option to extract references to these services.</minim:showmiss>
-  </rdf:Description>
-  
-  <rdf:Description rdf:nodeID="N5bf255aa21a44fb3b0793f5674522dfd">
-    <minim:sparql_query>
-    	?wf rdf:type wfdesc:Process ;
-    			rdfs:label ?wflab .
-  	 	{ ?wf wf4ever:serviceURI ?wfservice }
-  		UNION
-  		{ ?wf wf4ever:wsdlURI ?wfservice }
-  	</minim:sparql_query>
-    <minim:result_mod>ORDER BY ?wflab</minim:result_mod>
-  </rdf:Description>
   
   <!-- WF has sw requirements -->
   <minim:Requirement rdf:about="#WF_has_swrequirements">

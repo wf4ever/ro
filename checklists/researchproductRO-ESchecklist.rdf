@@ -305,7 +305,7 @@
           FILTER NOT EXISTS { ?ro rdf:type roterms:WorkflowRunBundle  }
         </minim:forall>
         <minim:exists>
-          ?ro roterms:references ?references .
+          ?ro dcterms:references ?references .
         </minim:exists>
         <minim:showpass>Research Object has references</minim:showpass>
         <minim:showfail>Research Object does not have references</minim:showfail>
@@ -325,7 +325,7 @@
   <rdf:Description rdf:about="#req_process_implementation">
     <rdf:type rdf:resource="http://purl.org/minim/minim#QueryTestRule"/>
     <!--<minim:showfail>Process implementation %(wfdef)s for %(wf)s is not accessible. The implementation is invoked when running a process (e.g., workflow definition (t2flow, ga, kar), command-line, script, web-service). With a .t2flow, use "Annotate and Transform" in ROHUB to create the anotation.</minim:showfail>-->
-    <minim:showfail>No process implementation found. The implementation is invoked when running a process (e.g., workflow definition (t2flow, ga, kar), command-line, script, web-service), and it is referenced by a process.  With a .t2flow, use "Annotate and Transform" in ROHUB to create the anotation.</minim:showfail>
+    <minim:showfail>No process implementation found. The implementation is invoked when running a process (e.g., workflow definition (t2flow, ga, kar), command-line, script, web-service). </minim:showfail>
     <minim:exists rdf:nodeID="Nc25db8dd938a4c2e94a250353e420830"/>
     <minim:showpass>One or more process implementations found. The implementation is invoked when running a process (e.g., workflow definition (t2flow, ga, kar), command-line, script, web-service).</minim:showpass>
   </rdf:Description>
@@ -334,10 +334,7 @@
   type wfdesc:Workflow, and if its executable file, also wfdesc:WorkflowDefinition, (ii) when adding a process, e.g., command-line, 
   script (BeanShell, Python, R), or web-service (SOAP, REST) it should be added type wfdesc:Process and, if its executable, the type 
   of executable process, e.g., command-line, script (BeanShell, Python, R), or web-service (SOAP, REST)
-  -->  
-  <rdf:Description rdf:nodeID="Nc25db8dd938a4c2e94a250353e420830">
-    <minim:sparql_query>
-    	{
+  		{
     		?pr rdf:type wfdesc:Process
   			; wfdesc:hasImplementation ?imp .
   		}
@@ -345,6 +342,16 @@
   		{
   			?wf rdf:type wfdesc:Workflow
   			; wfdesc:hasWorkflowDefinition ?wfdef .
+  		}
+  -->  
+  <rdf:Description rdf:nodeID="Nc25db8dd938a4c2e94a250353e420830">
+    <minim:sparql_query>
+    	{
+    		?ro ore:aggregates [ rdf:type wfdesc:Process ] .
+  		}
+  		UNION
+  		{
+  			?ro ore:aggregates [ rdf:type wfdesc:Workflow ] .
   		}
   		UNION
   		{
@@ -394,6 +401,38 @@
           {
            ?wf rdf:type wfdesc:Process .
           }
+          UNION
+          {
+           ?wf rdf:type wf4ever:CommandLineTool .
+          }
+          UNION
+  				{
+  				 ?wf rdf:type wf4ever:Script .
+  				}
+  				UNION
+  				{
+  				 ?wf rdf:type wf4ever:BeanShellScript .
+  				}
+  				UNION
+  				{
+  				 ?wf rdf:type wf4ever:PythonScript .
+  				}
+  				UNION
+  				{
+  				 ?wf rdf:type wf4ever:RScript .
+  				}
+  				UNION
+  				{
+  				 ?wf rdf:type wf4ever:WebService .
+  				}
+  				UNION
+  				{
+  				 ?wf rdf:type wf4ever:RESTService .
+  				}
+  				UNION
+  				{
+  				 ?wf rdf:type wf4ever:SOAPService .
+  				}
           FILTER  EXISTS { ?ro ore:aggregates ?wf}
         </minim:forall>
         <minim:exists>
@@ -420,6 +459,38 @@
           {
            ?wf rdf:type wfdesc:Process .
           }
+          UNION
+          {
+           ?wf rdf:type wf4ever:CommandLineTool .
+          }
+          UNION
+  				{
+  				 ?wf rdf:type wf4ever:Script .
+  				}
+  				UNION
+  				{
+  				 ?wf rdf:type wf4ever:BeanShellScript .
+  				}
+  				UNION
+  				{
+  				 ?wf rdf:type wf4ever:PythonScript .
+  				}
+  				UNION
+  				{
+  				 ?wf rdf:type wf4ever:RScript .
+  				}
+  				UNION
+  				{
+  				 ?wf rdf:type wf4ever:WebService .
+  				}
+  				UNION
+  				{
+  				 ?wf rdf:type wf4ever:RESTService .
+  				}
+  				UNION
+  				{
+  				 ?wf rdf:type wf4ever:SOAPService .
+  				}
           FILTER  EXISTS { ?ro ore:aggregates ?wf}
         </minim:forall>
         <minim:exists>

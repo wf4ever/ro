@@ -303,7 +303,7 @@
           ?ro ore:aggregates [ rdf:type wfdesc:Workflow ] .
         </minim:exists>
         <minim:showpass>Workflow resource is present</minim:showpass>
-        <minim:showfail>No workflow resource found. For workflows to be recognized, they must be annotated with type Workflow.</minim:showfail>
+        <minim:showfail>No workflow resource found. To solve this issue, at least one resource should be annotated with type Workflow.</minim:showfail>
         <minim:derives rdf:resource="#RO_has_workflow" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -319,11 +319,11 @@
   
   <rdf:Description rdf:about="#req_workflow_definition">
     <rdf:type rdf:resource="http://purl.org/minim/minim#QueryTestRule"/>
-    <minim:showfail>Workflow definition %(wfdef)s for %(wf)s is not accessible. The wf definition is the resource understood by a workfow engine (e.g., t2flow, ga, kar), and it is referenced by a workflow. With a .t2flow, use "Annotate and Transform" in ROHUB to create the anotation.</minim:showfail>
-    <minim:showmiss>No workflow resource found (for checking wf definition). The wf definition is the resource understood by a workfow engine (e.g., t2flow, ga, kar), and it is referenced by a workflow. With a .t2flow, use "Annotate and Transform" in ROHUB to create the anotation.</minim:showmiss>
+    <minim:showfail>Workflow definition %(wfdef)s for %(wf)s is not accessible. The wf definition is the resource understood by a workfow engine (e.g., t2flow, ga, kar), and it is referenced by a resource of type Workflow.</minim:showfail>
+    <minim:showmiss>No workflow definition found. The wf definition is the resource understood by a wf engine (e.g., t2flow, ga, kar), and it is referenced by a resource of type Workflow. To solve this issue in ROHub: select the resuource annotated with type Workflow, and if its a .t2flow file, execute "Annotate and Transform"; otherwise add the annotation (hasWorkflowDefinition).</minim:showmiss>
     <minim:isLiveTemplate>{+wfdef}</minim:isLiveTemplate>
     <minim:query rdf:nodeID="Nc25db8dd938a4c2e94a250353e420830"/>
-    <minim:showpass>All workflow definitions referenced by workflow reources are accessible. The wf definition is the resource understood by a workfow engine (e.g, t2flow, ga, kar).</minim:showpass>
+    <minim:showpass>All workflow definitions are accessible. The wf definition is the resource understood by a workfow engine (e.g, t2flow, ga, kar), and it is referenced by a resource of type Workflow.</minim:showpass>
   </rdf:Description>
   
   <rdf:Description rdf:nodeID="Nc25db8dd938a4c2e94a250353e420830">
@@ -373,10 +373,10 @@
   	<minim:listpass rdf:nodeID="N5bc03c1e374e43aa8a71b96f20af19e4"/>
     <minim:listfail rdf:nodeID="Na1a33851990347d9876082887fb48443"/>
     <minim:listfail rdf:nodeID="N3e38e02d4bd043458ad301d7cb7c8d00"/>
-    <minim:showfail>Some Web services (used by workflows) %(wf_list)s are not accessible: %(wfservices_fail)s.  Accessible services referenced are %(wfservices_pass)s.</minim:showfail>
-    <minim:showpass>All Web services (used by workflows) are accessible: %(wfservices_pass)s</minim:showpass>
+    <minim:showfail>Some Web services %(wf_list)s are not accessible: %(wfservices_fail)s.  Accessible services referenced are %(wfservices_pass)s.</minim:showfail>
+    <minim:showpass>All Web services are accessible: %(wfservices_pass)s</minim:showpass>
     <rdf:type rdf:resource="http://purl.org/minim/minim#QueryTestRule"/>
-    <minim:showmiss>No Web services references were found. For a workflow using Web services, use the "Annotate and Transform" option to generate the workflow description with references to the services used.</minim:showmiss>
+    
     <minim:isLiveTemplate>{+wfservice}</minim:isLiveTemplate>
     <minim:query rdf:nodeID="N5340afd3e3fe4af1982d36ae2a24c59b"/>
   </rdf:Description>
@@ -410,6 +410,37 @@
     <minim:collectList>wf_list</minim:collectList>
   </rdf:Description>
   
+  <!-- WF services -->
+  
+  <rdf:Description rdf:nodeID="N1337fb3e39504c4ca1301e45ee8b5d4a">
+    <rdf:type rdf:resource="http://purl.org/minim/minim#Requirement"/>
+    <minim:isDerivedBy rdf:resource="#req_web_service_enumeration"/>
+    <minim:seq>013</minim:seq>
+  </rdf:Description>  
+  
+  <rdf:Description rdf:about="#req_web_service_enumeration">
+    <minim:listpass rdf:nodeID="N5bc03c1e374e43aa8a71b96f20af19e4"/>
+    <minim:showpass>All Web services are accessible: %(wfservices_pass)s</minim:showpass>
+    <minim:listfail rdf:nodeID="Na1a33851990347d9876082887fb48443"/>
+    <minim:query rdf:nodeID="N5bf255aa21a44fb3b0793f5674522dfd"/>
+    <minim:isLiveTemplate>{+wfservice}</minim:isLiveTemplate>
+    <minim:showfail>Some Web services %(wflab_list)s are not accessible: %(wfservices_fail)s.  Accessible services referenced are %(wfservices_pass)s.</minim:showfail>
+    <rdf:type rdf:resource="http://purl.org/minim/minim#QueryTestRule"/>
+    <minim:listfail rdf:nodeID="N3e38e02d4bd043458ad301d7cb7c8d00"/>
+    
+    <minim:showmiss>No Web services references were found. To solve this issue, if there is(are) service(s) being used by a Taverna workflow, use the "Annotate and Transform" option to extract references to these services.</minim:showmiss>
+  </rdf:Description>
+  
+  <rdf:Description rdf:nodeID="N5bf255aa21a44fb3b0793f5674522dfd">
+    <minim:sparql_query>
+    	?wf rdf:type wfdesc:Process ;
+    			rdfs:label ?wflab .
+  	 	{ ?wf wf4ever:serviceURI ?wfservice }
+  		UNION
+  		{ ?wf wf4ever:wsdlURI ?wfservice }
+  	</minim:sparql_query>
+    <minim:result_mod>ORDER BY ?wflab</minim:result_mod>
+  </rdf:Description>
   
   <!-- WF has sw requirements -->
   <minim:Requirement rdf:about="#WF_has_swrequirements">

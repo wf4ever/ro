@@ -334,9 +334,10 @@
   </rdf:Description>
   
   <!-- Workflow Run is present
-  We need to specify relation between WF and WF RUN  
+  We need to specify relation between WF and WF RUN  (just add relation wfprov:describedByWorkflow)
   <minim:showmiss>No workflow resource found (for checking workflow run). The workflow run is the execution provenance of the workflow, e.g., Taverna can export it as an robundle that can be imported in ROHUB</minim:showmiss>
   <minim:showfail>The following workflows did not indicate any run: %(wf_list)s.</minim:showfail>
+  <minim:query rdf:nodeID="Nc0f481e0164d423cb30db7800f737ccc"/>
   
   		{
 				?wfrun rdf:type wfprov:WorkflowRun ;
@@ -354,9 +355,8 @@
   
   <rdf:Description rdf:about="#req_sample_data">
     <rdf:type rdf:resource="http://purl.org/minim/minim#QueryTestRule"/>
-    <minim:query rdf:nodeID="Nc0f481e0164d423cb30db7800f737ccc"/>
     <minim:listfail rdf:nodeID="N36a12140df24434091ccf4fe898b110c"/>
-    <minim:showfail>No workflow run has been indicated</minim:showfail>
+    <minim:showfail>No workflow run has been indicated. To solve this issue, aggregate an execution run provenance in ROHub: for taverna workflows import the generated RO bundle; otherwise aggregate and annotate (WorkflowRun) the provenance resource</minim:showfail>
     <minim:exists rdf:nodeID="Nb3f7714962104f7ea59f57b54cd57ee5"/>
     <minim:showpass>Workflow run(s) have been indicated</minim:showpass>
   </rdf:Description>

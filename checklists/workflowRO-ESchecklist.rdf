@@ -319,11 +319,11 @@
   
   <rdf:Description rdf:about="#req_workflow_definition">
     <rdf:type rdf:resource="http://purl.org/minim/minim#QueryTestRule"/>
-    <minim:showfail>Workflow definition %(wfdef)s for %(wf)s is not accessible. The wf definition is the resource understood by a workfow engine (e.g., t2flow, ga, kar), and it is referenced by a resource of type Workflow.</minim:showfail>
-    <minim:showmiss>No workflow definition found. The wf definition is the resource understood by a wf engine (e.g., t2flow, ga, kar), and it is referenced by a resource of type Workflow. To solve this issue in ROHub: select the resuource annotated with type Workflow, and if its a .t2flow file, execute "Annotate and Transform"; otherwise add the annotation (hasWorkflowDefinition).</minim:showmiss>
+    <minim:showfail>Workflow definition %(wfdef)s for %(wf)s is not accessible. The wf definition is the resource understood by a wf engine (e.g., t2flow, ga, kar), and which is referenced by a resource of type Workflow.</minim:showfail>
+    <minim:showmiss>No workflow definition found. The wf definition is the resource understood by a wf engine (e.g., t2flow, ga, kar), and which is referenced by a resource of type Workflow. To solve this issue in ROHub: select the resource annotated with type Workflow, and if its a .t2flow file, execute "Annotate and Transform"; otherwise add the annotation (hasWorkflowDefinition).</minim:showmiss>
     <minim:isLiveTemplate>{+wfdef}</minim:isLiveTemplate>
     <minim:query rdf:nodeID="Nc25db8dd938a4c2e94a250353e420830"/>
-    <minim:showpass>All workflow definitions are accessible. The wf definition is the resource understood by a workfow engine (e.g, t2flow, ga, kar), and it is referenced by a resource of type Workflow.</minim:showpass>
+    <minim:showpass>All workflow definitions are accessible. The wf definition is the resource understood by a wf engine (e.g, t2flow, ga, kar), and which is referenced by a resource of type Workflow.</minim:showpass>
   </rdf:Description>
   
   <rdf:Description rdf:nodeID="Nc25db8dd938a4c2e94a250353e420830">
@@ -333,7 +333,18 @@
   	</minim:sparql_query>
   </rdf:Description>
   
-  <!-- Workflow Run is present -->
+  <!-- Workflow Run is present
+  We need to specify relation between WF and WF RUN  
+  <minim:showmiss>No workflow resource found (for checking workflow run). The workflow run is the execution provenance of the workflow, e.g., Taverna can export it as an robundle that can be imported in ROHUB</minim:showmiss>
+  <minim:showfail>The following workflows did not indicate any run: %(wf_list)s.</minim:showfail>
+  
+  		{
+				?wfrun rdf:type wfprov:WorkflowRun ;
+    		wfprov:describedByWorkflow ?wf
+    	}
+  
+  -->
+  
   
   <rdf:Description rdf:nodeID="N7580aa07c8e74409974b1c3f99987bf3">
     <rdf:type rdf:resource="http://purl.org/minim/minim#Requirement"/>
@@ -343,17 +354,43 @@
   
   <rdf:Description rdf:about="#req_sample_data">
     <rdf:type rdf:resource="http://purl.org/minim/minim#QueryTestRule"/>
-    <minim:showfail>No workflow run indicated for any workflow</minim:showfail>
+    <minim:query rdf:nodeID="Nc0f481e0164d423cb30db7800f737ccc"/>
+    <minim:listfail rdf:nodeID="N36a12140df24434091ccf4fe898b110c"/>
+    <minim:showfail>No workflow run has been indicated</minim:showfail>
     <minim:exists rdf:nodeID="Nb3f7714962104f7ea59f57b54cd57ee5"/>
-    <minim:showpass>Workflow run is indicated</minim:showpass>
-    <minim:showmiss>No workflow resource found (for checking workflow run). The workflow run is the execution provenance of the workflow, e.g., Taverna can export it as an robundle that can be imported in ROHUB</minim:showmiss>
+    <minim:showpass>Workflow run(s) have been indicated</minim:showpass>
+  </rdf:Description>
+  
+  <rdf:Description rdf:nodeID="N36a12140df24434091ccf4fe898b110c">
+    <minim:collectVar>wf</minim:collectVar>
+    <rdf:type rdf:resource="http://purl.org/minim/minim#ValueCollector"/>
+    <minim:collectList>wf_list</minim:collectList>
+  </rdf:Description>
+  
+  <rdf:Description rdf:nodeID="Nc0f481e0164d423cb30db7800f737ccc">
+    <minim:sparql_query>
+    	?wf rdf:type wfdesc:Workflow
+    	FILTER  EXISTS { ?ro ore:aggregates ?wf}
+  	</minim:sparql_query>
   </rdf:Description>
   
   <rdf:Description rdf:nodeID="Nb3f7714962104f7ea59f57b54cd57ee5">
     <minim:sparql_query>
-    	?wf rdf:type wfdesc:Workflow .
-			?wfrun rdf:type wfprov:WorkflowRun ;
-    	wfprov:describedByWorkflow ?wf
+			{
+				?wfrun rdf:type wfprov:WorkflowRun 
+    	}
+    	UNION
+    	{
+    		?wfrun rdf:type roterms:ExampleRun 
+    	}
+    	UNION
+    	{
+    		?wfrun rdf:type roterms:ProspectiveRun 
+    	}
+    	UNION
+    	{
+    		?wfrun rdf:type roterms:ResultGenerationRun 
+    	}
     </minim:sparql_query>
   </rdf:Description>
 

@@ -113,7 +113,8 @@
     <minim:hasShouldRequirement rdf:resource="#RO_has_copyrightholder" />
     <minim:hasShouldRequirement rdf:resource="#RO_has_access_level" />
     <minim:hasShouldRequirement rdf:resource="#RO_has_references" />
-    <minim:hasMustRequirement   rdf:nodeID="Nb0d6e070b150465b880a2d97ef76d7ff"/> <!-- process implementation available -->
+    <minim:hasMustRequirement 	rdf:resource="#RO_has_process_implementation"/> 
+    <!-- <minim:hasMustRequirement   rdf:nodeID="Nb0d6e070b150465b880a2d97ef76d7ff"/>  process implementation available -->
     <minim:hasMustRequirement   rdf:resource="#PR_has_inputdata" />
     <minim:hasMustRequirement   rdf:resource="#PR_has_outputdata" />
     <minim:hasMustRequirement   rdf:resource="#RO_has_doi" />
@@ -316,7 +317,7 @@
   </minim:Requirement>
   
   <!-- Process implementation is present -->
-  <rdf:Description rdf:nodeID="Nb0d6e070b150465b880a2d97ef76d7ff">
+  <rdf:Description rdf:about="#RO_has_process_implementation">
     <minim:seq>010</minim:seq>
     <rdf:type rdf:resource="http://purl.org/minim/minim#Requirement"/>
     <minim:isDerivedBy rdf:resource="#req_process_implementation"/>

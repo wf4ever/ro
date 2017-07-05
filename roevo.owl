@@ -37,7 +37,7 @@
       
       <owl:versionInfo>1.0.1-SNAPSHOT</owl:versionInfo>
       <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-07-28T15:46:00Z</dct:issued>
-      <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-07-28T15:46:00Z</dct:modified>
+      <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-07-03T15:46:00Z</dct:modified>
 
       <!-- end TODO -->
         <rdfs:comment xml:lang="en">The Research Object Evolution Ontology (roevo) extends the ro ontology to capture the lifecycle and versioning of research objects. ro ontology and other extensions are described at http://wf4ever.github.io/ro/.

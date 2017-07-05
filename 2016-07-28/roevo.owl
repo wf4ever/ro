@@ -37,7 +37,7 @@
       
       <owl:versionInfo>1.0.1-SNAPSHOT</owl:versionInfo>
       <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-07-28T15:46:00Z</dct:issued>
-      <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-07-28T15:46:00Z</dct:modified>
+      <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-07-03T15:46:00Z</dct:modified>
 
       <!-- end TODO -->
         <rdfs:comment xml:lang="en">The Research Object Evolution Ontology (roevo) extends the ro ontology to capture the lifecycle and versioning of research objects. ro ontology and other extensions are described at http://wf4ever.github.io/ro/.
@@ -50,7 +50,7 @@
         roevo enables the representation of the different stages of the ROs lifecycle, their dependencies, as well as the corresponding versions of ROs and their aggregated resources, with the associated changes in these resources.
         roevo follows a modular approach, enabling the creation of extensions for modeling detailed taxonomies of changes for particular resources, e.g., workflows.
         Additional information about roevo and background information is available at http://www.wf4ever-project.org/wiki/display/docs/RO+evolution</dc:description>
-        <dc:description rdf:resource="http://www.wf4ever-project.org/wiki/download/attachments/2065027/ROevo_v0.4%2823%29.png"/>
+        <dc:description rdf:resource="https://github.com/wf4ever/ro/raw/earth-science/diagrams/07-2016/roevo.jpg"/>
         <dc:contributor>Jun Zhao</dc:contributor>
         <dc:contributor rdf:resource="http://orcid.org/0000-0001-6935-9028"/>
         <dc:contributor>Khalid Belhajjame</dc:contributor>
@@ -390,11 +390,12 @@ Archived ROs represent the final stage of a RO (release) where it has either rea
 		
 		<!-- http://purl.org/wf4ever/roevo#ForkedRO -->
 
-    <owl:Class rdf:about="&roevo;LiveRO">
+    <owl:Class rdf:about="&roevo;ForkedRO">
       <rdfs:isDefinedBy rdf:resource="http://purl.org/wf4ever/roevo"/>
         <rdfs:label>Forked RO</rdfs:label>
         <rdfs:subClassOf rdf:resource="&ro;ResearchObject"/>
         <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <rdfs:subClassOf rdf:resource="&roevo;LiveRO"/>
         <rdfs:comment>A subclass of ro:ResearchObject representing a live Research Object that was forked from 
         another Research Object (live, snapshot, archived) to start a new line of work. 
         Thus it is a especialisation of a live Research Object.

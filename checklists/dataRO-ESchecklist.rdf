@@ -427,7 +427,13 @@
           }
         </minim:forall>
         <minim:exists>
-          ?input dbo:filesize ?filesize .
+          {
+          	?input dbo:filesize ?filesize .
+          }
+          UNION
+          {
+          	?input ro:filesize ?filesize .
+          }
         </minim:exists>
         <minim:showpass>All data artifacts have filesize indicated</minim:showpass>
         <minim:showfail>One or more data artifact has no filesize indicated, including &lt;i&gt;%(input)s &lt;/i&gt;</minim:showfail>

@@ -623,7 +623,7 @@
         </minim:forall>
         <minim:exists>
           {
-          	?input dbo:filesize ?filesize .
+          	?input dbo:fileSize ?filesize .
           }
           UNION
           {

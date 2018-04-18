@@ -146,7 +146,7 @@
           ?ro dcterms:title ?rotitle .
         </minim:exists>
         <minim:showpass>Research Object has title</minim:showpass>
-        <minim:showfail>Research Object does not have title</minim:showfail>
+        <minim:showfail>Research Object does not have title. Please add annotation with property: title (dcterms vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_title" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -166,7 +166,7 @@
           ?ro dcterms:description ?rodescription .
         </minim:exists>
         <minim:showpass>Research Object has description</minim:showpass>
-        <minim:showfail>Research Object does not have description</minim:showfail>
+        <minim:showfail>Research Object does not have description. Please add annotation with property: description (dcterms vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_description" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -186,7 +186,7 @@
           ?ro dcterms:creator ?rocreator .
         </minim:exists>
         <minim:showpass>Research Object has creator</minim:showpass>
-        <minim:showfail>Research Object does not have creator</minim:showfail>
+        <minim:showfail>Research Object does not have creator. Please add annotation with property: creator (dcterms vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_creator" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -206,7 +206,7 @@
           ?ro roes:editedBy ?editor .
         </minim:exists>
         <minim:showpass>Research Object has editor</minim:showpass>
-        <minim:showfail>Research Object does not have editor</minim:showfail>
+        <minim:showfail>Research Object does not have editor. Please add annotation with property: editedBy (roes vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_editor" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -226,7 +226,7 @@
           ?ro roterms:performsTask ?purpose .
         </minim:exists>
         <minim:showpass>Research Object has indicated purpose</minim:showpass>
-        <minim:showfail>Research Object does not have indicated purpose</minim:showfail>
+        <minim:showfail>Research Object does not have indicated purpose. Please add annotation with property: performsTask (roterms vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_purpose" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -246,7 +246,7 @@
           ?ro dcterms:subject ?subject .
         </minim:exists>
         <minim:showpass>Research Object has subject</minim:showpass>
-        <minim:showfail>Research Object does not have subject</minim:showfail>
+        <minim:showfail>Research Object does not have subject. Please add annotation with property: subject (dcterms vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_subject" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -266,7 +266,7 @@
           ?ro odrs:copyrightHolder ?rocopyrightholder .
         </minim:exists>
         <minim:showpass>Research Object has copyright holder</minim:showpass>
-        <minim:showfail>Research Object does not have copyright holder</minim:showfail>
+        <minim:showfail>Research Object does not have copyright holder. Please add annotation with property: copyrightHolder (odrs vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_copyrightholder" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -286,7 +286,7 @@
           ?ro roes:distributionCategory ?accesslevel .
         </minim:exists>
         <minim:showpass>Research Object has access level specified</minim:showpass>
-        <minim:showfail>Research Object does not have access level specified</minim:showfail>
+        <minim:showfail>Research Object does not have access level specified. Please add annotation with property: distributionCategory (roes vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_access_level" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -308,7 +308,7 @@
               dcterms:identifier ?doi .
         </minim:exists>
         <minim:showpass>Research Object has DOI</minim:showpass>
-        <minim:showfail>Research Object does not have DOI</minim:showfail>
+        <minim:showfail>Research Object does not have DOI. Please make a release (snapshot/archive) of the source research object with a DOI</minim:showfail>
         <minim:derives rdf:resource="#RO_has_doi" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -397,7 +397,7 @@
           ?input dcterms:format ?format .
         </minim:exists>
         <minim:showpass>All data artifacts have format indicated</minim:showpass>
-        <minim:showfail>One or more data artifact has no format indicated, including &lt;i&gt;%(input)s &lt;/i&gt;</minim:showfail>
+        <minim:showfail>One or more data artifact has no format indicated, including &lt;i&gt;%(input)s &lt;/i&gt; Please add annotation with property: format (dcterms vocabulary)</minim:showfail>
         <minim:showmiss>No data artifacts found (for checking format). For data artifacts to be recognized, they must be annotated with their appropriate type (e.g., dataset, document, file, image).</minim:showmiss>
         <minim:derives rdf:resource="#input_has_format" />
       </minim:ContentMatchRequirementRule>
@@ -436,7 +436,7 @@
           }
         </minim:exists>
         <minim:showpass>All data artifacts have filesize indicated</minim:showpass>
-        <minim:showfail>One or more data artifact has no filesize indicated, including &lt;i&gt;%(input)s &lt;/i&gt;</minim:showfail>
+        <minim:showfail>One or more data artifact has no filesize indicated, including &lt;i&gt;%(input)s &lt;/i&gt; Please add annotation with property: fileSize (dbo vocabulary)</minim:showfail>
         <minim:showmiss>No data artifacts found (for checking filesize). For data artifacts to be recognized, they must be annotated with their appropriate type (e.g., dataset, document, file, image).</minim:showmiss>
         <minim:derives rdf:resource="#input_has_filesize" />
       </minim:ContentMatchRequirementRule>

@@ -146,7 +146,7 @@
           ?ro dcterms:title ?rotitle .
         </minim:exists>
         <minim:showpass>Research Object has title</minim:showpass>
-        <minim:showfail>Research Object does not have title. Please add annotation with property: title (dcterms vocabulary)</minim:showfail>
+        <minim:showfail>Research Object does not have title. You must add annotation: title (dcterms vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_title" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -166,7 +166,7 @@
           ?ro dcterms:description ?rodescription .
         </minim:exists>
         <minim:showpass>Research Object has description</minim:showpass>
-        <minim:showfail>Research Object does not have description. Please add annotation with property: description (dcterms vocabulary)</minim:showfail>
+        <minim:showfail>Research Object does not have description. You must add annotation: description (dcterms vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_description" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -186,7 +186,7 @@
           ?ro dcterms:creator ?rocreator .
         </minim:exists>
         <minim:showpass>Research Object has creator</minim:showpass>
-        <minim:showfail>Research Object does not have creator. Please add annotation with property: creator (dcterms vocabulary)</minim:showfail>
+        <minim:showfail>Research Object does not have creator. You must add annotation: creator (dcterms vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_creator" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -206,7 +206,7 @@
           ?ro roes:editedBy ?editor .
         </minim:exists>
         <minim:showpass>Research Object has editor</minim:showpass>
-        <minim:showfail>Research Object does not have editor. Please add annotation with property: editedBy (roes vocabulary)</minim:showfail>
+        <minim:showfail>Research Object does not have editor. You should add annotation: editedBy (roes vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_editor" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -226,7 +226,7 @@
           ?ro roterms:performsTask ?purpose .
         </minim:exists>
         <minim:showpass>Research Object has indicated purpose</minim:showpass>
-        <minim:showfail>Research Object does not have indicated purpose. Please add annotation with property: performsTask (roterms vocabulary)</minim:showfail>
+        <minim:showfail>Research Object does not have indicated purpose. You should add annotation: performsTask (roterms vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_purpose" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -246,7 +246,7 @@
           ?ro dcterms:subject ?subject .
         </minim:exists>
         <minim:showpass>Research Object has subject</minim:showpass>
-        <minim:showfail>Research Object does not have subject. Please add annotation with property: subject (dcterms vocabulary)</minim:showfail>
+        <minim:showfail>Research Object does not have subject. You should add annotation: subject (dcterms vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_subject" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -266,7 +266,7 @@
           ?ro odrs:copyrightHolder ?rocopyrightholder .
         </minim:exists>
         <minim:showpass>Research Object has copyright holder</minim:showpass>
-        <minim:showfail>Research Object does not have copyright holder. Please add annotation with property: copyrightHolder (odrs vocabulary)</minim:showfail>
+        <minim:showfail>Research Object does not have copyright holder. You should add annotation: copyrightHolder (odrs vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_copyrightholder" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -286,7 +286,7 @@
           ?ro roes:distributionCategory ?accesslevel .
         </minim:exists>
         <minim:showpass>Research Object has access level specified</minim:showpass>
-        <minim:showfail>Research Object does not have access level specified. Please add annotation with property: distributionCategory (roes vocabulary)</minim:showfail>
+        <minim:showfail>Research Object does not have access level specified. You should add annotation: distributionCategory (roes vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_access_level" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -308,7 +308,7 @@
               dcterms:identifier ?doi .
         </minim:exists>
         <minim:showpass>Research Object has DOI</minim:showpass>
-        <minim:showfail>Research Object does not have DOI. Please make a release (snapshot/archive) of the source research object with a DOI</minim:showfail>
+        <minim:showfail>Research Object does not have DOI. You should make a release (snapshot/archive) of the research object with a DOI</minim:showfail>
         <minim:derives rdf:resource="#RO_has_doi" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -364,8 +364,8 @@
           	?ro ore:aggregates [ rdf:type wf4ever:Image ] .
           }
         </minim:exists>
-        <minim:showpass>Data artifact is present (e.g., dataset, document, file, image)</minim:showpass>
-        <minim:showfail>No data artifact found. For data artifacts to be recognized, they must be annotated with their appropriate type (e.g., dataset, document, file, image).</minim:showfail>
+        <minim:showpass>Data artifact(s) are present (e.g., dataset, document, file, image)</minim:showpass>
+        <minim:showfail>No data artifact found. You must aggregate and annotate data resource with the appropriate type (e.g., dataset, document, file, image).</minim:showfail>
         <minim:derives rdf:resource="#RO_has_data" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -377,28 +377,20 @@
     <minim:isDerivedBy>
       <minim:ContentMatchRequirementRule>
         <minim:forall>
-          {
-           ?input rdf:type wf4ever:Dataset .
-          }
+          { ?input rdf:type wf4ever:Dataset }
           UNION
-          {
-           ?input rdf:type wf4ever:Document .
-          }
+          { ?input rdf:type wf4ever:Document }
           UNION
-          {
-           ?input rdf:type wf4ever:File .
-          }
+          { ?input rdf:type wf4ever:File }
           UNION
-          {
-           ?input rdf:type wf4ever:Image .
-          }
+          { ?input rdf:type wf4ever:Image }
         </minim:forall>
         <minim:exists>
           ?input dcterms:format ?format .
         </minim:exists>
         <minim:showpass>All data artifacts have format indicated</minim:showpass>
-        <minim:showfail>One or more data artifact has no format indicated, including &lt;i&gt;%(input)s &lt;/i&gt; Please add annotation with property: format (dcterms vocabulary)</minim:showfail>
-        <minim:showmiss>No data artifacts found (for checking format). For data artifacts to be recognized, they must be annotated with their appropriate type (e.g., dataset, document, file, image).</minim:showmiss>
+        <minim:showfail>One or more data artifact has no format indicated, including &lt;i&gt;%(input)s &lt;/i&gt; You must add annotation: format (dcterms vocabulary)</minim:showfail>
+        <minim:showmiss>No data artifacts found (for checking format)</minim:showmiss>
         <minim:derives rdf:resource="#input_has_format" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -410,34 +402,22 @@
     <minim:isDerivedBy>
       <minim:ContentMatchRequirementRule>
         <minim:forall>
-          {
-           ?input rdf:type wf4ever:Dataset .
-          }
+          { ?input rdf:type wf4ever:Dataset }
           UNION
-          {
-           ?input rdf:type wf4ever:Document .
-          }
+          { ?input rdf:type wf4ever:Document }
           UNION
-          {
-           ?input rdf:type wf4ever:File .
-          }
+          { ?input rdf:type wf4ever:File }
           UNION
-          {
-           ?input rdf:type wf4ever:Image .
-          }
+          { ?input rdf:type wf4ever:Image }
         </minim:forall>
         <minim:exists>
-          {
-          	?input dbo:fileSize ?filesize .
-          }
+          { ?input dbo:fileSize ?filesize }
           UNION
-          {
-          	?input ro:filesize ?filesize .
-          }
+          { ?input ro:filesize ?filesize }
         </minim:exists>
         <minim:showpass>All data artifacts have filesize indicated</minim:showpass>
-        <minim:showfail>One or more data artifact has no filesize indicated, including &lt;i&gt;%(input)s &lt;/i&gt; Please add annotation with property: fileSize (dbo vocabulary)</minim:showfail>
-        <minim:showmiss>No data artifacts found (for checking filesize). For data artifacts to be recognized, they must be annotated with their appropriate type (e.g., dataset, document, file, image).</minim:showmiss>
+        <minim:showfail>One or more data artifact has no filesize indicated, including &lt;i&gt;%(input)s &lt;/i&gt; You must add annotation: fileSize (dbo vocabulary)</minim:showfail>
+        <minim:showmiss>No data artifacts found (for checking filesize)</minim:showmiss>
         <minim:derives rdf:resource="#input_has_filesize" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>

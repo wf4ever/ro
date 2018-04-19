@@ -120,6 +120,7 @@
     <minim:hasMustRequirement   rdf:resource="#WF_has_inputdata" />
     <minim:hasMustRequirement   rdf:resource="#WF_has_outputdata" />
     <minim:hasShouldRequirement rdf:resource="#WF_has_swrequirements" />
+    <minim:hasMustRequirement   rdf:resource="#RO_has_data" />
     <minim:hasMustRequirement   rdf:resource="#input_has_format" />
     <minim:hasMustRequirement   rdf:resource="#input_has_filesize" />
   </minim:Model>
@@ -152,7 +153,7 @@
           ?ro dcterms:title ?rotitle .
         </minim:exists>
         <minim:showpass>Research Object has title</minim:showpass>
-        <minim:showfail>Research Object does not have title</minim:showfail>
+        <minim:showfail>Research Object does not have title. You must add annotation: title (dcterms vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_title" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -172,7 +173,7 @@
           ?ro dcterms:description ?rodescription .
         </minim:exists>
         <minim:showpass>Research Object has description</minim:showpass>
-        <minim:showfail>Research Object does not have description</minim:showfail>
+        <minim:showfail>Research Object does not have description. You must add annotation: description (dcterms vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_description" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -192,7 +193,7 @@
           ?ro dcterms:creator ?rocreator .
         </minim:exists>
         <minim:showpass>Research Object has creator</minim:showpass>
-        <minim:showfail>Research Object does not have creator</minim:showfail>
+        <minim:showfail>Research Object does not have creator. You must add annotation: creator (dcterms vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_creator" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -212,7 +213,7 @@
           ?ro odrs:copyrightHolder ?rocopyrightholder .
         </minim:exists>
         <minim:showpass>Research Object has copyright holder</minim:showpass>
-        <minim:showfail>Research Object does not have copyright holder</minim:showfail>
+        <minim:showfail>Research Object does not have copyright holder. You must add annotation: copyrightHolder (odrs vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_copyrightholder" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -232,7 +233,7 @@
           ?ro swrc:keywords ?rokeywords .
         </minim:exists>
         <minim:showpass>Research Object has keywords</minim:showpass>
-        <minim:showfail>Research Object does not have keywords</minim:showfail>
+        <minim:showfail>Research Object does not have keywords. You must add annotation: keywords (swrc vocabulary). Keywords can be separated by ";"</minim:showfail>
         <minim:derives rdf:resource="#RO_has_keywords" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -247,7 +248,7 @@
           ?ro ore:aggregates [ rdf:type roterms:Sketch ] .
         </minim:exists>
         <minim:showpass>Research Object has sketch</minim:showpass>
-        <minim:showfail>Research Object does not have sketch</minim:showfail>
+        <minim:showfail>Research Object does not have sketch. You should aggregate and annotate the sketch resource (e.g., png, jpeg file) with type: Sketch</minim:showfail>
         <minim:derives rdf:resource="#RO_has_sketch" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -267,7 +268,7 @@
           ?ro dcterms:subject ?subject .
         </minim:exists>
         <minim:showpass>Research Object has subject</minim:showpass>
-        <minim:showfail>Research Object does not have subject</minim:showfail>
+        <minim:showfail>Research Object does not have subject. You should add annotation: subject (dcterms vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_subject" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -287,7 +288,7 @@
           ?ro cito:isDocumentedBy ?doc .
         </minim:exists>
         <minim:showpass>Research Object has ancillary documentation</minim:showpass>
-        <minim:showfail>Research Object does not have ancillary documentation</minim:showfail>
+        <minim:showfail>Research Object does not have ancillary documentation. You should add annotation: isDocumentedBy (cito vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_ancillarydoc" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -298,7 +299,7 @@
         Workflow
   -->
 
-  <!-- Workflow instance description is present -->
+  <!-- Workflow instance description is present (pass/fail) -->
   <minim:Requirement rdf:about="#RO_has_workflow">
     <minim:isDerivedBy>
       <minim:ContentMatchRequirementRule>
@@ -306,14 +307,14 @@
           ?ro ore:aggregates [ rdf:type wfdesc:Workflow ] .
         </minim:exists>
         <minim:showpass>Workflow resource is present</minim:showpass>
-        <minim:showfail>No workflow resource found. To solve this issue, at least one resource should be annotated with type Workflow.</minim:showfail>
+        <minim:showfail>No workflow resource found. You must aggregate and annotate workflow resource with type: Workflow</minim:showfail>
         <minim:derives rdf:resource="#RO_has_workflow" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
     <minim:seq>010</minim:seq>
   </minim:Requirement>
   
-  <!-- Workflow definition is present -->
+  <!-- Workflow definition is accessible (pass/fail/miss)-->
   <rdf:Description rdf:about="#RO_has_workflow_definition">
     <minim:seq>011</minim:seq>
     <rdf:type rdf:resource="http://purl.org/minim/minim#Requirement"/>
@@ -322,77 +323,58 @@
   
   <rdf:Description rdf:about="#req_workflow_definition">
     <rdf:type rdf:resource="http://purl.org/minim/minim#QueryTestRule"/>
-    <minim:showfail>Workflow definition %(wfdef)s for %(wf)s is not accessible. The wf definition is the resource understood by a wf engine (e.g., t2flow, ga, kar), and which is referenced by a resource of type Workflow.</minim:showfail>
-    <minim:showmiss>No workflow definition found. The wf definition is the resource understood by a wf engine (e.g., t2flow, ga, kar), and which is referenced by a resource of type Workflow. To solve this issue in ROHub: select the resource annotated with type Workflow, and if its a .t2flow file, execute "Annotate and Transform"; otherwise add the annotation (hasWorkflowDefinition).</minim:showmiss>
     <minim:isLiveTemplate>{+wfdef}</minim:isLiveTemplate>
-    <minim:query rdf:nodeID="Nc25db8dd938a4c2e94a250353e420830"/>
-    <minim:showpass>All workflow definitions are accessible. The wf definition is the resource understood by a wf engine (e.g, t2flow, ga, kar), and which is referenced by a resource of type Workflow.</minim:showpass>
+    <minim:query rdf:nodeID="Nc25db8dd938a4c2e94a250353e420830"/>    
+    <minim:showpass>All workflow definitions links are accessible</minim:showpass>
+    <minim:showfail>Some workflow definitions links are not accesible, including &lt;i&gt;%(wfdef)s &lt;/i&gt;</minim:showfail>
+    <minim:showmiss>No link to workflow definition (e.g., t2flow, wfbundle, ga, kar) found. You should make sure a workflow resource is present and if its a .t2flow resource execute "Annotate and Transform"; otherwise add annotation link hasWorkflowDefinition (wfdesc vocabulary)</minim:showmiss>  
   </rdf:Description>
-  
+   
   <rdf:Description rdf:nodeID="Nc25db8dd938a4c2e94a250353e420830">
     <minim:sparql_query>
     	?wf rdf:type wfdesc:Workflow
   		; wfdesc:hasWorkflowDefinition ?wfdef .
   	</minim:sparql_query>
-  </rdf:Description>
+  </rdf:Description> 
   
-  <!-- Workflow Run is present
-  We need to specify relation between WF and WF RUN  (just add relation wfprov:describedByWorkflow)
-  <minim:showmiss>No workflow resource found (for checking workflow run). The workflow run is the execution provenance of the workflow, e.g., Taverna can export it as an robundle that can be imported in ROHUB</minim:showmiss>
-  <minim:showfail>The following workflows did not indicate any run: %(wf_list)s.</minim:showfail>
-  <minim:query rdf:nodeID="Nc0f481e0164d423cb30db7800f737ccc"/>
   
-  		{
-				?wfrun rdf:type wfprov:WorkflowRun ;
-    		wfprov:describedByWorkflow ?wf
-    	}
-  previous name: <rdf:Description rdf:nodeID="N7580aa07c8e74409974b1c3f99987bf3">
-  -->
-  
+  <!-- Workflow Run is present (pass/fail). Note1: we are not checking that workflowRuns are associated to the workflows aggregated. Note2: the association is done automatically in the taverna bundle (wfprov:describedByWorkflow (for wfprov:WorkflowRun) & wfprov:describedByProcess (for wfprov:ProcessRun))-->
   <rdf:Description rdf:about="#RO_has_workflow_run">
     <rdf:type rdf:resource="http://purl.org/minim/minim#Requirement"/>
-    <minim:isDerivedBy rdf:resource="#req_sample_data"/>
+    <minim:isDerivedBy rdf:resource="#req_workflow_run"/>
     <minim:seq>012</minim:seq>
   </rdf:Description>
   
-  <rdf:Description rdf:about="#req_sample_data">
+  <rdf:Description rdf:about="#req_workflow_run">
     <rdf:type rdf:resource="http://purl.org/minim/minim#QueryTestRule"/>
-    <minim:listfail rdf:nodeID="N36a12140df24434091ccf4fe898b110c"/>
-    <minim:showfail>No workflow run has been indicated. To solve this issue, aggregate an execution run provenance in ROHub: for taverna workflows import the generated RO bundle; otherwise aggregate and annotate (WorkflowRun) the provenance resource</minim:showfail>
     <minim:exists rdf:nodeID="Nb3f7714962104f7ea59f57b54cd57ee5"/>
-    <minim:showpass>Workflow run(s) have been indicated</minim:showpass>
+    <minim:listpass rdf:nodeID="N36a12140df24434091ccf4fe898b110d"/>
+    <minim:listfail rdf:nodeID="N36a12140df24434091ccf4fe898b110c"/>
+    <minim:showpass>Workflow run(s) have been indicated</minim:showpass> <!-- , including &lt;i&gt;%(wfrun_list_pass)s &lt;/i&gt;-->
+    <minim:showfail>No workflow run found. You should aggregate and annotate a workflow run (e.g., taverna RO bundle) resource with the appropriate type: WorkflowRun/ExampleRun/ProspectiveRun/ResultsGenerationRun</minim:showfail>
+  </rdf:Description>
+  
+  <rdf:Description rdf:nodeID="N36a12140df24434091ccf4fe898b110d">
+    <minim:collectVar>wfrun</minim:collectVar>
+    <rdf:type rdf:resource="http://purl.org/minim/minim#ValueCollector"/>
+    <minim:collectList>wfrun_list_pass</minim:collectList>
   </rdf:Description>
   
   <rdf:Description rdf:nodeID="N36a12140df24434091ccf4fe898b110c">
-    <minim:collectVar>wf</minim:collectVar>
+    <minim:collectVar>wfrun</minim:collectVar>
     <rdf:type rdf:resource="http://purl.org/minim/minim#ValueCollector"/>
-    <minim:collectList>wf_list</minim:collectList>
-  </rdf:Description>
-  
-  <rdf:Description rdf:nodeID="Nc0f481e0164d423cb30db7800f737ccc">
-    <minim:sparql_query>
-    	?wf rdf:type wfdesc:Workflow
-    	FILTER  EXISTS { ?ro ore:aggregates ?wf}
-  	</minim:sparql_query>
+    <minim:collectList>wfrun_list_fail</minim:collectList>
   </rdf:Description>
   
   <rdf:Description rdf:nodeID="Nb3f7714962104f7ea59f57b54cd57ee5">
     <minim:sparql_query>
-			{
-				?wfrun rdf:type wfprov:WorkflowRun 
-    	}
+			{ ?wfrun rdf:type wfprov:WorkflowRun }
     	UNION
-    	{
-    		?wfrun rdf:type roterms:ExampleRun 
-    	}
+    	{ ?wfrun rdf:type roterms:ExampleRun }
     	UNION
-    	{
-    		?wfrun rdf:type roterms:ProspectiveRun 
-    	}
+    	{ ?wfrun rdf:type roterms:ProspectiveRun }
     	UNION
-    	{
-    		?wfrun rdf:type roterms:ResultGenerationRun 
-    	}
+    	{ ?wfrun rdf:type roterms:ResultGenerationRun }
     </minim:sparql_query>
   </rdf:Description>
 
@@ -401,10 +383,8 @@
         missing values are displayed as error (fail): 
         <minim:showmiss>No Web services references were found. To solve this issue, if there is(are) service(s) being used by a Taverna workflow, use the "Annotate and Transform" option to extract references to these services.</minim:showmiss>
   -->
-
   
-  
-  <!-- All workflow services are accessible -->
+  <!-- All workflow services are accessible (pass/faill/miss) -->
   <rdf:Description rdf:about="#RO_has_services_available">
     <rdf:type rdf:resource="http://purl.org/minim/minim#Requirement"/>
     <minim:seq>013</minim:seq>
@@ -415,61 +395,68 @@
   	<minim:listpass rdf:nodeID="N5bc03c1e374e43aa8a71b96f20af19e4"/>
     <minim:listfail rdf:nodeID="Na1a33851990347d9876082887fb48443"/>
     <minim:listfail rdf:nodeID="N3e38e02d4bd043458ad301d7cb7c8d00"/>
-    <minim:showfail>Some Web services %(wf_list)s are not accessible: %(wfservices_fail)s.  Accessible services referenced are %(wfservices_pass)s.</minim:showfail>
-    <minim:showpass>All Web services found are accessible (or none found): %(wfservices_pass)s</minim:showpass>
     <rdf:type rdf:resource="http://purl.org/minim/minim#QueryTestRule"/>
-    
     <minim:isLiveTemplate>{+wfservice}</minim:isLiveTemplate>
     <minim:query rdf:nodeID="N5340afd3e3fe4af1982d36ae2a24c59b"/>
+    <minim:showpass>All Web services referenced are accessible (or none found): &lt;i&gt;%(wfservicesURI_pass)s &lt;/i&gt;</minim:showpass>
+    <minim:showfail>Some Web services are not accessible, including &lt;i&gt;%(wfservicesURI_fail)s &lt;/i&gt;.  You should make sure all the referenced services are accesible or use an alternative services, e.g., replace the reference in your workflow</minim:showfail>
+    <!--<minim:showmiss>No Web services references were found. If there is(are) service(s) being used by a Taverna workflow, use the "Annotate and Transform" feature to extract references to these services.</minim:showmiss>-->
   </rdf:Description>
   
   <rdf:Description rdf:nodeID="N5340afd3e3fe4af1982d36ae2a24c59b">
     <minim:sparql_query>
-    	?wf rdf:type wfdesc:Process .
-  		{ ?wf wf4ever:serviceURI ?wfservice }
-  		UNION
-  		{ ?wf wf4ever:wsdlURI ?wfservice }
-  		UNION
-  		{ ?wf wf4ever:rootURI ?wfservice }
+    <!--?ws rdf:type wfdesc:Process .-->
+      {
+      	{ ?ws rdf:type wf4ever:WebService }
+      	UNION
+      	{ ?ws rdf:type wf4ever:RESTService }
+      	UNION
+      	{ ?ws rdf:type wf4ever:SOAPService }
+      }
+      {
+  			{ ?ws wf4ever:serviceURI ?wfservice }
+  			UNION
+  			{ ?ws wf4ever:wsdlURI ?wfservice }
+  			UNION
+  			{ ?ws wf4ever:rootURI ?wfservice }
+  		}
   	</minim:sparql_query>
   </rdf:Description>
-
+  
   <rdf:Description rdf:nodeID="N5bc03c1e374e43aa8a71b96f20af19e4">
     <rdf:type rdf:resource="http://purl.org/minim/minim#ValueCollector"/>
     <minim:collectVar>wfservice</minim:collectVar>
-    <minim:collectList>wfservices_pass</minim:collectList>
+    <minim:collectList>wfservicesURI_pass</minim:collectList>
   </rdf:Description>
   
   <rdf:Description rdf:nodeID="Na1a33851990347d9876082887fb48443">
     <rdf:type rdf:resource="http://purl.org/minim/minim#ValueCollector"/>
-    <minim:collectList>wfservices_fail</minim:collectList>
     <minim:collectVar>wfservice</minim:collectVar>
+    <minim:collectList>wfservicesURI_fail</minim:collectList>
   </rdf:Description>
   
   <rdf:Description rdf:nodeID="N3e38e02d4bd043458ad301d7cb7c8d00">
     <rdf:type rdf:resource="http://purl.org/minim/minim#ValueCollector"/>
-    <minim:collectVar>wf</minim:collectVar>
-    <minim:collectList>wf_list</minim:collectList>
+    <minim:collectVar>ws</minim:collectVar>
+    <minim:collectList>ws_list</minim:collectList>
   </rdf:Description>
   
-  
-  <!-- WF has sw requirements -->
+  <!-- WF has sw requirements (pass/fail/miss)-->
   <minim:Requirement rdf:about="#WF_has_swrequirements">
     <minim:isDerivedBy>
       <minim:ContentMatchRequirementRule>
+        <minim:forall>
+          { ?wf rdf:type wfdesc:Workflow }
+          UNION
+          { ?wf rdf:type wfdesc:Process }
+          FILTER  EXISTS { ?ro ore:aggregates ?wf}
+        </minim:forall>
         <minim:exists>
-        {
-          ?wp rdf:type wfdesc:Process
-   					; roterms:requiresSoftware ?anything . 
-   			}
-				UNION
-  			{
-  				?wp rdf:type wfdesc:Workflow
-    				; roterms:requiresSoftware ?anything .
-    		}
+          ?wf roterms:requiresSoftware ?anything .
         </minim:exists>
-        <minim:showpass>Workflow process software dependencies are indicated</minim:showpass>
-        <minim:showfail>No workflow process software dependencies found</minim:showfail>
+        <minim:showpass>Software dependencies are indicated for all processes or workflows</minim:showpass>
+        <minim:showfail>Some processes/workflows have no software dependencies specified, including &lt;i&gt;%(wf)s &lt;/i&gt;. For a .t2flow annotated workflow you should execute "Annotate and Transform"; otherwise add annotation link requiresSoftware (roterms vocabulary)</minim:showfail>
+        <minim:showmiss>No processes or workflows found (for checking software requirements).</minim:showmiss>
         <minim:derives rdf:resource="#WF_has_swrequirements" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -481,7 +468,7 @@
         Workflow inputs
   -->
 
-  <!-- Workflow input data is present -->
+  <!-- Workflow input data is present (pass/fail/miss)-->
   <minim:Requirement rdf:about="#WF_has_inputdata">
     <minim:isDerivedBy>
       <minim:ContentMatchRequirementRule>
@@ -498,9 +485,9 @@
         <minim:exists>
           ?wf wfdesc:hasInput ?input .
         </minim:exists>
-        <minim:showpass>All processes (e.g., workflows) have input defined</minim:showpass>
-        <minim:showfail>One or more process (e.g., workflow) has no input defined, including &lt;i&gt;%(wf)s &lt;/i&gt;</minim:showfail>
-        <minim:showmiss>No processes (e.g., workflows) found (for checking input data)</minim:showmiss>
+        <minim:showpass>Inputs are defined for all the processes or workflows</minim:showpass>
+        <minim:showfail>Some processes/workflows have no input defined, including &lt;i&gt;%(wf)s &lt;/i&gt;. You must add annotation link hasInput (wfdesc vocabulary)</minim:showfail>
+        <minim:showmiss>No processes or workflows found (for checking input data).</minim:showmiss>
         <minim:derives rdf:resource="#WF_has_inputdata" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -528,9 +515,9 @@
         <minim:exists>
           ?wf wfdesc:hasOutput ?input .
         </minim:exists>
-        <minim:showpass>All processes (e.g., workflows) have output defined</minim:showpass>
-        <minim:showfail>One or more process (e.g., workflow) has no output defined, including &lt;i&gt;%(wf)s &lt;/i&gt;</minim:showfail>
-        <minim:showmiss>No processes (e.g., workflows) found (for checking output data)</minim:showmiss>
+        <minim:showpass>Outputs are defined for all the processes or workflows</minim:showpass>
+        <minim:showfail>Some processes/workflows have no output defined, including &lt;i&gt;%(wf)s &lt;/i&gt;. You must add annotation link hasOutput (wfdesc vocabulary)</minim:showfail>
+        <minim:showmiss>No processes or workflows found (for checking output data).</minim:showmiss>
         <minim:derives rdf:resource="#WF_has_outputdata" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -567,33 +554,53 @@
     <minim:seq>102</minim:seq>
   </minim:Requirement>
   
+  <minim:Requirement rdf:about="#RO_has_data">
+    <minim:isDerivedBy>
+      <minim:ContentMatchRequirementRule>
+        <minim:exists>
+          {
+          	?ro ore:aggregates [ rdf:type wf4ever:Dataset ] .
+          }
+          UNION
+          {
+          	?ro ore:aggregates [ rdf:type wf4ever:Document ] .
+          }
+          UNION
+          {
+          	?ro ore:aggregates [ rdf:type wf4ever:File ] .
+          }
+          UNION
+          {
+          	?ro ore:aggregates [ rdf:type wf4ever:Image ] .
+          }
+        </minim:exists>
+        <minim:showpass>Data artifact(s) are present (e.g., dataset, document, file, image)</minim:showpass>
+        <minim:showfail>No data artifact found. You must aggregate and annotate data resource with the appropriate type (e.g., dataset, document, file, image).</minim:showfail>
+        <minim:derives rdf:resource="#RO_has_data" />
+      </minim:ContentMatchRequirementRule>
+    </minim:isDerivedBy>
+    <minim:seq>019</minim:seq>
+  </minim:Requirement>
+  
   <!-- input has format -->
   <minim:Requirement rdf:about="#input_has_format">
     <minim:isDerivedBy>
       <minim:ContentMatchRequirementRule>
         <minim:forall>
-          {
-           ?input rdf:type wf4ever:Dataset .
-          }
+          { ?input rdf:type wf4ever:Dataset }
           UNION
-          {
-           ?input rdf:type wf4ever:Document .
-          }
+          { ?input rdf:type wf4ever:Document }
           UNION
-          {
-           ?input rdf:type wf4ever:File .
-          }
+          { ?input rdf:type wf4ever:File }
           UNION
-          {
-           ?input rdf:type wf4ever:Image .
-          }
+          { ?input rdf:type wf4ever:Image }
         </minim:forall>
         <minim:exists>
           ?input dcterms:format ?format .
         </minim:exists>
         <minim:showpass>All data artifacts have format indicated</minim:showpass>
-        <minim:showfail>One or more data artifact has no format indicated, including &lt;i&gt;%(input)s &lt;/i&gt;</minim:showfail>
-        <minim:showmiss>No data artifacts found (for checking format). For data artifacts to be recognized, they must be annotated with their appropriate type (e.g., dataset, document, file, image).</minim:showmiss>
+        <minim:showfail>One or more data artifact has no format indicated, including &lt;i&gt;%(input)s &lt;/i&gt; You must add annotation: format (dcterms vocabulary)</minim:showfail>
+        <minim:showmiss>No data artifacts found (for checking format)</minim:showmiss>
         <minim:derives rdf:resource="#input_has_format" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -605,41 +612,70 @@
     <minim:isDerivedBy>
       <minim:ContentMatchRequirementRule>
         <minim:forall>
-          {
-           ?input rdf:type wf4ever:Dataset .
-          }
+          { ?input rdf:type wf4ever:Dataset }
           UNION
-          {
-           ?input rdf:type wf4ever:Document .
-          }
+          { ?input rdf:type wf4ever:Document }
           UNION
-          {
-           ?input rdf:type wf4ever:File .
-          }
+          { ?input rdf:type wf4ever:File }
           UNION
-          {
-           ?input rdf:type wf4ever:Image .
-          }
+          { ?input rdf:type wf4ever:Image }
         </minim:forall>
         <minim:exists>
-          {
-          	?input dbo:fileSize ?filesize .
-          }
+          { ?input dbo:fileSize ?filesize }
           UNION
-          {
-          	?input ro:filesize ?filesize .
-          }
+          { ?input ro:filesize ?filesize }
         </minim:exists>
         <minim:showpass>All data artifacts have filesize indicated</minim:showpass>
-        <minim:showfail>One or more data artifact has no filesize indicated, including &lt;i&gt;%(input)s &lt;/i&gt;</minim:showfail>
-        <minim:showmiss>No data artifacts found (for checking filesize). For data artifacts to be recognized, they must be annotated with their appropriate type (e.g., dataset, document, file, image).</minim:showmiss>
+        <minim:showfail>One or more data artifact has no filesize indicated, including &lt;i&gt;%(input)s &lt;/i&gt; You must add annotation: fileSize (dbo vocabulary)</minim:showfail>
+        <minim:showmiss>No data artifacts found (for checking filesize)</minim:showmiss>
         <minim:derives rdf:resource="#input_has_filesize" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
     <minim:seq>021</minim:seq>
   </minim:Requirement>
   
+  <!-- old
+          <minim:exists>
+        {
+          ?wp rdf:type wfdesc:Process
+   					; roterms:requiresSoftware ?anything . 
+   			}
+				UNION
+  			{
+  				?wp rdf:type wfdesc:Workflow
+    				; roterms:requiresSoftware ?anything .
+    		}
+        </minim:exists>
+   -->
+  
+  <!-- Workflow Run is present
+  We need to specify relation between WF and WF RUN  (just add relation wfprov:describedByWorkflow)
+  <minim:showmiss>No workflow resource found (for checking workflow run). The workflow run is the execution provenance of the workflow, e.g., Taverna can export it as an robundle that can be imported in ROHUB</minim:showmiss>
+  <minim:showfail>The following workflows did not indicate any run: %(wf_list)s.</minim:showfail>
+  <minim:query rdf:nodeID="Nc0f481e0164d423cb30db7800f737ccc"/>
+  
+  		{
+				?wfrun rdf:type wfprov:WorkflowRun ;
+    		wfprov:describedByWorkflow ?wf
+    	}
+  previous name: <rdf:Description rdf:nodeID="N7580aa07c8e74409974b1c3f99987bf3">
+  
+  <rdf:Description rdf:nodeID="Nc0f481e0164d423cb30db7800f737ccc">
+    <minim:sparql_query>
+    	?wf rdf:type wfdesc:Workflow
+    	FILTER  EXISTS { ?ro ore:aggregates ?wf}
+  	</minim:sparql_query>
+  </rdf:Description>
+  -->
+  
+  <!--
+  <rdf:Description rdf:nodeID="Nc25db8dd938a4c2e94a250353e420830">
+    <minim:sparql_query>
+    	?wf rdf:type wfdesc:Workflow
+  		; wfdesc:hasWorkflowDefinition ?wfdef .
+  	</minim:sparql_query>
+  </rdf:Description> 
+  -->
   
   
-
 </rdf:RDF>

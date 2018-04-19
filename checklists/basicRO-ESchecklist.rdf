@@ -129,7 +129,7 @@
           ?ro dcterms:title ?rotitle .
         </minim:exists>
         <minim:showpass>Research Object has title</minim:showpass>
-        <minim:showfail>Research Object does not have title</minim:showfail>
+        <minim:showfail>Research Object does not have title. You must add annotation: title (dcterms vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_title" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -149,7 +149,7 @@
           ?ro dcterms:description ?rodescription .
         </minim:exists>
         <minim:showpass>Research Object has description</minim:showpass>
-        <minim:showfail>Research Object does not have description</minim:showfail>
+        <minim:showfail>Research Object does not have description. You must add annotation: description (dcterms vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_description" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -169,7 +169,7 @@
           ?ro dcterms:creator ?rocreator .
         </minim:exists>
         <minim:showpass>Research Object has creator</minim:showpass>
-        <minim:showfail>Research Object does not have creator</minim:showfail>
+        <minim:showfail>Research Object does not have creator. You must add annotation: creator (dcterms vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_creator" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -189,7 +189,7 @@
           ?ro swrc:keywords ?rokeywords .
         </minim:exists>
         <minim:showpass>Research Object has keywords</minim:showpass>
-        <minim:showfail>Research Object does not have keywords</minim:showfail>
+        <minim:showfail>Research Object does not have keywords. You must add annotation: keywords (swrc vocabulary). Keywords can be separated by ";"</minim:showfail>
         <minim:derives rdf:resource="#RO_has_keywords" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -204,7 +204,7 @@
           ?ro ore:aggregates [ rdf:type roterms:Sketch ] .
         </minim:exists>
         <minim:showpass>Research Object has sketch</minim:showpass>
-        <minim:showfail>Research Object does not have sketch</minim:showfail>
+        <minim:showfail>Research Object does not have sketch. You should aggregate and annotate the sketch resource (e.g., png, jpeg file) with type: Sketch</minim:showfail>
         <minim:derives rdf:resource="#RO_has_sketch" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -224,7 +224,7 @@
           ?ro dcterms:subject ?subject .
         </minim:exists>
         <minim:showpass>Research Object has subject</minim:showpass>
-        <minim:showfail>Research Object does not have subject</minim:showfail>
+        <minim:showfail>Research Object does not have subject. You should add annotation: subject (dcterms vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_subject" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>

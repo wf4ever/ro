@@ -146,7 +146,7 @@
           ?ro dcterms:title ?rotitle .
         </minim:exists>
         <minim:showpass>Research Object has title</minim:showpass>
-        <minim:showfail>Research Object does not have title. Please add annotation with property: title (dcterms vocabulary)</minim:showfail>
+        <minim:showfail>Research Object does not have title. You must add annotation: title (dcterms vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_title" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -166,7 +166,7 @@
           ?ro dcterms:description ?rodescription .
         </minim:exists>
         <minim:showpass>Research Object has description</minim:showpass>
-        <minim:showfail>Research Object does not have description. Please add annotation with property: description (dcterms vocabulary)</minim:showfail>
+        <minim:showfail>Research Object does not have description. You must add annotation: description (dcterms vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_description" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -186,7 +186,7 @@
           ?ro dcterms:creator ?rocreator .
         </minim:exists>
         <minim:showpass>Research Object has creator</minim:showpass>
-        <minim:showfail>Research Object does not have creator. Please add annotation with property: creator (dcterms vocabulary)</minim:showfail>
+        <minim:showfail>Research Object does not have creator. You must add annotation: creator (dcterms vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_creator" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -206,7 +206,7 @@
           ?ro roterms:performsTask ?purpose .
         </minim:exists>
         <minim:showpass>Research Object has indicated purpose</minim:showpass>
-        <minim:showfail>Research Object does not have indicated purpose. Please add annotation with property: performsTask (roterms vocabulary)</minim:showfail>
+        <minim:showfail>Research Object does not have indicated purpose. You must add annotation: performsTask (roterms vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_purpose" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -226,7 +226,7 @@
           ?ro dcterms:subject ?subject .
         </minim:exists>
         <minim:showpass>Research Object has subject</minim:showpass>
-        <minim:showfail>Research Object does not have subject. Please add annotation with property: subject (dcterms vocabulary)</minim:showfail>
+        <minim:showfail>Research Object does not have subject. You should add annotation: subject (dcterms vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_subject" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -246,7 +246,7 @@
           ?ro odrs:copyrightHolder ?rocopyrightholder .
         </minim:exists>
         <minim:showpass>Research Object has copyright holder</minim:showpass>
-        <minim:showfail>Research Object does not have copyright holder. Please add annotation with property: copyrightHolder (odrs vocabulary)</minim:showfail>
+        <minim:showfail>Research Object does not have copyright holder. You should add annotation: copyrightHolder (odrs vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_copyrightholder" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -266,7 +266,7 @@
           ?ro roes:distributionCategory ?accesslevel .
         </minim:exists>
         <minim:showpass>Research Object has access level specified</minim:showpass>
-        <minim:showfail>Research Object does not have access level specified. Please add annotation with property: distributionCategory (roes vocabulary)</minim:showfail>
+        <minim:showfail>Research Object does not have access level specified. You should add annotation: distributionCategory (roes vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_access_level" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -292,7 +292,7 @@
           }
         </minim:exists>
         <minim:showpass>Research Object has start date specified</minim:showpass>
-        <minim:showfail>Research Object does not have start date specified. Please add annotation with property: generatedAtTime or startedAtTime (prov vocabulary)</minim:showfail>
+        <minim:showfail>Research Object does not have start date specified. You should add annotation: generatedAtTime or startedAtTime (prov vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_start_date" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -318,7 +318,7 @@
           }
         </minim:exists>
         <minim:showpass>Research Object has end date specified</minim:showpass>
-        <minim:showfail>Research Object does not have end date specified. Please add annotation with property: invalidatedAtTime or endedAtTime (prov vocabulary)</minim:showfail>
+        <minim:showfail>Research Object does not have end date specified. You should add annotation: invalidatedAtTime or endedAtTime (prov vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_end_date" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -366,7 +366,7 @@
           ?ro ore:aggregates [ rdf:type dcterms:BibliographicResource ] .
         </minim:exists>
         <minim:showpass>Bibliographic resource is present</minim:showpass>
-        <minim:showfail>No bibliographic resource found. For bibliographic resources to be recognized, they must be annotated with the appropriate resource type: BibliographicResource (dcterms vocabulary)</minim:showfail>
+        <minim:showfail>No bibliographic resource found. You must aggregate and annotate bibliographic resource with the appropriate type: BibliographicResource</minim:showfail>
         <minim:derives rdf:resource="#RO_has_data" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>

@@ -149,7 +149,7 @@
           ?ro dcterms:title ?rotitle .
         </minim:exists>
         <minim:showpass>Research Object has title</minim:showpass>
-        <minim:showfail>Research Object does not have title</minim:showfail>
+        <minim:showfail>Research Object does not have title. You must add annotation: title (dcterms vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_title" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -169,7 +169,7 @@
           ?ro dcterms:description ?rodescription .
         </minim:exists>
         <minim:showpass>Research Object has description</minim:showpass>
-        <minim:showfail>Research Object does not have description</minim:showfail>
+        <minim:showfail>Research Object does not have description. You must add annotation: description (dcterms vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_description" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -189,7 +189,7 @@
           ?ro dcterms:creator ?rocreator .
         </minim:exists>
         <minim:showpass>Research Object has creator</minim:showpass>
-        <minim:showfail>Research Object does not have creator</minim:showfail>
+        <minim:showfail>Research Object does not have creator. You must add annotation: creator (dcterms vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_creator" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -209,7 +209,7 @@
           ?ro dcterms:contributor ?contributor .
         </minim:exists>
         <minim:showpass>Research Object has contributor</minim:showpass>
-        <minim:showfail>Research Object does not have contributor</minim:showfail>
+        <minim:showfail>Research Object does not have contributor. You should add annotation: contributor (dcterms vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_contributor" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -229,7 +229,7 @@
           ?ro roterms:performsTask ?purpose .
         </minim:exists>
         <minim:showpass>Research Object has indicated purpose</minim:showpass>
-        <minim:showfail>Research Object does not have indicated purpose</minim:showfail>
+        <minim:showfail>Research Object does not have indicated purpose. You should add annotation: performsTask (roterms vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_purpose" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -249,7 +249,7 @@
           ?ro dcterms:subject ?subject .
         </minim:exists>
         <minim:showpass>Research Object has subject</minim:showpass>
-        <minim:showfail>Research Object does not have subject</minim:showfail>
+        <minim:showfail>Research Object does not have subject. You should add annotation: subject (dcterms vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_subject" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -269,7 +269,7 @@
           ?ro odrs:copyrightHolder ?rocopyrightholder .
         </minim:exists>
         <minim:showpass>Research Object has copyright holder</minim:showpass>
-        <minim:showfail>Research Object does not have copyright holder</minim:showfail>
+        <minim:showfail>Research Object does not have copyright holder. You should add annotation: copyrightHolder (odrs vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_copyrightholder" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -289,7 +289,7 @@
           ?ro roes:distributionCategory ?accesslevel .
         </minim:exists>
         <minim:showpass>Research Object has access level specified</minim:showpass>
-        <minim:showfail>Research Object does not have access level specified</minim:showfail>
+        <minim:showfail>Research Object does not have access level specified. You should add annotation: distributionCategory (roes vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_access_level" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -309,7 +309,7 @@
           ?ro dcterms:references ?references .
         </minim:exists>
         <minim:showpass>Research Object has references</minim:showpass>
-        <minim:showfail>Research Object does not have references</minim:showfail>
+        <minim:showfail>Research Object does not have references. You should add annotation: references (dcterms vocabulary)</minim:showfail>
         <minim:derives rdf:resource="#RO_has_references" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -326,7 +326,7 @@
   <rdf:Description rdf:about="#req_process_implementation">
     <rdf:type rdf:resource="http://purl.org/minim/minim#QueryTestRule"/>
     <!--<minim:showfail>Process implementation %(wfdef)s for %(wf)s is not accessible. The implementation is invoked when running a process (e.g., workflow definition (t2flow, ga, kar), command-line, script, web-service). With a .t2flow, use "Annotate and Transform" in ROHUB to create the anotation.</minim:showfail>-->
-    <minim:showfail>No process implementation found. The implementation is invoked when running a process (e.g., workflow definition (t2flow, ga, kar), command-line, script, web-service). </minim:showfail>
+    <minim:showfail>No process implementation found. You must aggregate and annotate the implementation invoked when running a process (e.g., workflow definition (t2flow, ga, kar), command-line, script, web-service)</minim:showfail>
     <minim:exists rdf:nodeID="Nc25db8dd938a4c2e94a250353e420830"/>
     <minim:showpass>One or more process implementations found. The implementation is invoked when running a process (e.g., workflow definition (t2flow, ga, kar), command-line, script, web-service).</minim:showpass>
   </rdf:Description>
@@ -440,8 +440,8 @@
           ?wf wfdesc:hasInput ?input .
         </minim:exists>
         <minim:showpass>All processes (e.g., workflow, command-line, script, web-service) have input defined</minim:showpass>
-        <minim:showfail>One or more process (e.g., workflow, command-line, script, web-service) has no input defined, including &lt;i&gt;%(wf)s &lt;/i&gt;</minim:showfail>
-        <minim:showmiss>No processes (e.g., workflow, command-line, script, web-service) found (for checking input data)</minim:showmiss>
+        <minim:showfail>One or more process (e.g., workflow, command-line, script, web-service) has no input defined, including &lt;i&gt;%(wf)s &lt;/i&gt;. You must add annotation link hasInput (wfdesc vocabulary)</minim:showfail>
+        <minim:showmiss>No process implementation (e.g., workflow, command-line, script, web-service) found (for checking input data)</minim:showmiss>
         <minim:derives rdf:resource="#PR_has_inputdata" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -498,8 +498,8 @@
           ?wf wfdesc:hasOutput ?input .
         </minim:exists>
         <minim:showpass>All processes (e.g., workflow, command-line, script, web-service) have output defined</minim:showpass>
-        <minim:showfail>One or more process (e.g., workflow, command-line, script, web-service) has no output defined, including &lt;i&gt;%(wf)s &lt;/i&gt;</minim:showfail>
-        <minim:showmiss>No processes (e.g., workflow, command-line, script, web-service) found (for checking output data)</minim:showmiss>
+        <minim:showfail>One or more process (e.g., workflow, command-line, script, web-service) has no output defined, including &lt;i&gt;%(wf)s &lt;/i&gt;. You must add annotation link hasOutput (wfdesc vocabulary)</minim:showfail>
+        <minim:showmiss>No process implementation (e.g., workflow, command-line, script, web-service) found (for checking output data)</minim:showmiss>
         <minim:derives rdf:resource="#PR_has_outputdata" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
@@ -521,7 +521,7 @@
               dcterms:identifier ?doi .
         </minim:exists>
         <minim:showpass>Research Object has DOI</minim:showpass>
-        <minim:showfail>Research Object does not have DOI</minim:showfail>
+        <minim:showfail>Research Object does not have DOI. You must make a release (snapshot/archive) of the research object with a DOI</minim:showfail>
         <minim:derives rdf:resource="#RO_has_doi" />
       </minim:ContentMatchRequirementRule>
     </minim:isDerivedBy>
